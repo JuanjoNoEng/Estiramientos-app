@@ -1,6 +1,7 @@
 # Compila la app de Android (APK) con Capacitor.
 # - En cada push: deja la APK como artefacto descargable de la ejecución.
 # - Al subir una etiqueta v* (p. ej. v1.0.0): publica la APK en "Releases" con el nombre fijo
+#   (v1.0.0-prueba y similares se publican como pre-lanzamiento: no reemplazan la descarga principal)
 #   estiramientos-andrey-hernandez.apk, que es el enlace de descarga que usa la app.
 # Firma: si existen los secretos ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS y
 # ANDROID_KEY_PASSWORD, se firma como versión final (las actualizaciones se instalan encima de la anterior).
@@ -86,4 +87,6 @@ jobs:
         with:
           files: salida/estiramientos-andrey-hernandez.apk
           name: Estiramientos ${{ github.ref_name }}
+          # Las etiquetas con guion (p. ej. v0.9.0-prueba) son versiones de prueba: no cuentan como "la última"
+          prerelease: ${{ contains(github.ref_name, '-') }}
           body: App de estiramientos de Andrey Hernández, Quiropráctico, para Android.

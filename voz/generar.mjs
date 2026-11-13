@@ -19,6 +19,7 @@ const AJUSTES = { stability: 0.6, similarity_boost: 0.8, style: 0.15, use_speake
 
 const args = new Set(process.argv.slice(2));
 const ejercicios = JSON.parse(fs.readFileSync(path.join(RAIZ, 'datos', 'ejercicios.json'), 'utf8'));
+const guia = JSON.parse(fs.readFileSync(path.join(RAIZ, 'datos', 'guia.json'), 'utf8'));
 
 // ---------- Textos ----------
 export const AVISOS = {
@@ -45,10 +46,18 @@ const lectura = e => [
   ...(e.precauciones.length ? ['Ten en cuenta:', ...e.precauciones] : []),
 ].join(' ');
 
+export function textoSeguridad(s) {
+  return ['Antes de empezar.', ...s.antesDeEmpezar, 'No estires si tienes alguno de estos problemas.', ...s.noEstirarSi,
+    'Detente si te pasa algo de esto.', ...s.pararSi, 'Consejos.', ...s.consejos].join(' ');
+}
+
 const items = [
   ...Object.entries(AVISOS).map(([k, texto]) => ({ clave: `aviso-${k}`, texto })),
   ...ejercicios.map(e => ({ clave: `nombre-${e.id}`, texto: `${e.nombre}.` })),
   ...(args.has('--lecturas') ? ejercicios.map(e => ({ clave: `lectura-${e.id}`, texto: lectura(e) })) : []),
+  // Tarjetas de «Aprende» y guía de seguridad (para quien lee con dificultad)
+  ...(args.has('--lecturas') ? guia.tarjetas.map(t => ({ clave: `tarjeta-${t.id}`, texto: `${t.titulo}. ${t.texto}` })) : []),
+  ...(args.has('--lecturas') ? [{ clave: 'seguridad', texto: textoSeguridad(guia.seguridad) }] : []),
 ];
 
 // ---------- Generación ----------

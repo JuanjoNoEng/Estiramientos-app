@@ -1,10 +1,11 @@
 # Publica la app web (para iPhone y cualquier navegador) en GitHub Pages.
-# Requiere activar Pages una vez: Settings → Pages → Source: "GitHub Actions".
+# Se intenta activar Pages automáticamente; si GitHub no lo permite, hay que activarlo una vez:
+# Settings → Pages → Source: "GitHub Actions".
 name: Web (GitHub Pages)
 
 on:
   push:
-    branches: [main]
+    branches: [main, claude/admiring-bardeen-zf4mwj]
   workflow_dispatch:
 
 permissions:
@@ -31,6 +32,8 @@ jobs:
       - run: npm ci
       - run: npm run build
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

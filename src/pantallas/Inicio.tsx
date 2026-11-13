@@ -1,6 +1,7 @@
 import { RUTINAS, RUTINA_DIARIA, ZONAS, GUIA, duracionRutina, minutos } from '../datos';
 import { useEstado, racha, hechasHoy, diasActivos, actualizar } from '../almacen';
 import { estaInstalada } from '../plataforma';
+import { EnviarAvance } from '../componentes/EnviarAvance';
 import { Ilustracion, TarjetaRutina } from '../componentes/comunes';
 import { Icono } from '../componentes/Icono';
 import { SemanaActual } from './Progreso';
@@ -63,6 +64,7 @@ function InicioSencillo() {
       </section>
       <AvisoInstalar />
       <a className="boton claro grande ancho" href={`#/rutina/${destino}`}><Icono nombre="rutinas" /> Ver mis ejercicios</a>
+      {estado.sesiones.length > 0 && <EnviarAvance />}
       <footer className="pie">
         <a href="#/seguridad">Recomendaciones de seguridad</a>
         <span className="peque-texto">Ante cualquier dolor, consulta con Andrey.</span>

@@ -419,6 +419,414 @@
     "nombre-90": {
       "hash": "1062f3d9736b",
       "bytes": 18851
+    },
+    "lectura-3": {
+      "hash": "56a3470fa944",
+      "bytes": 224278
+    },
+    "lectura-1": {
+      "hash": "31200c6755ce",
+      "bytes": 214247
+    },
+    "lectura-2": {
+      "hash": "a1ee113b683e",
+      "bytes": 358234
+    },
+    "lectura-4": {
+      "hash": "244effd2125d",
+      "bytes": 336709
+    },
+    "lectura-5": {
+      "hash": "c8e37e1869ca",
+      "bytes": 311422
+    },
+    "lectura-6": {
+      "hash": "a4ea0b605cde",
+      "bytes": 340888
+    },
+    "lectura-9": {
+      "hash": "4e1849b148dd",
+      "bytes": 255416
+    },
+    "lectura-7": {
+      "hash": "d69c5242b01b",
+      "bytes": 303063
+    },
+    "lectura-8": {
+      "hash": "b8da7ec98651",
+      "bytes": 323125
+    },
+    "lectura-10": {
+      "hash": "f9c56a3add7e",
+      "bytes": 185616
+    },
+    "lectura-12": {
+      "hash": "4231fc5af4ed",
+      "bytes": 274433
+    },
+    "lectura-11": {
+      "hash": "fd9f235dd1e7",
+      "bytes": 279866
+    },
+    "lectura-13": {
+      "hash": "2d2f2f22b2ad",
+      "bytes": 223024
+    },
+    "lectura-14": {
+      "hash": "0a2c1170e1c6",
+      "bytes": 252908
+    },
+    "lectura-15": {
+      "hash": "29a5d5f65ba4",
+      "bytes": 307869
+    },
+    "lectura-17": {
+      "hash": "70af49670383",
+      "bytes": 299928
+    },
+    "lectura-18": {
+      "hash": "334402ab63ba",
+      "bytes": 259804
+    },
+    "lectura-16": {
+      "hash": "816e31b90ce5",
+      "bytes": 278821
+    },
+    "lectura-19": {
+      "hash": "a955c017fdbe",
+      "bytes": 268372
+    },
+    "lectura-20": {
+      "hash": "116594242c9e",
+      "bytes": 280284
+    },
+    "lectura-21": {
+      "hash": "dcd504d0b50b",
+      "bytes": 378714
+    },
+    "lectura-24": {
+      "hash": "6dde3e5fac26",
+      "bytes": 214247
+    },
+    "lectura-22": {
+      "hash": "c1ee1ff37581",
+      "bytes": 318109
+    },
+    "lectura-23": {
+      "hash": "898c7819e95d",
+      "bytes": 405463
+    },
+    "lectura-27": {
+      "hash": "f9fe89a648aa",
+      "bytes": 225323
+    },
+    "lectura-26": {
+      "hash": "49ae02838948",
+      "bytes": 286554
+    },
+    "lectura-25": {
+      "hash": "7baa61c5ee4e",
+      "bytes": 347158
+    },
+    "lectura-30": {
+      "hash": "93a01d64f0d6",
+      "bytes": 184780
+    },
+    "lectura-29": {
+      "hash": "b3151a1a6345",
+      "bytes": 276523
+    },
+    "lectura-28": {
+      "hash": "77407da8ddf9",
+      "bytes": 360532
+    },
+    "lectura-32": {
+      "hash": "c7c7283cf71f",
+      "bytes": 232846
+    },
+    "lectura-31": {
+      "hash": "bc9858f02c4a",
+      "bytes": 217590
+    },
+    "lectura-33": {
+      "hash": "51a12ad31267",
+      "bytes": 277985
+    },
+    "lectura-35": {
+      "hash": "38f02d80fe7e",
+      "bytes": 290315
+    },
+    "lectura-34": {
+      "hash": "a70728070ab6",
+      "bytes": 340888
+    },
+    "lectura-36": {
+      "hash": "d928409dff63",
+      "bytes": 408807
+    },
+    "lectura-37": {
+      "hash": "743790899278",
+      "bytes": 210485
+    },
+    "lectura-39": {
+      "hash": "844d3277f171",
+      "bytes": 358652
+    },
+    "lectura-38": {
+      "hash": "8c64b7403c56",
+      "bytes": 384774
+    },
+    "lectura-41": {
+      "hash": "091caa09801d",
+      "bytes": 353845
+    },
+    "lectura-42": {
+      "hash": "c6175380d780",
+      "bytes": 247683
+    },
+    "lectura-40": {
+      "hash": "64fe66c7d4d5",
+      "bytes": 382057
+    },
+    "lectura-44": {
+      "hash": "85d36b7fbb80",
+      "bytes": 197737
+    },
+    "lectura-43": {
+      "hash": "fc110cd152c4",
+      "bytes": 256460
+    },
+    "lectura-45": {
+      "hash": "e44126bef782",
+      "bytes": 312258
+    },
+    "lectura-46": {
+      "hash": "d83c8d4ed8ba",
+      "bytes": 392506
+    },
+    "lectura-48": {
+      "hash": "fd7e7af81172",
+      "bytes": 418838
+    },
+    "lectura-47": {
+      "hash": "151c864bc1eb",
+      "bytes": 333783
+    },
+    "lectura-51": {
+      "hash": "6c6845acbd32",
+      "bytes": 336082
+    },
+    "lectura-49": {
+      "hash": "c4d5cc8818cb",
+      "bytes": 258341
+    },
+    "lectura-50": {
+      "hash": "ec566681110a",
+      "bytes": 345277
+    },
+    "lectura-54": {
+      "hash": "ea33becaf467",
+      "bytes": 246847
+    },
+    "lectura-52": {
+      "hash": "f158a39aee65",
+      "bytes": 257923
+    },
+    "lectura-53": {
+      "hash": "d6e229da10c6",
+      "bytes": 390207
+    },
+    "lectura-56": {
+      "hash": "5d8bf410b717",
+      "bytes": 239533
+    },
+    "lectura-57": {
+      "hash": "6002d9390712",
+      "bytes": 261058
+    },
+    "lectura-55": {
+      "hash": "5e6fa5e0c0a8",
+      "bytes": 317065
+    },
+    "lectura-59": {
+      "hash": "a8fff60b1d74",
+      "bytes": 385401
+    },
+    "lectura-60": {
+      "hash": "11a74b2268f0",
+      "bytes": 319990
+    },
+    "lectura-58": {
+      "hash": "751ce71c4e8e",
+      "bytes": 335664
+    },
+    "lectura-62": {
+      "hash": "32a103f832c8",
+      "bytes": 327514
+    },
+    "lectura-61": {
+      "hash": "e9e703c447b1",
+      "bytes": 332320
+    },
+    "lectura-63": {
+      "hash": "81eb91aa23b2",
+      "bytes": 330439
+    },
+    "lectura-64": {
+      "hash": "91846c3fa7f0",
+      "bytes": 296585
+    },
+    "lectura-66": {
+      "hash": "67593e23ef50",
+      "bytes": 321871
+    },
+    "lectura-65": {
+      "hash": "ee5bad34769b",
+      "bytes": 390207
+    },
+    "lectura-68": {
+      "hash": "f350e949e9df",
+      "bytes": 232428
+    },
+    "lectura-67": {
+      "hash": "55f5bf4b4b87",
+      "bytes": 282165
+    },
+    "lectura-69": {
+      "hash": "4081497178a6",
+      "bytes": 468993
+    },
+    "lectura-70": {
+      "hash": "253fc6904ea9",
+      "bytes": 230547
+    },
+    "lectura-72": {
+      "hash": "7e986104f751",
+      "bytes": 284046
+    },
+    "lectura-71": {
+      "hash": "cbf575c73c31",
+      "bytes": 303690
+    },
+    "lectura-75": {
+      "hash": "68032b589d8c",
+      "bytes": 181855
+    },
+    "lectura-73": {
+      "hash": "e7416ba2e405",
+      "bytes": 185616
+    },
+    "lectura-74": {
+      "hash": "9f4e452d4ab2",
+      "bytes": 339007
+    },
+    "lectura-77": {
+      "hash": "d7e8c6a3f326",
+      "bytes": 207141
+    },
+    "lectura-76": {
+      "hash": "b71408b5c99a",
+      "bytes": 297003
+    },
+    "lectura-78": {
+      "hash": "4a4ffa5fa266",
+      "bytes": 304526
+    },
+    "lectura-80": {
+      "hash": "d3fcd00977b3",
+      "bytes": 190005
+    },
+    "lectura-79": {
+      "hash": "59cb57f027f2",
+      "bytes": 271716
+    },
+    "lectura-81": {
+      "hash": "d2bf329bb4ff",
+      "bytes": 196065
+    },
+    "lectura-84": {
+      "hash": "e9460ea71d5a",
+      "bytes": 188124
+    },
+    "lectura-83": {
+      "hash": "e436c78ca9fa",
+      "bytes": 184154
+    },
+    "lectura-82": {
+      "hash": "92698a6cb880",
+      "bytes": 219471
+    },
+    "lectura-87": {
+      "hash": "b42cb73111a8",
+      "bytes": 222815
+    },
+    "lectura-86": {
+      "hash": "fb6b457f3aad",
+      "bytes": 232846
+    },
+    "lectura-85": {
+      "hash": "ff008268514d",
+      "bytes": 237861
+    },
+    "lectura-89": {
+      "hash": "db808f03795f",
+      "bytes": 216754
+    },
+    "lectura-88": {
+      "hash": "64f77785f911",
+      "bytes": 228666
+    },
+    "lectura-90": {
+      "hash": "30fe376a96fd",
+      "bytes": 251027
+    },
+    "tarjeta-reflejo-estiramiento": {
+      "hash": "595e383a9a86",
+      "bytes": 186661
+    },
+    "tarjeta-que-es-flexibilidad": {
+      "hash": "520e91260931",
+      "bytes": 213829
+    },
+    "lectura-91": {
+      "hash": "2da764413545",
+      "bytes": 187497
+    },
+    "tarjeta-sin-rebotes": {
+      "hash": "a90253d7e722",
+      "bytes": 183318
+    },
+    "tarjeta-pasivo-activo": {
+      "hash": "dfc2e64177cd",
+      "bytes": 199618
+    },
+    "tarjeta-estatico-dinamico": {
+      "hash": "75b2a94f20e6",
+      "bytes": 212366
+    },
+    "tarjeta-calentar-antes": {
+      "hash": "44794b4c81a6",
+      "bytes": 151762
+    },
+    "tarjeta-vuelta-a-la-calma": {
+      "hash": "a18d834d8ea7",
+      "bytes": 190423
+    },
+    "tarjeta-beneficios": {
+      "hash": "f67aab96c28a",
+      "bytes": 206723
+    },
+    "tarjeta-respiracion": {
+      "hash": "2e4382fed832",
+      "bytes": 157404
+    },
+    "tarjeta-constancia": {
+      "hash": "c49a91713ea0",
+      "bytes": 176003
+    },
+    "seguridad": {
+      "hash": "489bb8e57b03",
+      "bytes": 1171582
     }
   }
 }

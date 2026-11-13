@@ -1,6 +1,8 @@
 import { GUIA } from '../datos';
 import { Cabecera } from '../componentes/comunes';
 import { Icono } from '../componentes/Icono';
+import { Escuchar } from '../componentes/Escuchar';
+import { tarjetaFrase, seguridadFrase } from '../voz';
 
 export function Aprende() {
   return (
@@ -14,6 +16,7 @@ export function Aprende() {
         <article key={t.id} className="tarjeta seccion" id={t.id}>
           <h2>{t.titulo}</h2>
           <p>{t.texto}</p>
+          <Escuchar frase={tarjetaFrase(t)} />
         </article>
       ))}
       <p className="peque-texto" style={{ textAlign: 'center' }}>Contenido basado en el material que Andrey comparte con sus pacientes.</p>
@@ -32,6 +35,7 @@ export function Seguridad() {
   return (
     <main className="pantalla">
       <Cabecera titulo="Seguridad" atras="/aprende" />
+      <Escuchar frase={seguridadFrase(s)} texto="Escuchar todo" clase="boton claro grande" />
       {bloques.filter(b => b[2]?.length).map(([titulo, icono, items, color]) => (
         <section key={titulo} className={'tarjeta seccion ' + (color ?? '')}>
           <div className="aviso"><Icono nombre={icono} /><h3>{titulo}</h3></div>

@@ -125,3 +125,11 @@ export function lecturaEj(e: { id: number; nombre: string; pasos: string[]; resp
   ].join(' ');
   return { clave: `lectura-${e.id}`, texto };
 }
+
+export const tarjetaFrase = (t: { id: string; titulo: string; texto: string }): Frase => ({ clave: `tarjeta-${t.id}`, texto: `${t.titulo}. ${t.texto}` });
+
+export function seguridadFrase(s: { antesDeEmpezar: string[]; noEstirarSi: string[]; pararSi: string[]; consejos: string[] }): Frase {
+  const texto = ['Antes de empezar.', ...s.antesDeEmpezar, 'No estires si tienes alguno de estos problemas.', ...s.noEstirarSi,
+    'Detente si te pasa algo de esto.', ...s.pararSi, 'Consejos.', ...s.consejos].join(' ');
+  return { clave: 'seguridad', texto };
+}

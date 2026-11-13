@@ -1,6 +1,7 @@
 import { useEstado, racha, diasActivos, type Sesion } from '../almacen';
 import { minutos } from '../datos';
 import { Cabecera } from '../componentes/comunes';
+import { EnviarAvance } from '../componentes/EnviarAvance';
 
 const DIAS = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
 const clave = (d: Date) => d.toLocaleDateString('sv');
@@ -42,6 +43,9 @@ export function Progreso() {
         </div>
         <SemanaActual sesiones={sesiones} />
       </section>
+
+      <EnviarAvance />
+      <p className="peque-texto" style={{ textAlign: 'center', marginTop: -12 }}>Se abre WhatsApp con un resumen; tú decides si lo envías.</p>
 
       {conMolestia.length > 1 && (
         <section className="tarjeta seccion">
