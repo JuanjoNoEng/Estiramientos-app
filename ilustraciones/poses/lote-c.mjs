@@ -242,7 +242,7 @@ export default {
     resaltar: ['piernaN.muslo', 'piernaL.muslo'],
     objetos: (J, suelo) => [{
       tipo: 'svg',
-      svg: `<rect x="-95" y="${suelo - 118}" width="190" height="118" fill="#DDE8E5"/><line x1="-95" y1="${suelo - 0.5}" x2="95" y2="${suelo - 0.5}" stroke="#BFD3CE" stroke-width="2"/>`,
+      svg: `<rect x="-62" y="${suelo - 104}" width="124" height="104" rx="6" fill="#DDE8E5" opacity=".7"/>`,
       caja: [-80, suelo - 100, 80],
     }],
   },
