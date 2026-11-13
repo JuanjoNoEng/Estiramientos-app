@@ -53,8 +53,12 @@ Esa es la dirección que se comparte con los pacientes de iPhone. Los planes que
 
 ## Probar una APK sin publicarla
 
-Cada ejecución de **Actions → APK Android** deja la APK como **artefacto** descargable al final de la
-página de la ejecución (requiere iniciar sesión en GitHub).
+- **Versión de prueba siempre al día:** cada cambio en la rama principal actualiza el pre-lanzamiento
+  **«prueba»**. Enlace directo para el teléfono:
+  `https://github.com/JuanjoNoEng/Estiramientos-app/releases/download/prueba/estiramientos-andrey-hernandez.apk`
+  (sirve para probar; no es la descarga oficial para pacientes).
+- Además, cada ejecución de **Actions → APK Android** deja la APK como **artefacto** al final de la página
+  de la ejecución (requiere iniciar sesión en GitHub).
 
 ## Voces
 
