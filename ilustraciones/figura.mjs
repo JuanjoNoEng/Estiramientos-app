@@ -439,7 +439,21 @@ export function dibujar(pose, opciones = {}) {
   const sueloSVG = pose.sinSuelo ? '' : `<line x1="${n(vbX + 12 / esc)}" y1="${n(sueloY + 2)}" x2="${n(vbX + vbW - 12 / esc)}" y2="${n(sueloY + 2)}" stroke="${PALETA.suelo}" stroke-width="4" stroke-linecap="round"/>`;
   const defs = `<defs>${fig.defs}${comp ? comp.defs : ''}</defs>`;
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${n(vbX)} ${n(vbY)} ${n(vbW)} ${n(vbH)}" width="${ANCHO}" height="${ALTO}">` +
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${n(vbX)} ${n(vbY)} ${n(vbW)} ${n(vbH)}" width="${ANCHO}" height="${ALTO}">` +
     (opciones.titulo ? `<title>${opciones.titulo}</title>` : '') + defs + sueloSVG + svgObj('atras') +
     (compDelante ? '' : compSVG) + fig.svg + (compDelante ? compSVG : '') + svgObj('adelante') + '</svg>';
+  return idsUnicos(svg, id);
+}
+
+// Los objetos 'svg' de las posturas pueden traer ids fijos (recortes, máscaras). Cuando la misma figura aparece
+// varias veces en una página, los ids se repetirían: se les añade el prefijo único de este dibujo.
+function idsUnicos(svg, id) {
+  const propios = new Set([...svg.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]).filter(x => !x.startsWith(id + '-')));
+  if (!propios.size) return svg;
+  let r = svg;
+  for (const x of propios) {
+    const nuevo = `${id}-${x}`;
+    r = r.split(`id="${x}"`).join(`id="${nuevo}"`).split(`url(#${x})`).join(`url(#${nuevo})`).split(`href="#${x}"`).join(`href="#${nuevo}"`);
+  }
+  return r;
 }

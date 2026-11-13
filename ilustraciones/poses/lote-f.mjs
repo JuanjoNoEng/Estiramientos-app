@@ -8,9 +8,9 @@ const RODILLAS = {
 };
 const ANTEBRAZOS = ['brazoN.antebrazo', 'brazoN.mano', 'brazoL.antebrazo', 'brazoL.mano'];
 
-// Apaño: en vista lateral el brazo cercano nace en la base del cuello y tapa la banda coral de la nuca.
-// Esta función repite la geometría de cuelloGeo/bandaCuello de figura.mjs (lado nuca) para volver a pintar
-// la banda por encima del brazo con un objeto `svg`.
+// Apaño: en vista lateral el hombro está en la base del cuello y el brazo cercano tapa la banda coral.
+// Esta función repite la geometría de cuelloGeo/bandaCuello de figura.mjs para volver a pintar la banda
+// por encima de los brazos con un objeto `svg` (lado -1 = nuca, 1 = parte delantera; con máscara para la cabeza).
 const rad = g => (g * Math.PI) / 180;
 const f1 = v => (Math.round(v * 10) / 10).toString();
 function suave(pts) {
@@ -165,8 +165,8 @@ export default {
     piernaN: { a: [90, 90] },
     piernaL: { a: [90, 90] },
     // Manos sobre la parte alta y posterior de la cabeza, codos hacia delante
-    brazoN: { hacia: J => [J.cabeza[0] - 8, J.cabeza[1] - 6], doblez: 1, fin: -55 },
-    brazoL: { hacia: J => [J.cabeza[0] - 7, J.cabeza[1] - 7], doblez: 1, fin: -55 },
+    brazoN: { hacia: J => [J.cabeza[0] - 3, J.cabeza[1] - 11], doblez: 1, fin: 10 },
+    brazoL: { hacia: J => [J.cabeza[0] - 2, J.cabeza[1] - 11.5], doblez: 1, fin: 10 },
     resaltar: ['cuello'],
     objetos: J => [nucaEncima(J, -90, 'lote-f-nuca-86')],
   },
@@ -227,9 +227,10 @@ export default {
     cuelloLado: 'frente',
     piernaN: { a: [88, 90] },
     piernaL: { a: [90, 90] },
-    // Mano sobre la frente empujando la cabeza hacia atrás, codo hacia delante y arriba
-    brazoN: { hacia: J => [J.cabeza[0] + 12, J.cabeza[1] - 9], doblez: 1, fin: -150, escala: [1, 1, 1.4] },
-    brazoL: { a: [95, 92] },
+    // El brazo lejano sube por delante: mano sobre la frente empujando la cabeza hacia atrás.
+    // (El cercano cuelga: si subiera, taparía la parte delantera del cuello.)
+    brazoN: { a: [95, 92] },
+    brazoL: { hacia: J => [J.cabeza[0] + 14, J.cabeza[1] - 9], doblez: 1, fin: -130, escala: [1, 1, 1.4] },
     resaltar: ['cuello'],
     objetos: J => [nucaEncima(J, -94, 'lote-f-cuello-91', 1, 1)],
   },

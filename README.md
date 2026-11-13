@@ -6,7 +6,7 @@ que Andrey envía por enlace o código QR.
 
 ## Qué incluye
 
-- **Biblioteca de 91 ejercicios** con búsqueda y filtros por zona, postura, material y dificultad.
+- **Biblioteca de 91 ejercicios** ilustrados (ver `ilustraciones/catalogo.png`) con búsqueda y filtros por zona, postura, material y dificultad.
 - **Ficha de cada ejercicio**: ilustración, pasos, respiración, precauciones y variantes.
 - **Modo guiado**: cuenta atrás, guía de respiración, cambio de lado con la figura en espejo, voz y
   sonidos, pantalla siempre encendida y botón "me molesta".
