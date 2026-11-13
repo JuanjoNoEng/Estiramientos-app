@@ -43,8 +43,8 @@ const p55 = {
   mira: 1,
   piernaN: { a: [180, 180], fin: 180 },
   piernaL: { a: [178, 180], fin: 180 },
-  brazoN: { a: [-92, -94], fin: -94 },
-  brazoL: { a: [-96, -98], fin: -98 },
+  brazoN: { a: [-112, -114], fin: -114 },
+  brazoL: { a: [-116, -118], fin: -118 },
   resaltar: ['abdomen'],
 };
 const dx55 = -6;
@@ -52,8 +52,8 @@ const c55base = {
   vista: 'lado',
   torso: -48,
   cuello: -30,
-  piernaN: { a: [78, 102], fin: 0 },
-  piernaL: { a: [82, 100], fin: 0 },
+  piernaN: { a: [72, 106], fin: 0 },
+  piernaL: { a: [76, 104], fin: 0 },
 };
 {
   const J = art(p55);
@@ -200,12 +200,12 @@ export default {
   56: {
     nombre: 'Región lumbar',
     vista: 'lado',
-    torso: 18,
-    cuello: 85,
-    piernaN: { a: [0, 92], fin: 0 },
-    piernaL: { a: [-2, 94], fin: 0 },
-    brazoN: { hacia: [50, 41], doblez: 1, fin: 90 },
-    brazoL: { hacia: [48, 41], doblez: 1, fin: 90 },
+    torso: 22,
+    cuello: 65,
+    piernaN: { a: [0, 100], fin: 0 },
+    piernaL: { a: [-2, 102], fin: 0 },
+    brazoN: { hacia: [50, 42], doblez: 1, fin: 0 },
+    brazoL: { hacia: [48, 42], doblez: 1, fin: 0 },
     resaltar: ['lumbar'],
     objetos: J => [{ tipo: 'silla', x: 16, y: 12, dir: 1 }],
   },
@@ -227,12 +227,13 @@ export default {
   58: {
     nombre: 'Romboides',
     vista: 'lado',
-    torso: -28,
-    cuello: 10,
-    piernaN: { a: [-10, 22], fin: -40 },
-    piernaL: { a: [-12, 24], fin: -40 },
-    brazoN: { hacia: 'piernaN.rodilla+-2,8', doblez: -1, fin: 60 },
-    brazoL: { hacia: 'piernaL.rodilla+-3,8', doblez: -1, fin: 60 },
+    torso: -50,
+    cuello: 15,
+    piernaN: { a: [-35, 50], fin: -40 },
+    piernaL: { a: [-37, 52], fin: -42 },
+    // Codos bajos; los antebrazos pasan por debajo de los muslos (escorzo) hasta la rodilla contraria
+    brazoN: { a: [80, -155], escala: [1, 0.5, 0.6], fin: -155 },
+    brazoL: { a: [84, -150], escala: [1, 0.5, 0.6], fin: -150 },
     resaltar: ['espalda'],
   },
 

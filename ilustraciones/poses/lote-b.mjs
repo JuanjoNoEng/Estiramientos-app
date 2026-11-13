@@ -54,14 +54,14 @@ export default {
   19: {
     nombre: 'Parte interna del hombro',
     vista: 'frente',
-    torso: -100,
-    cuello: -96,
+    torso: -103,
+    cuello: -97,
     piernaN: { a: [150, 95], escala: [0.42, 0.95, 0.55], fin: 120 },
     piernaL: { a: [30, 85], escala: [0.42, 0.95, 0.55], fin: 60 },
     brazoN: { hacia: [-6, 4], doblez: 1, fin: 90 },
     brazoL: { hacia: [6, 4], doblez: -1, fin: 90 },
     resaltar: ['brazoN.brazo', 'brazoL.brazo'],
-    objetos: () => [{ tipo: 'banco', x1: -26, x2: 26, y: 6 }],
+    objetos: J => [{ tipo: 'banco', x1: -26, x2: 26, y: 6 }, { tipo: 'flecha', c: J.pelvis, r: 84, de: -82, a: -108 }],
   },
 
   // 20 · Parte lateral del hombro: sentado, brazo cruzado delante del pecho, la otra mano tira del codo
@@ -132,7 +132,7 @@ export default {
     piernaL: { a: [83, 88], fin: 65, escala: [1, 1, 0.5] },
     cuello: -82,
     // Vista de frente: el antebrazo flexionado y la mano que sujeta el codo pasan por detrás de la cabeza
-    brazoN: { a: [-102, 40], fin: 45 },
+    brazoN: { a: [-110, 38], fin: 45 },
     brazoL: { hacia: 'brazoN.codo+4,1', doblez: 1, fin: 175 },
     orden: ['piernaN', 'piernaL', 'brazoN', 'torso', 'brazoL', 'cabeza'],
     resaltar: ['brazoN.brazo'],
@@ -212,11 +212,13 @@ export default {
     vista: 'lado',
     torso: 180,
     mira: 1,
-    cuello: 125,
+    cuello: 140,
     piernaN: { a: [0, 0], fin: -80 },
     piernaL: { a: [-1, 0], fin: -82 },
     brazoN: { a: [8, 2], fin: 2 },
     brazoL: { a: [7, 2], fin: 2 },
+    // Brazos a lo largo del cuerpo, por detrás del tronco: si no, el hombro tapa la garganta resaltada
+    orden: ['brazoL', 'brazoN', 'piernaL', 'torso', 'piernaN'],
     resaltar: ['cuello'],
     cuelloLado: 'frente',
     sobreSuelo: 34,

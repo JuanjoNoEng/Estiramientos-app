@@ -72,6 +72,7 @@ function resolverRef(ref, J) {
   if (typeof ref === 'function') return ref(J);
   const [nombre, extra] = ref.split('+');
   const p = nombre.split('.').reduce((o, key) => o?.[key], J);
+  if (Array.isArray(p) && p.length === 2) { /* ok */ } else if (p) throw new Error('Referencia desconocida: ' + ref);
   if (!p) throw new Error('Referencia desconocida: ' + ref);
   if (extra) { const [ex, ey] = extra.split(',').map(Number); return [p[0] + ex, p[1] + ey]; }
   return p;
@@ -110,19 +111,29 @@ export function resolver(pose) {
     J['hombro' + lado] = frente ? sum(sum(pelvis, torsoA, LARGO.torso * 0.9), perp, s * ANCHO_HOMBROS) : sum(pelvis, torsoA, LARGO.torso * 0.86);
     J['cadera' + lado] = frente ? sum(pelvis, perp, s * ANCHO_CADERA) : [0, 0];
   }
-  const pendientes = [];
-  for (const lado of ['N', 'L']) pendientes.push(['pierna' + lado, lado], ['brazo' + lado, lado]);
-  // Las piernas primero (los brazos suelen apuntar a tobillos/pies)
-  pendientes.sort((a, b) => (a[0].startsWith('pierna') ? -1 : 1) - (b[0].startsWith('pierna') ? -1 : 1));
-  for (const [miembro, lado] of pendientes) {
-    const spec = pose[miembro] || {};
-    const esPierna = miembro.startsWith('pierna');
-    const base0 = esPierna ? J['cadera' + lado] : J['hombro' + lado];
-    const largos = esPierna ? [LARGO.muslo, LARGO.pierna, LARGO.pie] : [LARGO.brazo, LARGO.antebrazo, LARGO.mano];
-    const porDefecto = esPierna ? (vista === 'frente' ? () => 90 : mira === 1 ? () => 0 : () => 180) : a2 => a2;
-    const defecto = esPierna ? { a: [90, 90] } : { a: [100, 95] };
-    const [b, p1, p2, p3, a3] = cadena(base0, ('a' in spec || 'hacia' in spec) ? spec : { ...defecto, ...spec }, largos, J, porDefecto);
-    J[miembro] = esPierna ? { cadera: b, rodilla: p1, tobillo: p2, punta: p3, angPie: a3 } : { hombro: b, codo: p1, muneca: p2, punta: p3 };
+  // Se resuelven en varias pasadas: un miembro puede apuntar a otro (p. ej. la mano al codo contrario)
+  let pendientes = ['piernaN', 'piernaL', 'brazoN', 'brazoL'];
+  for (let pasada = 0; pendientes.length && pasada < 4; pasada++) {
+    const quedan = [];
+    for (const miembro of pendientes) {
+      const lado = miembro.slice(-1);
+      const spec = pose[miembro] || {};
+      const esPierna = miembro.startsWith('pierna');
+      const base0 = esPierna ? J['cadera' + lado] : J['hombro' + lado];
+      const largos = esPierna ? [LARGO.muslo, LARGO.pierna, LARGO.pie] : [LARGO.brazo, LARGO.antebrazo, LARGO.mano];
+      const porDefecto = esPierna ? (vista === 'frente' ? () => 90 : mira === 1 ? () => 0 : () => 180) : a2 => a2;
+      const defecto = esPierna ? { a: [90, 90] } : { a: [100, 95] };
+      let r;
+      try {
+        r = cadena(base0, ('a' in spec || 'hacia' in spec) ? spec : { ...defecto, ...spec }, largos, J, porDefecto);
+      } catch (err) {
+        if (pasada < 3 && String(err.message).startsWith('Referencia desconocida')) { quedan.push(miembro); continue; }
+        throw err;
+      }
+      const [b, p1, p2, p3, a3] = r;
+      J[miembro] = esPierna ? { cadera: b, rodilla: p1, tobillo: p2, punta: p3, angPie: a3 } : { hombro: b, codo: p1, muneca: p2, punta: p3 };
+    }
+    pendientes = quedan;
   }
   return { J, vista, torsoA, cuelloA };
 }
@@ -238,6 +249,20 @@ function bandaCuello(geo, lado) {
   return contorno([...l1, ...l2.reverse()]);
 }
 
+// Vista de espaldas: línea de la columna y omóplatos, para que se lea que vemos la espalda
+function marcasEspalda(J, torsoA, mira) {
+  const u = [Math.cos(rad(torsoA)), Math.sin(rad(torsoA))];
+  const v = [-u[1] * mira, u[0] * mira];
+  const P = (a, b) => [J.pelvis[0] + u[0] * a + v[0] * b, J.pelvis[1] + u[1] * a + v[1] * b];
+  const col = '#3F8580';
+  const columna = linea([P(47, 0), P(30, 0.4), P(12, -0.3), P(-2, 0)], col, 1.8);
+  const omoplato = s => {
+    const a = P(42, s * 4.5), b = P(34, s * 11.5), c = P(27, s * 6);
+    return `<path d="M${n(a[0])} ${n(a[1])}Q${n(b[0])} ${n(b[1])} ${n(c[0])} ${n(c[1])}" fill="none" stroke="${col}" stroke-width="1.8" stroke-linecap="round"/>`;
+  };
+  return `<g opacity=".9">${columna}${omoplato(-1)}${omoplato(1)}</g>`;
+}
+
 // ---------- Objetos ----------
 function caja(x, y, w, h, r = 3) {
   return `<rect x="${n(x)}" y="${n(y)}" width="${n(w)}" height="${n(h)}" rx="${r}" fill="${PALETA.objeto}" stroke="${PALETA.objetoBorde}" stroke-width="1.5"/>`;
@@ -339,6 +364,7 @@ function construirFigura(pose, idp, pal) {
         const lado = frente ? ((pose.cuello ?? torsoA) > torsoA ? -1 : 1) : (pose.cuelloLado === 'frente' ? 1 : -1);
         piezas.push({ d: bandaCuello(geoCuello, lado), color: pal.resalte, recorte: 'cuello' });
       }
+      if (pose.espaldas && frente) piezas.push({ raw: marcasEspalda(J, torsoA, mira) });
       if (!orden.includes('cabeza')) piezas.push({ cabeza: true });
     } else if (k === 'cabeza') {
       piezas.push({ cabeza: true });
@@ -362,6 +388,7 @@ function construirFigura(pose, idp, pal) {
       return '<g>' + borde + p.grupo.map(q => `<path d="${q.d}" fill="${q.color}"/>`).join('') + '</g>';
     }
     if (p.recorte) return `<path d="${p.d}" fill="${p.color}" clip-path="url(#${idp}-${p.recorte})"/>`;
+    if (p.raw) return p.raw;
     return `<path d="${p.d}" fill="${p.color}"/>`;
   }).join('');
   return { J, caja, defs, svg };

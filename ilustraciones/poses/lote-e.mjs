@@ -32,8 +32,8 @@ export default {
     torso: -5,
     piernaN: { a: [175, 175], fin: 60 },
     piernaL: { a: [176, 176], fin: 62 },
-    brazoN: { hacia: [48, 18.6], doblez: 1, fin: 0 },
-    brazoL: { hacia: [52, 18.6], doblez: 1, fin: 0 },
+    brazoN: { hacia: [44, 18.6], doblez: 1, escala: [0.45, 1, 1], fin: 0 },
+    brazoL: { hacia: [47, 18.6], doblez: 1, escala: [0.45, 1, 1], fin: 0 },
     resaltar: ['brazoN.brazo', 'brazoL.brazo'],
   },
 
@@ -42,7 +42,7 @@ export default {
     nombre: 'Rotadores internos de los hombros',
     vista: 'lado',
     torso: -45,
-    cuello: 10,
+    cuello: 35,
     piernaN: { a: [15, 95] },
     piernaL: { a: [18, 96] },
     brazoN: { hacia: [67, -5], doblez: 1, fin: 0 },
@@ -62,19 +62,20 @@ export default {
     mira: 1,
     piernaN: { a: [3, 3], fin: -70 },
     piernaL: { a: [2, 2], fin: -72 },
-    brazoN: { a: [90, 175], escala: [0.45, 1, 1] },
+    brazoN: { a: [92, 180], escala: [0.75, 1, 1] },
     brazoL: { a: [8, 5] },
     resaltar: ['brazoN.brazo'],
     sobreSuelo: 30,
     objetos: J => [
       { tipo: 'banco', x1: -84, x2: 100, y: 12 },
-      { tipo: 'mancuerna', x: J.brazoN.punta[0], y: J.brazoN.punta[1], ang: 175 + 90 },
-      { tipo: 'flecha', c: J.brazoN.codo, r: 30, de: -88, a: -172 },
+      { tipo: 'mancuerna', x: J.brazoN.punta[0], y: J.brazoN.punta[1], ang: 90 },
+      { tipo: 'flecha', c: J.brazoN.codo, r: 50, de: -86, a: -174 },
     ],
   },
 
   // 70 · De pie, brazos por detrás de la espalda: una mano tira del codo contrario (vista de espaldas)
   70: {
+    espaldas: true,
     nombre: 'Rotadores externos de los hombros (parte posterior)',
     vista: 'frente',
     ...DE_PIE_FRENTE,
@@ -111,11 +112,12 @@ export default {
 
   // 73 · Palmas juntas por detrás de la espalda, dedos hacia arriba (vista de espaldas)
   73: {
+    espaldas: true,
     nombre: 'Rotadores externos de los hombros (parte posterior)',
     vista: 'frente',
     ...DE_PIE_FRENTE,
-    brazoN: { hacia: [-3, -26], doblez: 1, fin: -90 },
-    brazoL: { hacia: [3, -26], doblez: -1, fin: -90 },
+    brazoN: { hacia: [-3, -20], doblez: 1, fin: -90 },
+    brazoL: { hacia: [3, -20], doblez: -1, fin: -90 },
     resaltar: ['brazoN.brazo', 'brazoL.brazo'],
   },
 
@@ -181,6 +183,7 @@ export default {
 
   // 78 · Un brazo por detrás de la cabeza y otro por detrás de la espalda, sujetando una toalla (de espaldas)
   78: {
+    espaldas: true,
     nombre: 'Tríceps braquial',
     vista: 'frente',
     ...DE_PIE_FRENTE,
@@ -192,6 +195,7 @@ export default {
 
   // 79 · Igual sin toalla: los dedos de ambas manos se enganchan entre los omóplatos (de espaldas)
   79: {
+    espaldas: true,
     nombre: 'Tríceps braquial',
     vista: 'frente',
     ...DE_PIE_FRENTE,

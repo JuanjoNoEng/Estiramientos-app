@@ -190,56 +190,59 @@ export default {
     resaltar: ['lumbar'],
   },
 
-  // 13 · Colgado de una barra en la pared, de cara a ella, cuerpo arqueado hacia atrás
+  // 13 · Colgado de una barra en la pared, de cara a ella, pies alejados y cuerpo arqueado hacia atrás
   13: {
     nombre: 'Abdominales',
     vista: 'lado',
     mira: -1,
-    torso: -102,
-    cuello: -112,
-    piernaN: { a: [64, 66], fin: 105 },
-    piernaL: { a: [62, 64], fin: 105 },
-    brazoN: { a: [-97, -97], fin: -97 },
-    brazoL: { a: [-95, -95], fin: -95 },
+    torso: -116,
+    cuello: -126,
+    piernaN: { a: [48, 50], fin: 95 },
+    piernaL: { a: [46, 48], fin: 95 },
+    brazoN: { a: [-104, -104], fin: -104 },
+    brazoL: { a: [-102, -102], fin: -102 },
     resaltar: ['abdomen'],
     objetos: J => {
       const m = J.brazoN.muneca, bx = m[0] - 1, by = m[1] - 4;
+      const px = Math.min(bx - 12, J.cabeza[0] - 15);
       return [
-        { tipo: 'pared', x: bx - 12, lado: -1, arriba: by - 25 },
-        { tipo: 'barra', x: bx, y: by, pared: bx - 12 },
+        { tipo: 'pared', x: px, lado: -1, arriba: by - 25 },
+        { tipo: 'barra', x: bx, y: by, pared: px },
       ];
     },
   },
 
-  // 14 · Desde cuclillas, rodillas extendidas: tronco pegado a los muslos y manos en el suelo junto a los pies
+  // 14 · Desde cuclillas, rodillas extendidas: tronco colgando pegado a los muslos y manos en el suelo junto a los pies
   14: {
     nombre: 'Zona lumbar',
     vista: 'lado',
-    torso: 72,
-    cuello: 95,
-    piernaN: { a: [84, 99], fin: 0 },
-    piernaL: { a: [86, 97], fin: 0 },
-    brazoN: { hacia: [22, 82], doblez: -1, fin: 0 },
-    brazoL: { hacia: [18, 82], doblez: -1, fin: 0 },
+    torso: 57,
+    cuello: 92,
+    piernaN: { a: [88, 100], fin: 0 },
+    piernaL: { a: [90, 98], fin: 0 },
+    brazoN: { hacia: [9, 88], doblez: -1, fin: 0 },
+    brazoL: { hacia: [5, 88], doblez: -1, fin: 0 },
     resaltar: ['lumbar'],
   },
 
-  // 15 · Colgado de lado de una barra en la pared, brazos juntos tras las orejas y cuerpo arqueado lateralmente
+  // 15 · Colgado de lado de una barra en la pared, manos juntas, brazos tras las orejas y cuerpo arqueado lateralmente
   15: {
     nombre: 'Parte lateral del tronco',
     vista: 'frente',
-    torso: -100,
-    cuello: -104,
-    piernaN: { a: [72, 73], fin: 90 },
-    piernaL: { a: [68, 70], fin: 80 },
-    brazoN: { a: [-104, -106], fin: -106 },
-    brazoL: { a: [-118, -110], fin: -110 },
+    torso: -106,
+    cuello: -112,
+    piernaN: { a: [62, 63], fin: 70 },
+    piernaL: { a: [60, 61], fin: 70 },
+    brazoN: { hacia: [-31, -103], doblez: 1, fin: -104 },
+    brazoL: { hacia: [-27, -103], doblez: -1, fin: -104 },
+    orden: ['piernaN', 'piernaL', 'torso', 'brazoN', 'brazoL', 'cabeza'],
     objetos: J => {
-      const m = J.brazoN.muneca, bx = m[0] - 2, by = m[1] - 4;
+      const bx = (J.brazoN.punta[0] + J.brazoL.punta[0]) / 2 - 3, by = J.brazoN.muneca[1] - 3;
+      const px = Math.min(bx - 12, J.brazoN.codo[0] - 9);
       return [
-        { tipo: 'pared', x: bx - 14, lado: -1, arriba: by - 25 },
-        { tipo: 'barra', x: bx, y: by, pared: bx - 14 },
-        { tipo: 'svg', delante: true, svg: costadoFrontal(J, -100, -1, 'lote-a-15-costado') },
+        { tipo: 'pared', x: px, lado: -1, arriba: by - 25 },
+        { tipo: 'barra', x: bx, y: by, pared: px },
+        { tipo: 'svg', delante: true, svg: costadoFrontal(J, -106, -1, 'lote-a-15-costado') },
       ];
     },
   },

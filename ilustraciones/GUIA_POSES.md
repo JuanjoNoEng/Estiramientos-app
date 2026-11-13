@@ -45,6 +45,7 @@ herramienta de lectura de imágenes y corrige hasta que la postura se entienda a
   piernaN: {...}, piernaL: {...}, brazoN: {...}, brazoL: {...},
   resaltar: ['piernaN.pierna'],
   objetos: J => [ ... ],       // función que recibe las articulaciones J (y sueloY)
+  espaldas: true,              // vista frontal vista DE ESPALDAS: dibuja columna y omóplatos
   orden: [...],                // opcional: orden de dibujo
 }
 ```
@@ -59,7 +60,7 @@ En vista frontal `N` es el lado **izquierdo del dibujo** y `L` el derecho.
 - Cinemática inversa: `{ hacia: [x, y], doblez: 1 | -1, fin }`. El extremo (tobillo o muñeca) va a ese punto.
   `doblez` elige hacia qué lado se dobla la rodilla o el codo: **prueba los dos valores**.
   `hacia` también acepta referencias: `'piernaN.tobillo'`, `'piernaL.punta+3,-5'` (con desplazamiento)
-  o una función `J => [x, y]`.
+  o una función `J => [x, y]`. Un brazo puede apuntar al otro (`'brazoL.codo'`): el motor resuelve el orden.
 - `escala: [s1, s2, s3]` acorta segmentos para simular escorzo (p. ej. muslos de alguien sentado visto de
   frente: `[0.42, 0.95, 0.55]`).
 - Pie por defecto: plano hacia donde mira la figura. Pie en punta o apoyado de otra forma: usa `fin`.
