@@ -361,7 +361,7 @@ function construirFigura(pose, idp, pal) {
       piezas.push({ d: geoCuello.forma, color: pal.cuerpo });
       for (const z of pose.resaltar || []) if (ZONAS[z]) piezas.push({ zona: z });
       if (resaltar.has('cuello')) {
-        const lado = frente ? ((pose.cuello ?? torsoA) > torsoA ? -1 : 1) : (pose.cuelloLado === 'frente' ? 1 : -1);
+        const lado = frente ? (pose.ladoCuello ?? ((pose.cuello ?? torsoA) > torsoA ? -1 : 1)) : (pose.cuelloLado === 'frente' ? 1 : -1);
         piezas.push({ d: bandaCuello(geoCuello, lado), color: pal.resalte, recorte: 'cuello' });
       }
       if (pose.espaldas && frente) piezas.push({ raw: marcasEspalda(J, torsoA, mira) });
@@ -476,12 +476,16 @@ function explicita(pose) {
 const mezclaAng = (a, b, t) => a + ((((b - a) % 360) + 540) % 360 - 180) * t;
 const mezclaNum = (a, b, t) => a + (b - a) * t;
 
-/** Punto de apoyo que no debe moverse durante la animación (por defecto, la articulación más baja). */
+/** Punto de apoyo que no debe moverse durante la animación (por defecto, la articulación más baja de la postura final). */
+const CANDIDATOS_ANCLA = ['piernaN.punta', 'piernaN.tobillo', 'piernaL.punta', 'piernaL.tobillo', 'piernaN.rodilla', 'piernaL.rodilla',
+  'brazoN.punta', 'brazoL.punta', 'pelvis', 'cabeza'];
+function nombreAncla(J) {
+  let mejor = CANDIDATOS_ANCLA[0];
+  for (const c of CANDIDATOS_ANCLA) if (resolverRef(c, J)[1] > resolverRef(mejor, J)[1] + 0.5) mejor = c;
+  return mejor;
+}
 function puntoAncla(pose, J) {
-  if (pose.ancla) return resolverRef(pose.ancla, J);
-  const candidatos = [J.piernaN.punta, J.piernaN.tobillo, J.piernaL.punta, J.piernaL.tobillo, J.piernaN.rodilla, J.piernaL.rodilla,
-    J.brazoN.punta, J.brazoL.punta, J.pelvis, J.cabeza];
-  return candidatos.reduce((m, p) => (p[1] > m[1] + 0.5 ? p : m));
+  return resolverRef(pose.ancla ?? nombreAncla(J), J);
 }
 
 /**
@@ -494,7 +498,12 @@ export function animacion(inicio, fin, opciones = {}) {
   const A = explicita({ ...fin, ...inicio, objetos: undefined });
   const base = { ...fin };
   delete base.objetos;
-  const anclaFin = puntoAncla(fin, P.J);
+  // En vista frontal, la franja del cuello se queda en el lado que tiene en la postura final
+  const tF = fin.torso ?? -90;
+  if ((fin.vista || 'lado') === 'frente') base.ladoCuello = fin.ladoCuello ?? ((fin.cuello ?? tF) > tF ? -1 : 1);
+  // El punto de apoyo puede indicarse en la postura inicial o en la final
+  const refAncla = { ancla: inicio.ancla ?? fin.ancla ?? nombreAncla(P.J) };
+  const anclaFin = puntoAncla(refAncla, P.J);
   const posePara = t => {
     const x = { ...base, torso: mezclaAng(A.torso, B.torso, t), cuello: mezclaAng(A.cuello, B.cuello, t) };
     for (const m of MIEMBROS) {
@@ -509,7 +518,7 @@ export function animacion(inicio, fin, opciones = {}) {
   const cuerpoPara = t => {
     const pose = posePara(t);
     const fig = construirFigura(pose, P.id, PALETA);
-    const ancla = puntoAncla(fin, fig.J);
+    const ancla = puntoAncla(refAncla, fig.J);
     // x: el apoyo no se desliza; y: el punto más bajo sigue tocando la misma altura que al final
     return { fig, dx: anclaFin[0] - ancla[0], dy: P.fig.caja.maxY - fig.caja.maxY };
   };

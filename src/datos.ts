@@ -2,7 +2,8 @@
 import ejerciciosJSON from '../datos/ejercicios.json';
 import rutinasJSON from '../datos/rutinas.json';
 import guiaJSON from '../datos/guia.json';
-import { dibujar } from '../ilustraciones/figura.mjs';
+import { dibujar, animacion } from '../ilustraciones/figura.mjs';
+import { INICIOS } from '../ilustraciones/inicios.mjs';
 import { POSES } from '../ilustraciones/ejercicios.mjs';
 
 export type Zona =
@@ -49,7 +50,15 @@ export interface Guia {
 }
 
 export const EJERCICIOS = ejerciciosJSON as Ejercicio[];
-export const RUTINAS = rutinasJSON as Rutina[];
+// Rutina corta y suave (de pie o en silla) para quien no tiene plan de Andrey: es la del botón grande del modo sencillo
+export const RUTINA_DIARIA: Rutina = {
+  id: 'diaria',
+  nombre: 'Rutina diaria suave',
+  descripcion: 'Siete estiramientos suaves, de pie o en una silla, para cuello, hombros, brazos, espalda y piernas. Necesitas una pared, una silla y el marco de una puerta.',
+  intensidad: 'suave',
+  ejercicios: [89, 18, 75, 61, 56, 4, 48],
+};
+export const RUTINAS = [RUTINA_DIARIA, ...(rutinasJSON as Rutina[])];
 export const GUIA = guiaJSON as Guia;
 
 const porId = new Map(EJERCICIOS.map(e => [e.id, e]));
@@ -99,6 +108,24 @@ export function svgEjercicio(id: number, clave = ''): string | null {
   const k = `${id}-${clave}`;
   if (!cacheSVG.has(k)) cacheSVG.set(k, dibujar(pose, { id: `e${id}${clave}`, titulo: ejercicio(id)?.nombre, zoomMax: 1.5 }));
   return cacheSVG.get(k)!;
+}
+
+// ---------- Animaciones ----------
+export const FOTOGRAMAS = 24;
+const cacheAnim = new Map<string, (string | undefined)[]>();
+export const tieneAnimacion = (id: number) => !!(INICIOS as Record<number, unknown>)[id] && !!(POSES as Record<number, unknown>)[id];
+/** Fotograma i (0 … FOTOGRAMAS) de la animación inicio → final. Se calcula la primera vez que se pide. */
+export function fotograma(id: number, i: number, clave = ''): string | null {
+  if (!tieneAnimacion(id)) return svgEjercicio(id, clave);
+  const k = `${id}-${clave}`;
+  let lista = cacheAnim.get(k);
+  if (!lista) { lista = []; cacheAnim.set(k, lista); }
+  if (!lista[i]) {
+    const anim = animacion((INICIOS as Record<number, unknown>)[id], (POSES as Record<number, unknown>)[id], { id: `a${id}${clave}`, titulo: ejercicio(id)?.nombre, zoomMax: 1.5 });
+    // Se guardan todos de una vez: preparar la animación es lo costoso
+    for (let j = 0; j <= FOTOGRAMAS; j++) lista[j] ??= anim.cuadro(j / FOTOGRAMAS);
+  }
+  return lista[i]!;
 }
 
 /** Duración total aproximada de una rutina en segundos (incluye ambos lados y preparación). */

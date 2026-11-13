@@ -50,7 +50,7 @@ export function Progreso() {
           <div style={{ display: 'flex', alignItems: 'flex-end', gap: 6, height: 110 }} role="img" aria-label={'Molestia: ' + conMolestia.map(s => s.molestia).join(', ')}>
             {conMolestia.map((s, k) => (
               <div key={k} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, height: '100%', justifyContent: 'flex-end' }}>
-                <span className="peque-texto" style={{ fontSize: 11 }}>{s.molestia}</span>
+                <span className="peque-texto" style={{ fontSize: '0.8125rem' }}>{s.molestia}</span>
                 <div style={{ width: '100%', maxWidth: 26, height: `${Math.max(4, (s.molestia ?? 0) * 8)}px`, background: 'var(--coral)', borderRadius: 6 }} />
               </div>
             ))}
@@ -64,10 +64,10 @@ export function Progreso() {
         {ultimas.map((s, k) => (
           <div key={k} className="tarjeta" style={{ display: 'flex', justifyContent: 'space-between', gap: 10, padding: 14 }}>
             <div>
-              <h3 style={{ fontSize: 16 }}>{s.rutina}</h3>
+              <h3 style={{ fontSize: '1rem' }}>{s.rutina}</h3>
               <span className="peque-texto">{new Date(s.fecha).toLocaleDateString('es', { weekday: 'long', day: 'numeric', month: 'long' })} · {minutos(s.segundos)} min</span>
             </div>
-            <span className="peque-texto" style={{ textAlign: 'right' }}>{s.sensacion ? sensaciones[s.sensacion] : ''}{s.dolorEn?.length ? <><br /><span style={{ color: '#B24E22' }}>molestia en {s.dolorEn.length}</span></> : null}</span>
+            <span className="peque-texto" style={{ textAlign: 'right' }}>{s.sensacion ? sensaciones[s.sensacion] : ''}{s.dolorEn?.length ? <><br /><span style={{ color: 'var(--coral-texto)' }}>molestia en {s.dolorEn.length}</span></> : null}</span>
           </div>
         ))}
       </section>

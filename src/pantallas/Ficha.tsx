@@ -1,13 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ejercicio, nombreZona, POSICIONES, MATERIALES, DIFICULTAD } from '../datos';
 import { useEstado, alternarFavorito } from '../almacen';
-import { Cabecera, Ilustracion } from '../componentes/comunes';
+import { Cabecera } from '../componentes/comunes';
+import { Animada } from '../componentes/Animada';
+import { decir, callar, lecturaEj } from '../voz';
 import { Icono } from '../componentes/Icono';
 
 export function Ficha({ id }: { id: number }) {
   const e = ejercicio(id);
   const estado = useEstado();
   const [espejo, setEspejo] = useState(false);
+  const [hablando, setHablando] = useState(false);
+  useEffect(() => () => callar(), [id]);
   if (!e) return <main className="pantalla"><Cabecera titulo="Ejercicio" atras="/ejercicios" /><p className="vacio">No encontramos este ejercicio.</p></main>;
   const fav = estado.favoritos.includes(id);
 
@@ -24,7 +28,7 @@ export function Ficha({ id }: { id: number }) {
       />
 
       <div className="ficha-ilus">
-        <Ilustracion id={id} espejo={espejo} clave="ficha" />
+        <Animada id={id} espejo={espejo} clave="ficha" />
       </div>
       {e.porLado && (
         <button className="chip" style={{ alignSelf: 'center', marginTop: -10 }} onClick={() => setEspejo(!espejo)}>
@@ -43,7 +47,14 @@ export function Ficha({ id }: { id: number }) {
         {e.musculos.length > 0 && <p className="sub">Estira: {e.musculos.join(', ')}.</p>}
       </section>
 
-      <a className="boton coral ancho" href={`#/sesion?e=${id}`}><Icono nombre="play" relleno /> Hacer este ejercicio</a>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+        <button className="boton claro grande" aria-pressed={hablando} onClick={() => {
+          if (hablando) { callar(); setHablando(false); return; }
+          setHablando(true);
+          decir(lecturaEj(e), true).then(() => setHablando(false));
+        }}><Icono nombre={hablando ? 'pausa' : 'sonido'} relleno={hablando} /> {hablando ? 'Parar' : 'Escuchar'}</button>
+        <a className="boton coral grande" href={`#/sesion?e=${id}`}><Icono nombre="play" relleno /> Hacer</a>
+      </div>
 
       <section className="tarjeta seccion">
         <h2>Cómo hacerlo</h2>

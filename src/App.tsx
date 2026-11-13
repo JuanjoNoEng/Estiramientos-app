@@ -10,11 +10,16 @@ import { Aprende, Seguridad } from './pantallas/Aprende';
 import { Bienvenida } from './pantallas/Bienvenida';
 import { RecibirPlan, CrearPlan } from './pantallas/Plan';
 import { Progreso } from './pantallas/Progreso';
+import { Ajustes } from './pantallas/Ajustes';
+import { Instalar } from './pantallas/Instalar';
+import { useEffect } from 'react';
 
 export function App() {
   const { partes, params } = useRuta();
   const estado = useEstado();
   const [p0, p1] = partes;
+  // Tamaño de letra elegido por el paciente (escala toda la app)
+  useEffect(() => { document.documentElement.dataset.letra = estado.letra; }, [estado.letra]);
 
   // Un plan recibido por enlace se muestra aunque sea la primera vez que se abre la app
   if (p0 === 'plan') return <div className="app"><RecibirPlan params={params} /></div>;
@@ -31,6 +36,8 @@ export function App() {
     case 'aprende': pantalla = <Aprende />; activa = 'aprende'; break;
     case 'seguridad': pantalla = <Seguridad />; activa = 'aprende'; break;
     case 'progreso': pantalla = <Progreso />; break;
+    case 'ajustes': pantalla = <Ajustes />; break;
+    case 'instalar': pantalla = <Instalar />; break;
     default: pantalla = <Inicio />;
   }
   return (

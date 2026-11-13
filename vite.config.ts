@@ -28,7 +28,14 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+        // Avisos y nombres de la voz guía van incluidos: la sesión guiada funciona sin internet
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2}', 'audio/aviso-*.mp3', 'audio/nombre-*.mp3'],
+        // Las lecturas largas se guardan la primera vez que se escuchan
+        runtimeCaching: [{
+          urlPattern: /\/audio\/lectura-\d+\.mp3$/,
+          handler: 'CacheFirst',
+          options: { cacheName: 'lecturas', expiration: { maxEntries: 120 } },
+        }],
       },
     }),
   ],

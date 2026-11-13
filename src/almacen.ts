@@ -27,10 +27,18 @@ interface Estado {
   propias: Rutina[];
   voz: boolean;
   sonido: boolean;
+  vibracion: boolean;
+  letra: 'normal' | 'grande' | 'muy-grande';
+  modo: 'completo' | 'sencillo';
+  animaciones: boolean;
+  instalacionVista: boolean;
 }
 
 const CLAVE = 'estiramientos-ah-v1';
-const inicial: Estado = { bienvenida: false, favoritos: [], sesiones: [], propias: [], voz: true, sonido: true };
+const inicial: Estado = {
+  bienvenida: false, favoritos: [], sesiones: [], propias: [], voz: true, sonido: true,
+  vibracion: true, letra: 'normal', modo: 'completo', animaciones: true, instalacionVista: false,
+};
 
 function leer(): Estado {
   try {
@@ -53,6 +61,8 @@ export function actualizar(cambio: (e: Estado) => Partial<Estado>) {
   }
   oyentes.forEach(f => f());
 }
+
+export const leerEstado = () => estado;
 
 export function useEstado() {
   return useSyncExternalStore(

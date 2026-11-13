@@ -1,0 +1,424 @@
+{
+  "voz": {
+    "id": "9EU0h6CVtEDS6vriwwq5",
+    "nombre": "Julieta"
+  },
+  "audios": {
+    "aviso-empezamos": {
+      "hash": "e0cf4489eb6c",
+      "bytes": 8820
+    },
+    "aviso-siguiente": {
+      "hash": "cdfa6898ccbc",
+      "bytes": 11327
+    },
+    "aviso-colocate": {
+      "hash": "16f3a2d1500b",
+      "bytes": 12372
+    },
+    "aviso-primer-lado": {
+      "hash": "ea8dbedfff44",
+      "bytes": 27210
+    },
+    "aviso-segundo-lado": {
+      "hash": "5e4e1c2a5ac2",
+      "bytes": 20314
+    },
+    "aviso-estira": {
+      "hash": "b6507321392d",
+      "bytes": 29927
+    },
+    "aviso-tres-segundos": {
+      "hash": "472322b0f256",
+      "bytes": 10909
+    },
+    "aviso-cambia": {
+      "hash": "ea9739f56b15",
+      "bytes": 14671
+    },
+    "aviso-molesta": {
+      "hash": "e272d7f8e63a",
+      "bytes": 36196
+    },
+    "aviso-fin": {
+      "hash": "c787788b80a5",
+      "bytes": 25120
+    },
+    "aviso-seguimos": {
+      "hash": "e5daba227c8c",
+      "bytes": 9029
+    },
+    "aviso-pausa": {
+      "hash": "dd3fb74a7e44",
+      "bytes": 22194
+    },
+    "nombre-1": {
+      "hash": "bfa4cd4645b0",
+      "bytes": 10909
+    },
+    "nombre-2": {
+      "hash": "68c00b3e71c9",
+      "bytes": 22194
+    },
+    "aviso-bienvenida": {
+      "hash": "7ed9f528b85c",
+      "bytes": 68170
+    },
+    "nombre-3": {
+      "hash": "842c6c6e915f",
+      "bytes": 16970
+    },
+    "nombre-4": {
+      "hash": "144e681f33d7",
+      "bytes": 9865
+    },
+    "nombre-5": {
+      "hash": "cb6e6d750cc6",
+      "bytes": 12163
+    },
+    "nombre-7": {
+      "hash": "99bafb34f354",
+      "bytes": 12163
+    },
+    "nombre-6": {
+      "hash": "69e940f5afa5",
+      "bytes": 16552
+    },
+    "nombre-8": {
+      "hash": "f3b4e83f5d91",
+      "bytes": 18015
+    },
+    "nombre-11": {
+      "hash": "3d1d06e63640",
+      "bytes": 14671
+    },
+    "nombre-10": {
+      "hash": "54af772d94e1",
+      "bytes": 17179
+    },
+    "nombre-9": {
+      "hash": "b00caac80d89",
+      "bytes": 23657
+    },
+    "nombre-14": {
+      "hash": "d2a3b397869b",
+      "bytes": 15507
+    },
+    "nombre-13": {
+      "hash": "7e2427ac6c0f",
+      "bytes": 16552
+    },
+    "nombre-12": {
+      "hash": "fee673740f82",
+      "bytes": 11327
+    },
+    "nombre-17": {
+      "hash": "a722a8c74731",
+      "bytes": 13835
+    },
+    "nombre-16": {
+      "hash": "851c05df52dc",
+      "bytes": 16970
+    },
+    "nombre-15": {
+      "hash": "b7c54e3147ef",
+      "bytes": 18851
+    },
+    "nombre-20": {
+      "hash": "ff89a78414b4",
+      "bytes": 11745
+    },
+    "nombre-19": {
+      "hash": "d5a08b7995ae",
+      "bytes": 11745
+    },
+    "nombre-18": {
+      "hash": "ee7ececa25e4",
+      "bytes": 18851
+    },
+    "nombre-23": {
+      "hash": "2ca43ec18509",
+      "bytes": 17597
+    },
+    "nombre-22": {
+      "hash": "82d5be38010d",
+      "bytes": 22403
+    },
+    "nombre-21": {
+      "hash": "c72128d01ee5",
+      "bytes": 18015
+    },
+    "nombre-26": {
+      "hash": "dfccffe36d4c",
+      "bytes": 16970
+    },
+    "nombre-25": {
+      "hash": "2ef6585937a1",
+      "bytes": 17179
+    },
+    "nombre-24": {
+      "hash": "6184a07aa0e7",
+      "bytes": 16552
+    },
+    "nombre-28": {
+      "hash": "288053e6e086",
+      "bytes": 15716
+    },
+    "nombre-27": {
+      "hash": "803604c73ac1",
+      "bytes": 18015
+    },
+    "nombre-29": {
+      "hash": "b098cfa4962d",
+      "bytes": 20314
+    },
+    "nombre-32": {
+      "hash": "44ee2476942e",
+      "bytes": 8402
+    },
+    "nombre-31": {
+      "hash": "b3b0b7576d50",
+      "bytes": 9447
+    },
+    "nombre-30": {
+      "hash": "91e46896e9f5",
+      "bytes": 12790
+    },
+    "nombre-33": {
+      "hash": "51c084d886f4",
+      "bytes": 15716
+    },
+    "nombre-35": {
+      "hash": "5ff423857276",
+      "bytes": 21358
+    },
+    "nombre-34": {
+      "hash": "2ab7f45b033b",
+      "bytes": 17179
+    },
+    "nombre-37": {
+      "hash": "a66048c25f65",
+      "bytes": 12163
+    },
+    "nombre-36": {
+      "hash": "c22ffffa2576",
+      "bytes": 10283
+    },
+    "nombre-38": {
+      "hash": "6988317ad67f",
+      "bytes": 22194
+    },
+    "nombre-41": {
+      "hash": "93cdb601dd82",
+      "bytes": 17597
+    },
+    "nombre-40": {
+      "hash": "bdd0f31238f8",
+      "bytes": 19478
+    },
+    "nombre-39": {
+      "hash": "85b8a13779da",
+      "bytes": 23239
+    },
+    "nombre-42": {
+      "hash": "3d4ba463d637",
+      "bytes": 12163
+    },
+    "nombre-44": {
+      "hash": "511f473914b0",
+      "bytes": 15089
+    },
+    "nombre-43": {
+      "hash": "985d0839988a",
+      "bytes": 10283
+    },
+    "nombre-45": {
+      "hash": "c627417dd5db",
+      "bytes": 12163
+    },
+    "nombre-47": {
+      "hash": "85e1b0864388",
+      "bytes": 10909
+    },
+    "nombre-46": {
+      "hash": "e297e9808c32",
+      "bytes": 12163
+    },
+    "nombre-48": {
+      "hash": "3c2f9ba4c4c0",
+      "bytes": 19060
+    },
+    "nombre-49": {
+      "hash": "f115e520c0e2",
+      "bytes": 17179
+    },
+    "nombre-50": {
+      "hash": "76dbbe9899bc",
+      "bytes": 16552
+    },
+    "nombre-52": {
+      "hash": "ec7291f07253",
+      "bytes": 12372
+    },
+    "nombre-53": {
+      "hash": "bb73c6d087da",
+      "bytes": 16970
+    },
+    "nombre-51": {
+      "hash": "6da730f95a82",
+      "bytes": 19896
+    },
+    "nombre-56": {
+      "hash": "af797a416d98",
+      "bytes": 13208
+    },
+    "nombre-54": {
+      "hash": "2a5fa6932293",
+      "bytes": 11327
+    },
+    "nombre-55": {
+      "hash": "821a33f3985f",
+      "bytes": 13835
+    },
+    "nombre-59": {
+      "hash": "1f39257582ea",
+      "bytes": 12790
+    },
+    "nombre-58": {
+      "hash": "6bb3be11e5ef",
+      "bytes": 11745
+    },
+    "nombre-57": {
+      "hash": "fee07544877c",
+      "bytes": 18433
+    },
+    "nombre-60": {
+      "hash": "b13e71ddb75c",
+      "bytes": 17597
+    },
+    "nombre-61": {
+      "hash": "ebd3699189a5",
+      "bytes": 24284
+    },
+    "nombre-62": {
+      "hash": "5a913e484bc8",
+      "bytes": 35151
+    },
+    "nombre-65": {
+      "hash": "8572ea0bd02f",
+      "bytes": 13208
+    },
+    "nombre-64": {
+      "hash": "5d7f9421b743",
+      "bytes": 11327
+    },
+    "nombre-63": {
+      "hash": "1e8a2047e949",
+      "bytes": 24702
+    },
+    "nombre-67": {
+      "hash": "0b0d44d7f57c",
+      "bytes": 27001
+    },
+    "nombre-68": {
+      "hash": "3285635368ea",
+      "bytes": 17597
+    },
+    "nombre-66": {
+      "hash": "7fdda3f408dc",
+      "bytes": 21776
+    },
+    "nombre-69": {
+      "hash": "003af1cf003f",
+      "bytes": 20940
+    },
+    "nombre-70": {
+      "hash": "386f83773895",
+      "bytes": 21776
+    },
+    "nombre-71": {
+      "hash": "51888cfd8473",
+      "bytes": 25538
+    },
+    "nombre-74": {
+      "hash": "e3c93862a1db",
+      "bytes": 19478
+    },
+    "nombre-73": {
+      "hash": "f3f7c53cd723",
+      "bytes": 13208
+    },
+    "nombre-72": {
+      "hash": "d324ccffba9c",
+      "bytes": 20940
+    },
+    "nombre-76": {
+      "hash": "8e517bee65e1",
+      "bytes": 13835
+    },
+    "nombre-77": {
+      "hash": "935dd3d90c78",
+      "bytes": 16134
+    },
+    "nombre-75": {
+      "hash": "f1be9ef5c819",
+      "bytes": 18015
+    },
+    "nombre-80": {
+      "hash": "e293c4d7ea95",
+      "bytes": 18433
+    },
+    "nombre-79": {
+      "hash": "a03e6906cfdb",
+      "bytes": 23239
+    },
+    "nombre-78": {
+      "hash": "aabbf00eabd5",
+      "bytes": 17597
+    },
+    "nombre-82": {
+      "hash": "6a82abba4766",
+      "bytes": 18015
+    },
+    "nombre-81": {
+      "hash": "ac194b631383",
+      "bytes": 18851
+    },
+    "nombre-83": {
+      "hash": "f6743183824f",
+      "bytes": 24702
+    },
+    "nombre-85": {
+      "hash": "9ce006af04cd",
+      "bytes": 19478
+    },
+    "nombre-84": {
+      "hash": "36203deaf2a0",
+      "bytes": 25747
+    },
+    "nombre-86": {
+      "hash": "fbb3d801c5cb",
+      "bytes": 18851
+    },
+    "nombre-88": {
+      "hash": "79d89699cc33",
+      "bytes": 20940
+    },
+    "nombre-89": {
+      "hash": "0f2b0436ebbc",
+      "bytes": 14253
+    },
+    "nombre-87": {
+      "hash": "91f24e11b8f6",
+      "bytes": 20314
+    },
+    "nombre-91": {
+      "hash": "fbb3faf3e3df",
+      "bytes": 19896
+    },
+    "nombre-90": {
+      "hash": "1062f3d9736b",
+      "bytes": 18851
+    }
+  }
+}
