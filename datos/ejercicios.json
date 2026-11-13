@@ -1,0 +1,2419 @@
+[
+  {
+    "id": 1,
+    "nombre": "Dedos y arco plantar",
+    "zona": "pies-tobillos",
+    "musculos": [
+      "dedos de los pies",
+      "arco plantar"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-rodillas",
+    "material": [],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de rodillas con las manos apoyadas en el suelo.",
+      "Apoya los dedos de los pies doblados hacia arriba contra el suelo.",
+      "Lleva las nalgas hacia atrás y hacia abajo hasta sentir el estiramiento en los dedos y la planta de los pies."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas las nalgas hacia atrás y hacia abajo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 9
+  },
+  {
+    "id": 2,
+    "nombre": "Dedos y parte delantera e interna del tobillo",
+    "zona": "pies-tobillos",
+    "musculos": [
+      "dedos de los pies",
+      "parte delantera e interna del tobillo"
+    ],
+    "bloque": "fundamental",
+    "posicion": "sentado-silla",
+    "material": [
+      "silla"
+    ],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Siéntate y cruza una pierna sobre la rodilla contraria.",
+      "Sujeta esa pierna justo por encima del tobillo con la mano del mismo lado, y con la otra mano toma la parte de arriba del pie, un poco por detrás de los dedos.",
+      "Empuja con la mano los dedos del pie hacia abajo, hasta doblarlos al máximo.",
+      "Sin cambiar de postura, lleva ahora despacio la planta del pie hacia tu cuerpo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras empujas los dedos hacia abajo; vuelve a soltarlo despacio mientras llevas la planta del pie hacia ti.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 9
+  },
+  {
+    "id": 3,
+    "nombre": "Parte delantera del pie y dedos",
+    "zona": "pies-tobillos",
+    "musculos": [
+      "parte delantera del pie",
+      "dedos de los pies"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie con una pierna un poco adelantada.",
+      "Gira el pie hacia delante y apoya en el suelo la parte de arriba de los dedos.",
+      "Presiona los dedos contra el suelo usando el peso de tu cuerpo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras presionas los dedos hacia abajo con el peso del cuerpo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 9
+  },
+  {
+    "id": 4,
+    "nombre": "Pantorrillas",
+    "zona": "piernas",
+    "musculos": [
+      "gemelos",
+      "sóleo"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-pie",
+    "material": [
+      "pared"
+    ],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Inclínate hacia delante apoyando las manos en una pared, con una pierna doblada al frente y la otra estirada atrás.",
+      "Apoya por completo las plantas de ambos pies en el suelo, alineadas hacia delante.",
+      "Mantén la cabeza, el cuello, la espalda, la pelvis, la pierna estirada y el tobillo en una sola línea recta.",
+      "Dobla los brazos para llevar tu peso hacia la pared y dobla la rodilla de delante."
+    ],
+    "respiracion": "Suelta el aire despacio mientras doblas la rodilla de delante.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 10
+  },
+  {
+    "id": 5,
+    "nombre": "Cuádriceps de rodillas",
+    "zona": "piernas",
+    "musculos": [
+      "cuádriceps (parte delantera del muslo)"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-rodillas",
+    "material": [],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de rodillas con las piernas juntas, los talones a los lados de los muslos y las puntas de los pies hacia atrás. No te sientes sobre los talones.",
+      "Apóyate en las manos por detrás, con los brazos rectos y sin arquear la espalda.",
+      "Inclínate hacia atrás apretando los glúteos y rotando la pelvis.",
+      "No dejes que las rodillas se despeguen del suelo ni se separen entre sí, ni que los pies giren hacia fuera."
+    ],
+    "respiracion": "Suelta el aire despacio mientras te inclinas hacia atrás.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 10
+  },
+  {
+    "id": 6,
+    "nombre": "Parte de atrás del muslo en el suelo",
+    "zona": "piernas",
+    "musculos": [
+      "isquiotibiales (parte de atrás del muslo)"
+    ],
+    "bloque": "fundamental",
+    "posicion": "sentado-suelo",
+    "material": [],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Siéntate en el suelo con una pierna estirada.",
+      "Dobla la otra pierna, con el talón tocando el muslo contrario y la parte externa del muslo y de la pantorrilla apoyadas en el suelo.",
+      "Mantén recta la pierna estirada y aprieta el cuádriceps (parte delantera del muslo) para aflojar la parte de atrás.",
+      "Baja el tronco hacia el muslo, con los brazos estirados y las manos alrededor del tobillo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras bajas el tronco hacia el muslo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 10
+  },
+  {
+    "id": 7,
+    "nombre": "Aductores de rodillas",
+    "zona": "piernas",
+    "musculos": [
+      "aductores (parte interna del muslo)"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-rodillas",
+    "material": [],
+    "porLado": false,
+    "dificultad": 3,
+    "pasos": [
+      "Ponte de rodillas con las puntas de los pies hacia los lados y el borde interno de los pies apoyado en el suelo.",
+      "Apoya los codos en el suelo, sin arquear la espalda.",
+      "Separa las rodillas y baja el pecho hacia el suelo mientras estiras los brazos hacia delante, deslizando los antebrazos paralelos por el suelo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras separas las rodillas y bajas el pecho.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [
+      "Es un ejercicio intenso: avanza poco a poco, sin forzar."
+    ],
+    "variantes": [
+      "A medida que ganes flexibilidad, podrás llegar a una postura más profunda, con las rodillas más separadas y el pecho más cerca del suelo."
+    ],
+    "duracionSegundos": 20,
+    "paginaLibro": 11
+  },
+  {
+    "id": 8,
+    "nombre": "Parte delantera y lateral de la pierna",
+    "zona": "piernas",
+    "musculos": [
+      "tibial anterior (parte delantera de la espinilla)",
+      "parte lateral de la pierna"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-rodillas",
+    "material": [
+      "colchoneta"
+    ],
+    "porLado": false,
+    "dificultad": 3,
+    "pasos": [
+      "Sobre una colchoneta, arrodíllate con los dedos de los pies apuntando hacia atrás.",
+      "Siéntate sobre los tobillos, no entre los pies.",
+      "Sujeta la parte de arriba de los empeines y levanta los pies hacia arriba.",
+      "Debes sentir el estiramiento a lo largo de la parte delantera de la espinilla."
+    ],
+    "respiracion": "Suelta el aire despacio mientras levantas los pies.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [
+      "No hagas este estiramiento si tienes algún problema en las rodillas.",
+      "La postura es incómoda: hazlo siempre sobre una colchoneta."
+    ],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 11
+  },
+  {
+    "id": 9,
+    "nombre": "Tendón de Aquiles y pantorrilla en triángulo",
+    "zona": "piernas",
+    "musculos": [
+      "tendón de Aquiles",
+      "pantorrillas"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Apoya las manos y los pies en el suelo, con los brazos, las piernas y el tronco rectos.",
+      "Acerca las manos hacia los pies para subir la cadera, hasta que tu cuerpo forme un triángulo.",
+      "Cuando llegues a la posición más cerrada que puedas, presiona despacio los talones contra el suelo."
+    ],
+    "respiracion": "Respira con calma mientras presionas los talones contra el suelo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "También puedes hacerlo apoyando los codos y la cabeza en el suelo.",
+      "También puedes doblar una rodilla y mantener la otra pierna estirada, alternando, mientras presionas el talón de la pierna estirada contra el suelo."
+    ],
+    "duracionSegundos": 20,
+    "paginaLibro": 11
+  },
+  {
+    "id": 10,
+    "nombre": "Parte de atrás de las rodillas",
+    "zona": "piernas",
+    "musculos": [
+      "parte de atrás de las rodillas",
+      "isquiotibiales",
+      "pantorrillas"
+    ],
+    "bloque": "fundamental",
+    "posicion": "sentado-suelo",
+    "material": [],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Siéntate en el suelo con las piernas estiradas.",
+      "Inclínate hacia delante y agarra los pies con las manos.",
+      "Lleva las puntas de los pies hacia atrás, en dirección a tu tronco."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas los pies hacia tu tronco.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "Si no llegas a los pies, rodéalos con una toalla doblada y sujeta sus extremos."
+    ],
+    "duracionSegundos": 20,
+    "paginaLibro": 12
+  },
+  {
+    "id": 11,
+    "nombre": "Cadera y glúteos en el suelo",
+    "zona": "cadera-gluteos",
+    "musculos": [
+      "glúteos",
+      "músculos de la cadera"
+    ],
+    "bloque": "fundamental",
+    "posicion": "sentado-suelo",
+    "material": [
+      "pared"
+    ],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Siéntate en el suelo con la espalda recta apoyada en una pared y una pierna estirada.",
+      "Dobla la otra pierna y, con la mano del lado de la pierna estirada, lleva ese tobillo hacia el pecho.",
+      "Sujeta la rodilla doblada con el codo del mismo lado.",
+      "Lleva el pie despacio hacia el hombro contrario."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas el pie hacia el hombro contrario.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 12
+  },
+  {
+    "id": 12,
+    "nombre": "Parte baja del tronco",
+    "zona": "zona-lumbar",
+    "musculos": [
+      "zona lumbar",
+      "glúteos"
+    ],
+    "bloque": "fundamental",
+    "posicion": "boca-arriba",
+    "material": [],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Acuéstate boca arriba con las rodillas dobladas sobre el pecho.",
+      "Sujeta los muslos con las manos por detrás de las rodillas, para no doblarlas de más, y lleva los talones hacia las nalgas.",
+      "Lleva despacio las rodillas hacia el pecho, hasta que la cadera se despegue del suelo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas las rodillas hacia el pecho.",
+    "volver": "Desde esa posición, estira las piernas para evitar espasmos o dolores y vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 12
+  },
+  {
+    "id": 13,
+    "nombre": "Abdominales colgado de una barra",
+    "zona": "abdomen",
+    "musculos": [
+      "abdominales"
+    ],
+    "bloque": "fundamental",
+    "posicion": "colgado",
+    "material": [
+      "barra"
+    ],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de pie frente a una barra horizontal bien fijada a la pared, un poco por debajo de la altura de tu cabeza.",
+      "Agarra la barra con ambas manos.",
+      "Déjate colgar despacio de la barra con los brazos estirados, arqueando el cuerpo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras te dejas colgar y arqueas el cuerpo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 13
+  },
+  {
+    "id": 14,
+    "nombre": "Zona lumbar desde cuclillas",
+    "zona": "zona-lumbar",
+    "musculos": [
+      "zona lumbar",
+      "isquiotibiales (parte de atrás del muslo)"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte en cuclillas, con el pecho en contacto con los muslos y las palmas bien apoyadas en el suelo, a los lados de los pies.",
+      "Desde ahí, estira las rodillas hasta notar tensión en la parte de atrás de los muslos.",
+      "Detén el movimiento en ese punto."
+    ],
+    "respiracion": "Suelta el aire despacio mientras vuelves a doblar las rodillas para regresar a la posición de partida.",
+    "volver": "Regresa a las cuclillas despacio y toma aire profundamente antes de repetir.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 13
+  },
+  {
+    "id": 15,
+    "nombre": "Costado del tronco colgado de una barra",
+    "zona": "espalda-alta",
+    "musculos": [
+      "costados del tronco",
+      "abdominales"
+    ],
+    "bloque": "fundamental",
+    "posicion": "colgado",
+    "material": [
+      "barra"
+    ],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de lado junto a una barra horizontal bien fijada a la pared, un poco por debajo de la altura de tu cabeza.",
+      "Sujeta la barra con ambas manos juntas.",
+      "Déjate colgar despacio con los brazos estirados, arqueando el cuerpo hacia un lado.",
+      "Al llegar al punto de mayor estiramiento, con los brazos por detrás de las orejas, gira un poco el tronco."
+    ],
+    "respiracion": "Suelta el aire despacio mientras te dejas colgar y arqueas el cuerpo hacia el lado.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 13
+  },
+  {
+    "id": 16,
+    "nombre": "Parte alta de la espalda con apoyo",
+    "zona": "espalda-alta",
+    "musculos": [
+      "parte alta de la espalda"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-pie",
+    "material": [
+      "barra"
+    ],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie a un metro, más o menos, de una barra o de cualquier apoyo firme que quede entre la altura de tus caderas y la de tus hombros.",
+      "Lleva los brazos por encima de la cabeza y agárrate al apoyo, doblando el tronco hacia delante con los brazos y las piernas estirados y la espalda plana.",
+      "Arquea la espalda intentando bajar los hombros."
+    ],
+    "respiracion": "Suelta el aire despacio mientras arqueas la espalda y bajas los hombros.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "En esa misma posición, si giras la pelvis hacia arriba, también estirarás la zona lumbar."
+    ],
+    "duracionSegundos": 30,
+    "paginaLibro": 14
+  },
+  {
+    "id": 17,
+    "nombre": "Pecho con apoyo en una silla",
+    "zona": "pecho",
+    "musculos": [
+      "pectorales"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-rodillas",
+    "material": [
+      "silla"
+    ],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de rodillas frente a una silla, a la distancia necesaria para apoyar los brazos en el asiento con el tronco inclinado.",
+      "Entrelaza los antebrazos por detrás de la cabeza.",
+      "Inclina el tronco hacia delante y apoya los antebrazos en el asiento, dejando que la cabeza cuelgue por delante del borde.",
+      "Deja que el peso de tu cabeza y de tu pecho los lleve hacia el suelo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras dejas que la cabeza y el pecho bajen hacia el suelo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 14
+  },
+  {
+    "id": 18,
+    "nombre": "Parte de atrás de los hombros en una silla",
+    "zona": "hombros",
+    "musculos": [
+      "rotadores externos del hombro (parte de atrás del hombro)"
+    ],
+    "bloque": "fundamental",
+    "posicion": "sentado-silla",
+    "material": [
+      "silla"
+    ],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Siéntate en una silla con las piernas juntas y las plantas de los pies apoyadas en el suelo.",
+      "Pon las manos en las caderas, con los pulgares hacia el abdomen.",
+      "Inclínate hasta apoyar la parte delantera de los hombros sobre las rodillas.",
+      "Intenta juntar los hombros por delante del pecho."
+    ],
+    "respiracion": "Suelta el aire despacio mientras intentas juntar los hombros por delante del pecho.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "Para intensificar, estira un hombro cada vez: deja una mano en la cadera y, con la otra, sujeta el codo de ese brazo y llévalo despacio hacia abajo mientras sueltas el aire. Después cambia de hombro."
+    ],
+    "duracionSegundos": 30,
+    "paginaLibro": 14
+  },
+  {
+    "id": 19,
+    "nombre": "Parte interna del hombro",
+    "zona": "hombros",
+    "musculos": [
+      "parte interna del hombro"
+    ],
+    "bloque": "fundamental",
+    "posicion": "sentado-silla",
+    "material": [
+      "banco"
+    ],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Siéntate en la esquina de un banco o una banqueta de bordes rectos, con las manos entre las piernas agarrando el borde del asiento.",
+      "Estira los brazos y gira los hombros hacia fuera.",
+      "Pasa el peso del cuerpo sobre los brazos e inclínate hacia un lado.",
+      "Vuelve al centro y luego inclínate hacia el otro lado."
+    ],
+    "respiracion": "Suelta el aire despacio cada vez que te inclinas hacia un lado.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 15
+  },
+  {
+    "id": 20,
+    "nombre": "Parte lateral del hombro",
+    "zona": "hombros",
+    "musculos": [
+      "parte lateral del hombro"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Levanta un brazo a la altura del hombro, dobla el codo y lleva la mano hacia el hombro contrario.",
+      "Sujeta el codo del brazo doblado con la otra mano y llévalo despacio hacia el lado contrario.",
+      "Deja que el codo vuelva a su posición, estira el antebrazo sin soltar el codo y vuelve a llevarlo hacia el lado contrario."
+    ],
+    "respiracion": "Suelta el aire despacio cada vez que llevas el codo hacia el lado contrario.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "También puedes hacerlo en una silla."
+    ],
+    "duracionSegundos": 30,
+    "paginaLibro": 15
+  },
+  {
+    "id": 21,
+    "nombre": "Parte delantera de los hombros con silla",
+    "zona": "hombros",
+    "musculos": [
+      "parte delantera de los hombros"
+    ],
+    "bloque": "fundamental",
+    "posicion": "sentado-suelo",
+    "material": [
+      "silla"
+    ],
+    "porLado": false,
+    "dificultad": 3,
+    "pasos": [
+      "Coloca detrás de ti una silla firme, bien apoyada en el suelo y capaz de aguantar tu peso.",
+      "Apoya las manos en el borde del asiento, con los brazos rectos por detrás del tronco.",
+      "Mantén el cuerpo estirado, con las piernas hacia delante y la cadera adelantada.",
+      "Dobla los brazos y baja despacio las nalgas hacia el suelo."
+    ],
+    "respiracion": "Toma aire mientras doblas los brazos y bajas las nalgas.",
+    "volver": "Suelta el aire mientras vuelves despacio a la posición de partida.",
+    "precauciones": [
+      "¡Atención! Este ejercicio requiere fuerza para sostener el peso de tu cuerpo con los brazos.",
+      "Usa una silla que se apoye bien en el suelo y que aguante tu peso."
+    ],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 15
+  },
+  {
+    "id": 22,
+    "nombre": "Parte delantera del hombro en el marco de una puerta",
+    "zona": "hombros",
+    "musculos": [
+      "rotadores internos del hombro (parte delantera del hombro)"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-pie",
+    "material": [
+      "puerta"
+    ],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie frente a una puerta abierta, dobla un codo y apoya la mano y el antebrazo en el marco.",
+      "Lleva hacia atrás la pierna de ese mismo lado, completamente recta; la otra pierna queda un poco adelantada, con la rodilla doblada, y el otro brazo relajado junto al cuerpo.",
+      "Sin despegar el antebrazo del marco ni mover los pies, gira el tronco como si quisieras alejarte de la puerta."
+    ],
+    "respiracion": "Suelta el aire despacio mientras giras el tronco.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 16
+  },
+  {
+    "id": 23,
+    "nombre": "Extensores del hombro con peso ligero",
+    "zona": "hombros",
+    "musculos": [
+      "extensores del hombro"
+    ],
+    "bloque": "fundamental",
+    "posicion": "boca-arriba",
+    "material": [
+      "banco",
+      "peso-ligero"
+    ],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Acuéstate boca arriba sobre un banco o una mesa, con la cabeza fuera del borde.",
+      "Con los brazos estirados por detrás de la cabeza, a la altura de la mesa, sujeta con ambas manos una mancuerna ligera (sirve un cartón de leche de un litro lleno).",
+      "Sin doblar los brazos, súbelos hasta que queden verticales.",
+      "Desde ahí, con los brazos estirados, llévalos de nuevo por detrás de la cabeza e intenta bajar las manos todo lo que puedas hacia el suelo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras subes los brazos; toma aire despacio mientras los bajas por detrás de la cabeza.",
+    "volver": "Suelta el aire despacio mientras vuelves a la posición inicial, con los brazos estirados por detrás de la cabeza a la altura de la mesa.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 16
+  },
+  {
+    "id": 24,
+    "nombre": "Tríceps por detrás de la cabeza",
+    "zona": "brazos",
+    "musculos": [
+      "tríceps"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Dobla un brazo hacia atrás, pasando por el lado de la cabeza, hasta tocar con la mano el omóplato contrario.",
+      "Con la otra mano, sujeta el codo doblado.",
+      "Lleva el codo despacio hacia abajo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas el codo hacia abajo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "También puedes hacerlo en una silla."
+    ],
+    "duracionSegundos": 20,
+    "paginaLibro": 17
+  },
+  {
+    "id": 25,
+    "nombre": "Bíceps en el marco de una puerta",
+    "zona": "brazos",
+    "musculos": [
+      "bíceps"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-pie",
+    "material": [
+      "puerta"
+    ],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie de espaldas al marco de una puerta.",
+      "Con una mano, agarra el marco con el brazo estirado y girado hacia dentro, de modo que el pulgar apunte hacia abajo.",
+      "Deja el otro brazo relajado junto al cuerpo y apoya tu peso en la pierna de ese lado, recta; la otra pierna queda un poco adelantada, con la rodilla algo doblada.",
+      "Sin soltar el marco y con el brazo estirado, intenta girar el brazo hacia arriba."
+    ],
+    "respiracion": "Suelta el aire despacio mientras intentas girar el brazo hacia arriba.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 17
+  },
+  {
+    "id": 26,
+    "nombre": "Extensores de las muñecas con palo",
+    "zona": "munecas",
+    "musculos": [
+      "extensores de la muñeca",
+      "antebrazos"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-pie",
+    "material": [
+      "palo"
+    ],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Agarra un palo largo con ambas manos y llévalo por detrás de la cabeza, con los codos a la altura de los hombros, los brazos en cruz y los antebrazos hacia arriba, formando una L.",
+      "Deja el dorso de las manos hacia arriba y los pulgares por debajo del palo.",
+      "Baja el palo por delante del cuerpo hasta la cintura, girando los antebrazos desde el codo y manteniendo los brazos en cruz."
+    ],
+    "respiracion": "Suelta el aire despacio mientras bajas el palo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 17
+  },
+  {
+    "id": 27,
+    "nombre": "Flexores de las muñecas de rodillas",
+    "zona": "munecas",
+    "musculos": [
+      "flexores de la muñeca",
+      "antebrazos"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-rodillas",
+    "material": [],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de rodillas, con el tronco horizontal, y apoya las palmas de las manos en el suelo.",
+      "Gira las muñecas para que los dedos apunten hacia las rodillas.",
+      "Lleva despacio las nalgas hacia las pantorrillas."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas las nalgas hacia las pantorrillas.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 18
+  },
+  {
+    "id": 28,
+    "nombre": "Lado del cuello con peso ligero",
+    "zona": "cuello",
+    "musculos": [
+      "parte lateral del cuello"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-pie",
+    "material": [
+      "peso-ligero"
+    ],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie con los pies juntos y el cuerpo bien derecho, con un peso ligero en una mano (una mancuerna o un cartón de leche de un litro lleno).",
+      "Pasa la mano libre por encima de la cabeza y apóyala en el otro lado de esta.",
+      "Deja que el hombro que sostiene el peso baje todo lo posible, manteniendo fijo el otro hombro.",
+      "Después, inclina la cabeza todo lo que puedas hacia el hombro libre."
+    ],
+    "respiracion": "Toma aire despacio mientras dejas bajar el hombro con el peso; suelta el aire despacio mientras inclinas la cabeza.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 18
+  },
+  {
+    "id": 29,
+    "nombre": "Parte de atrás del cuello con peso ligero",
+    "zona": "cuello",
+    "musculos": [
+      "parte de atrás del cuello",
+      "trapecios"
+    ],
+    "bloque": "fundamental",
+    "posicion": "de-pie",
+    "material": [
+      "palo",
+      "peso-ligero"
+    ],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie con los pies juntos y el cuerpo recto.",
+      "Sujeta por delante del cuerpo, con las manos lo más juntas posible, una barra con un peso ligero (sirve un palo del que cuelguen bolsas con arena u otro material).",
+      "Deja que los hombros bajen todo lo posible y apoya la barbilla sobre el pecho."
+    ],
+    "respiracion": "Suelta el aire despacio mientras dejas bajar los hombros y llevas la barbilla al pecho.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 18
+  },
+  {
+    "id": 30,
+    "nombre": "Parte delantera del cuello",
+    "zona": "cuello",
+    "musculos": [
+      "parte delantera del cuello"
+    ],
+    "bloque": "fundamental",
+    "posicion": "boca-arriba",
+    "material": [
+      "mesa"
+    ],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Acuéstate boca arriba sobre una mesa, de modo que la cabeza quede fuera del borde.",
+      "Deja que la cabeza cuelgue sin hacer ninguna fuerza.",
+      "Mantén el estiramiento mientras te relajas."
+    ],
+    "respiracion": "Respira con calma y relájate mientras mantienes la postura.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 19
+  },
+  {
+    "id": 31,
+    "nombre": "Arco plantar",
+    "zona": "pies-tobillos",
+    "musculos": [
+      "arco plantar",
+      "planta del pie"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-silla",
+    "material": [
+      "silla"
+    ],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Siéntate y cruza una pierna sobre la rodilla contraria.",
+      "Sujeta el tobillo con la mano contraria y, con la otra, toma la parte delantera del pie justo por debajo de los dedos.",
+      "Lleva despacio los dedos hacia la espinilla."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas los dedos hacia la espinilla.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 19
+  },
+  {
+    "id": 32,
+    "nombre": "Tobillos",
+    "zona": "pies-tobillos",
+    "musculos": [
+      "tobillo",
+      "borde externo del pie"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-silla",
+    "material": [
+      "silla"
+    ],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Siéntate y cruza una pierna sobre la rodilla contraria.",
+      "Con la mano del lado de esa pierna, sujétala por encima del tobillo; pon la otra mano sobre la parte de arriba del borde externo del pie.",
+      "Gira despacio el tobillo hacia arriba."
+    ],
+    "respiracion": "Suelta el aire despacio mientras giras el tobillo hacia arriba.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 20
+  },
+  {
+    "id": 33,
+    "nombre": "Gemelos con la espalda en la pared",
+    "zona": "piernas",
+    "musculos": [
+      "gemelos",
+      "parte de atrás de las piernas"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [
+      "pared"
+    ],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Apoya la espalda en una pared, con las manos en las caderas.",
+      "Adelanta los pies y gira las puntas hacia dentro, torciendo un poco los tobillos.",
+      "Inclina el tronco hacia delante."
+    ],
+    "respiracion": "Suelta el aire despacio mientras inclinas el tronco hacia delante.",
+    "volver": "Vuelve a la posición inicial despacio, con la espalda recta, tomando aire profundamente.",
+    "precauciones": [
+      "Si tienes algún problema de espalda, no subas con la espalda recta: vuelve a la posición inicial girando el torso."
+    ],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 20
+  },
+  {
+    "id": 34,
+    "nombre": "Tendón de Aquiles, boca arriba",
+    "zona": "piernas",
+    "musculos": [
+      "tendón de Aquiles",
+      "pantorrilla"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-arriba",
+    "material": [],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Acuéstate boca arriba y dobla una rodilla, deslizando el pie hacia las nalgas.",
+      "Levanta la otra pierna recta, sujetándola con ambas manos por detrás de la rodilla, hasta donde llegues sin sentir molestias.",
+      "Lleva la punta del pie hacia ti, doblando el tobillo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas la punta del pie hacia ti.",
+    "volver": "Vuelve a la posición inicial despacio, con la pierna estirada, tomando aire profundamente.",
+    "precauciones": [
+      "Si tienes algún problema de espalda, para volver dobla primero la pierna estirada y después bájala al suelo."
+    ],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 20
+  },
+  {
+    "id": 35,
+    "nombre": "Parte de atrás de la pierna en tabla inclinada",
+    "zona": "piernas",
+    "musculos": [
+      "pantorrillas",
+      "tendón de Aquiles",
+      "parte de atrás de las rodillas"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [
+      "escalon-inclinado",
+      "pared"
+    ],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Súbete a una tabla inclinada, con la punta de los pies más alta que los talones, frente a una pared y a una distancia en la que casi la toques con los brazos estirados al frente.",
+      "Inclínate hacia delante y apoya las palmas de las manos en la pared.",
+      "Mantén la posición todo lo que puedas, sintiendo el estiramiento en las pantorrillas, el tendón de Aquiles y detrás de las rodillas."
+    ],
+    "respiracion": "Respira con calma mientras mantienes la posición.",
+    "volver": "Vuelve a la posición inicial despacio.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 21
+  },
+  {
+    "id": 36,
+    "nombre": "Pierna completa",
+    "zona": "piernas",
+    "musculos": [
+      "isquiotibiales (parte de atrás del muslo)",
+      "parte de atrás de la rodilla",
+      "pantorrilla"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-suelo",
+    "material": [],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Siéntate en el suelo con las piernas abiertas y dobla una pierna hacia dentro hasta que el talón toque la ingle de la pierna estirada.",
+      "Baja la parte externa del muslo y de la pantorrilla de la pierna doblada hasta que queden por completo en el suelo.",
+      "Apoya en el suelo la mano del lado de la pierna doblada, por fuera de ella; inclínate hacia delante y sujeta la pierna estirada con la otra mano.",
+      "Aprieta el cuádriceps (parte delantera del muslo) y después relájalo por completo, para soltar la tensión detrás de la rodilla.",
+      "Lleva el pie de la pierna estirada hacia ti."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas el pie hacia ti.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 21
+  },
+  {
+    "id": 37,
+    "nombre": "Parte alta de la pierna",
+    "zona": "piernas",
+    "musculos": [
+      "parte alta de la pierna",
+      "pantorrillas"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie con los pies paralelos y bien apoyados en el suelo.",
+      "Apoya las manos sobre las rodillas, inclinando el tronco hacia delante.",
+      "Baja la cadera y lleva el peso del cuerpo hacia abajo, sin despegar del suelo ninguna parte de la planta del pie."
+    ],
+    "respiracion": "Suelta el aire despacio mientras bajas la cadera.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 21
+  },
+  {
+    "id": 38,
+    "nombre": "Parte de atrás del muslo, piernas abiertas",
+    "zona": "piernas",
+    "musculos": [
+      "isquiotibiales (parte de atrás del muslo)"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-suelo",
+    "material": [],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Siéntate en el suelo con las piernas abiertas y dobla una pierna hacia dentro hasta que el talón toque la ingle de la pierna estirada.",
+      "Baja la parte externa del muslo y de la pantorrilla de la pierna doblada hasta que queden por completo en el suelo.",
+      "Inclínate hacia delante y agarra con ambas manos el tobillo de la pierna estirada.",
+      "Aprieta el cuádriceps de la pierna estirada para soltar la tensión en la parte de atrás del muslo.",
+      "Baja el tronco hacia el muslo, manteniendo la pierna estirada."
+    ],
+    "respiracion": "Suelta el aire despacio mientras bajas el tronco hacia el muslo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 22
+  },
+  {
+    "id": 39,
+    "nombre": "Parte de atrás del muslo en el marco de una puerta",
+    "zona": "piernas",
+    "musculos": [
+      "isquiotibiales (parte de atrás del muslo)"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-arriba",
+    "material": [
+      "puerta"
+    ],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Acuéstate boca arriba junto al marco de una puerta, con una pierna estirada pasando por la puerta, de modo que el marco quede un poco por encima de la rodilla. Deja las manos relajadas sobre el abdomen.",
+      "Sube la otra pierna completamente estirada y apóyala en el marco.",
+      "Aprieta el cuádriceps de la pierna elevada para soltar la tensión en la parte de atrás del muslo.",
+      "Acerca la cadera a la puerta o sube la pierna todo lo que puedas."
+    ],
+    "respiracion": "Suelta el aire despacio mientras acercas la cadera a la puerta o subes la pierna.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 22
+  },
+  {
+    "id": 40,
+    "nombre": "Parte de atrás del muslo, boca arriba",
+    "zona": "piernas",
+    "musculos": [
+      "isquiotibiales (parte de atrás del muslo)"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-arriba",
+    "material": [],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Acuéstate boca arriba con las piernas dobladas y los talones cerca de las nalgas.",
+      "Estira una pierna hacia arriba, sujetando el muslo con ambas manos.",
+      "Aprieta el cuádriceps de la pierna elevada para soltar la tensión en la parte de atrás del muslo.",
+      "Lleva la pierna, siempre estirada, hacia tu cara mientras deslizas las manos hacia el tobillo."
+    ],
+    "respiracion": "Toma aire al subir la pierna; suelta el aire despacio mientras la llevas hacia tu cara.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [
+      "Si tienes algún problema de espalda, para volver dobla primero la pierna estirada y después bájala al suelo."
+    ],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 22
+  },
+  {
+    "id": 41,
+    "nombre": "Parte de atrás del muslo en un banco",
+    "zona": "piernas",
+    "musculos": [
+      "isquiotibiales (parte de atrás del muslo)"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-silla",
+    "material": [
+      "banco"
+    ],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Siéntate de lado sobre un banco y apoya en él una pierna estirada; la otra queda fuera, con el pie apoyado en el suelo.",
+      "Pon ambas manos detrás de la cabeza, con los codos en línea con los hombros.",
+      "Aprieta el cuádriceps de la pierna que está sobre el banco para soltar la tensión en la parte de atrás del muslo.",
+      "Estira el tronco y dóblalo desde la cadera, intentando bajarlo sobre el muslo, sin mover los codos y con la pierna estirada."
+    ],
+    "respiracion": "Suelta el aire despacio mientras bajas el tronco hacia el muslo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 23
+  },
+  {
+    "id": 42,
+    "nombre": "Aductores boca arriba",
+    "zona": "piernas",
+    "musculos": [
+      "aductores (parte interna del muslo)"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-arriba",
+    "material": [],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Acuéstate boca arriba con las rodillas dobladas, las plantas de los pies juntas y los talones lo más cerca posible de las nalgas.",
+      "Deja los brazos relajados a los lados del cuerpo.",
+      "Separa las rodillas todo lo que puedas, llevándolas hacia el suelo, sin separar las plantas de los pies."
+    ],
+    "respiracion": "Suelta el aire despacio mientras separas las rodillas hacia el suelo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "Si te resulta fácil, hazlo sobre un banco estrecho, para que las rodillas puedan bajar por debajo del nivel del banco."
+    ],
+    "duracionSegundos": 20,
+    "paginaLibro": 23
+  },
+  {
+    "id": 43,
+    "nombre": "Aductores con correas",
+    "zona": "piernas",
+    "musculos": [
+      "aductores (parte interna del muslo)"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-arriba",
+    "material": [
+      "correa"
+    ],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Acuéstate boca arriba y pasa una correa o una tira de tela por la parte interna de cada pie, sujetando los extremos con las manos.",
+      "Sube las piernas estiradas hacia arriba.",
+      "Abre las piernas todo lo que puedas y, al final del movimiento, tensa suavemente las correas."
+    ],
+    "respiracion": "Toma aire profundamente al subir las piernas; suelta el aire despacio mientras las abres.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 23
+  },
+  {
+    "id": 44,
+    "nombre": "Aductores con giro de tronco",
+    "zona": "piernas",
+    "musculos": [
+      "aductores (parte interna del muslo)"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-suelo",
+    "material": [],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Siéntate en el suelo con las piernas lo más abiertas que puedas.",
+      "Gira el tronco hacia una de las piernas.",
+      "Inclínate sobre esa pierna hasta sujetar el pie."
+    ],
+    "respiracion": "Suelta el aire despacio mientras giras el tronco y te inclinas sobre la pierna.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 24
+  },
+  {
+    "id": 45,
+    "nombre": "Aductores contra la pared",
+    "zona": "piernas",
+    "musculos": [
+      "aductores (parte interna del muslo)"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-suelo",
+    "material": [
+      "pared"
+    ],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Siéntate en el suelo con la espalda contra una pared, las rodillas dobladas, las plantas de los pies juntas y los talones lo más cerca posible de las nalgas.",
+      "Toma los pies o los tobillos con ambas manos y acércalos a las nalgas todo lo que puedas.",
+      "Inclínate hacia delante con la espalda recta, intentando bajar el pecho hacia el suelo lo más posible."
+    ],
+    "respiracion": "Toma aire profundamente mientras acercas los pies; suelta el aire despacio mientras te inclinas hacia delante.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "Si tienes los aductores débiles, hazlo con los talones un poco más adelantados."
+    ],
+    "duracionSegundos": 20,
+    "paginaLibro": 24
+  },
+  {
+    "id": 46,
+    "nombre": "Cuádriceps boca abajo",
+    "zona": "piernas",
+    "musculos": [
+      "cuádriceps (parte delantera del muslo)"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-abajo",
+    "material": [],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Acuéstate boca abajo, dobla una rodilla y lleva el talón hacia las nalgas, sujetando el tobillo con la mano del mismo lado. El otro brazo descansa en el suelo, junto al cuerpo.",
+      "Durante todo el ejercicio, mantén la zona lumbar sin arquear y no tuerzas la pelvis: solo inclínala hacia arriba.",
+      "Empuja el talón hacia las nalgas, intentando que la pantorrilla toque el muslo de la otra pierna, como si quisieras meter el tobillo entre ambas piernas."
+    ],
+    "respiracion": "Suelta el aire despacio mientras empujas el talón hacia las nalgas.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [
+      "No fuerces la rodilla."
+    ],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 24
+  },
+  {
+    "id": 47,
+    "nombre": "Cuádriceps de lado",
+    "zona": "piernas",
+    "musculos": [
+      "cuádriceps (parte delantera del muslo)"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-lado",
+    "material": [],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Acuéstate de lado, con las piernas estiradas una sobre otra y el brazo de abajo debajo de la cabeza, como almohada.",
+      "Dobla la pierna de arriba, lleva el talón hasta las nalgas y sujeta el tobillo con la mano.",
+      "Durante todo el ejercicio, mantén la zona lumbar sin arquear y no tuerzas la pelvis: solo inclínala hacia arriba.",
+      "Empuja el talón hacia las nalgas."
+    ],
+    "respiracion": "Suelta el aire despacio mientras empujas el talón hacia las nalgas.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [
+      "No fuerces la rodilla."
+    ],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 25
+  },
+  {
+    "id": 48,
+    "nombre": "Cuádriceps de pie con apoyo en la pared",
+    "zona": "piernas",
+    "musculos": [
+      "cuádriceps (parte delantera del muslo)"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [
+      "pared"
+    ],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie frente a una pared, a una distancia que te permita apoyarte en ella con el brazo estirado.",
+      "Durante todo el ejercicio, mantén la zona lumbar sin arquear y no tuerzas la pelvis: solo inclínala hacia arriba.",
+      "Dobla la rodilla del lado contrario al brazo de apoyo, sube el talón hacia las nalgas y toma el pie con la mano de ese lado.",
+      "Empuja el tobillo hacia las nalgas, manteniendo los muslos juntos, como si quisieras meter el talón entre ellos."
+    ],
+    "respiracion": "Suelta el aire mientras doblas la rodilla y tomas el pie; toma aire despacio mientras empujas el tobillo hacia las nalgas.",
+    "volver": "Suelta el pie y vuelve a la posición inicial despacio.",
+    "precauciones": [
+      "No aprietes de más la rodilla."
+    ],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 25
+  },
+  {
+    "id": 49,
+    "nombre": "Cuádriceps con el pie sobre una silla",
+    "zona": "piernas",
+    "musculos": [
+      "cuádriceps (parte delantera del muslo)"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [
+      "silla"
+    ],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de pie de espaldas a una silla.",
+      "Dobla una pierna hacia atrás y apoya la parte de arriba del empeine sobre el borde del asiento.",
+      "Durante todo el ejercicio, mantén la zona lumbar sin arquear y no tuerzas la pelvis.",
+      "Dobla un poco la rodilla de la pierna en la que apoyas el peso."
+    ],
+    "respiracion": "Toma aire despacio mientras doblas un poco la rodilla de apoyo.",
+    "volver": "Baja el pie de la silla y vuelve a la posición inicial despacio.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 25
+  },
+  {
+    "id": 50,
+    "nombre": "Glúteos con una rodilla en el suelo",
+    "zona": "cadera-gluteos",
+    "musculos": [
+      "glúteos",
+      "músculos de la cadera"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-rodillas",
+    "material": [],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de pie con las piernas separadas unos 30 cm y las manos en las caderas.",
+      "Dobla una rodilla, baja el tronco y apoya la otra rodilla en el suelo.",
+      "Estira hacia atrás el pie de la pierna de atrás hasta que el empeine quede totalmente apoyado en el suelo, con la pantorrilla de delante perpendicular al suelo.",
+      "Intenta bajar la cadera hacia el suelo a la vez que la empujas hacia delante."
+    ],
+    "respiracion": "Suelta el aire despacio mientras bajas la cadera y la empujas hacia delante.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "También puedes hacerlo con una mano sobre la rodilla de delante y la otra en la cadera."
+    ],
+    "duracionSegundos": 20,
+    "paginaLibro": 26
+  },
+  {
+    "id": 51,
+    "nombre": "Glúteos y cadera, boca arriba",
+    "zona": "cadera-gluteos",
+    "musculos": [
+      "glúteos",
+      "músculos de la cadera"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-arriba",
+    "material": [],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Acuéstate boca arriba con las piernas estiradas.",
+      "Sube una rodilla doblada hacia el pecho y sujeta el muslo con la mano contraria.",
+      "Cruza la pierna doblada hacia el otro lado del cuerpo y empuja la rodilla con la mano hacia el suelo.",
+      "Mantén apoyados en el suelo la cabeza, los hombros, el codo de la mano que sujeta la rodilla y el otro brazo, estirado en cruz."
+    ],
+    "respiracion": "Suelta el aire despacio mientras cruzas la pierna y llevas la rodilla hacia el suelo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 26
+  },
+  {
+    "id": 52,
+    "nombre": "Parte baja del abdomen",
+    "zona": "abdomen",
+    "musculos": [
+      "parte baja del abdomen"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-arriba",
+    "material": [],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Acuéstate boca arriba con las rodillas dobladas y juntas, apuntando hacia arriba, y los brazos en cruz.",
+      "Mantén los hombros y los brazos apoyados en el suelo durante todo el ejercicio.",
+      "Baja ambas rodillas juntas hacia el suelo, hacia un lado del cuerpo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras bajas las rodillas hacia un lado.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 26
+  },
+  {
+    "id": 53,
+    "nombre": "Glúteos, cadera y abdomen con giro",
+    "zona": "cadera-gluteos",
+    "musculos": [
+      "glúteos",
+      "músculos de la cadera",
+      "parte baja del abdomen"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-suelo",
+    "material": [],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Siéntate en el suelo con las piernas estiradas al frente y las manos apoyadas en el suelo detrás de la cadera.",
+      "Deja una pierna estirada; cruza la otra por encima y apoya el pie lo más cerca posible de la cadera.",
+      "Coloca el codo contrario a la pierna doblada por fuera de la rodilla levantada.",
+      "Mira el hombro del brazo apoyado en el suelo y, sin dejar de mirarlo, gira el tronco hacia esa mano mientras empujas suavemente la rodilla con el codo hacia el lado contrario."
+    ],
+    "respiracion": "Suelta el aire despacio mientras giras el tronco y empujas la rodilla con el codo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 27
+  },
+  {
+    "id": 54,
+    "nombre": "Abdominales boca abajo",
+    "zona": "abdomen",
+    "musculos": [
+      "abdominales"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-abajo",
+    "material": [],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Acuéstate boca abajo con el cuerpo estirado y las palmas en el suelo junto a las caderas, con los dedos hacia delante.",
+      "Aprieta los glúteos durante todo el ejercicio para no cargar de más la zona lumbar.",
+      "Apoyándote en las manos, arquea la espalda levantando la cabeza y el tronco."
+    ],
+    "respiracion": "Suelta el aire despacio mientras levantas la cabeza y el tronco.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 27
+  },
+  {
+    "id": 55,
+    "nombre": "Abdominales con compañero",
+    "zona": "abdomen",
+    "musculos": [
+      "abdominales"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-abajo",
+    "material": [
+      "companero"
+    ],
+    "porLado": false,
+    "dificultad": 3,
+    "pasos": [
+      "Acuéstate boca abajo con los brazos juntos y estirados hacia delante.",
+      "Tu compañero se pone de pie con los pies a la altura de tus caderas y las rodillas un poco dobladas, y te sujeta los brazos entre los codos y los hombros.",
+      "Aprieta los glúteos durante todo el ejercicio para no cargar de más la zona lumbar.",
+      "Tu compañero levanta tus brazos para elevarte del suelo."
+    ],
+    "respiracion": "Toma aire mientras tu compañero te levanta.",
+    "volver": "Tu compañero debe bajarte despacio hasta la posición de partida.",
+    "precauciones": [
+      "Avisa a tu compañero de inmediato si sientes un estiramiento excesivo."
+    ],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 27
+  },
+  {
+    "id": 56,
+    "nombre": "Zona lumbar en una silla",
+    "zona": "zona-lumbar",
+    "musculos": [
+      "zona lumbar"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-silla",
+    "material": [
+      "silla"
+    ],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Siéntate en una silla con las piernas un poco separadas.",
+      "Contrae los abdominales durante el ejercicio para ayudar a relajar la zona lumbar.",
+      "Estira la parte alta del tronco y dóblate desde la cadera hacia delante, llevando el pecho hacia los muslos y la cabeza hacia el suelo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras doblas el tronco hacia delante.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 28
+  },
+  {
+    "id": 57,
+    "nombre": "Zona lumbar, rodillas al pecho",
+    "zona": "zona-lumbar",
+    "musculos": [
+      "zona lumbar"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-arriba",
+    "material": [],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Acuéstate boca arriba con las rodillas dobladas hacia arriba, los pies lo más cerca posible de las nalgas y las manos sujetando las piernas por detrás de las rodillas.",
+      "Lleva las rodillas hacia el pecho y despega la cadera del suelo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas las rodillas hacia el pecho.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente. Después estira una de las piernas para evitar espasmos o molestias en la espalda.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 28
+  },
+  {
+    "id": 58,
+    "nombre": "Romboides en el suelo",
+    "zona": "espalda-alta",
+    "musculos": [
+      "romboides (entre los omóplatos)"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-suelo",
+    "material": [],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Siéntate en el suelo con las rodillas un poco dobladas y el pecho en contacto con los muslos.",
+      "Con los codos bajos, cruza las manos por debajo de las piernas y agarra con cada mano la rodilla contraria.",
+      "Inclínate hacia delante y tira de los muslos hacia atrás, manteniendo los pies estirados y los talones apoyados en el suelo.",
+      "Arquea la espalda para intensificar el estiramiento: debes sentirlo entre los omóplatos."
+    ],
+    "respiracion": "Suelta el aire despacio mientras te inclinas hacia delante y tiras de los muslos.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 28
+  },
+  {
+    "id": 59,
+    "nombre": "Romboides con compañero",
+    "zona": "espalda-alta",
+    "musculos": [
+      "romboides (entre los omóplatos)"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-abajo",
+    "material": [
+      "mesa",
+      "companero"
+    ],
+    "porLado": true,
+    "dificultad": 3,
+    "pasos": [
+      "Acuéstate boca abajo sobre una mesa, con la cabeza girada hacia un lado.",
+      "Dobla el codo de ese lado y deja el antebrazo relajado sobre la zona lumbar; el otro brazo queda relajado junto al cuerpo.",
+      "Tu compañero, situado del lado hacia el que miras, sujeta la parte de arriba de tu hombro (el del brazo doblado).",
+      "Tu compañero levanta la parte delantera de tu hombro para separar un poco el omóplato y lo sube despacio."
+    ],
+    "respiracion": "Suelta el aire despacio mientras tu compañero levanta tu hombro.",
+    "volver": "Tu compañero debe bajarte el hombro despacio, mientras tomas aire profundamente.",
+    "precauciones": [
+      "Avisa a tu compañero de inmediato si sientes un estiramiento excesivo."
+    ],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 29
+  },
+  {
+    "id": 60,
+    "nombre": "Pecho sobre el respaldo de una silla",
+    "zona": "pecho",
+    "musculos": [
+      "pectorales"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-silla",
+    "material": [
+      "silla",
+      "toalla"
+    ],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Siéntate en una silla cuyo respaldo te llegue, como mucho, a la mitad de la espalda, y coloca una toalla doblada sobre el respaldo.",
+      "Entrelaza las manos detrás de la cabeza, con los codos a la altura de los hombros.",
+      "Inclina la parte alta del tronco hacia atrás, por encima del respaldo, y lleva también los brazos hacia atrás, como si quisieras juntar los codos."
+    ],
+    "respiracion": "Toma aire mientras inclinas el tronco hacia atrás.",
+    "volver": "Vuelve a la posición inicial despacio.",
+    "precauciones": [
+      "Usa siempre la toalla doblada sobre el respaldo para no lastimarte."
+    ],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 29
+  },
+  {
+    "id": 61,
+    "nombre": "Pecho en el marco de una puerta: codos bajos",
+    "zona": "pecho",
+    "musculos": [
+      "pectorales (parte alta, junto a la clavícula)"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [
+      "puerta"
+    ],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie frente al marco de una puerta no muy ancha, con un pie adelantado y el otro atrás.",
+      "Sube los codos sin pasar la altura de los hombros, con los antebrazos verticales, de modo que cada brazo forme una V con su antebrazo.",
+      "Apoya los antebrazos en el marco, uno a cada lado.",
+      "Inclina todo el cuerpo hacia delante. Debes sentir el estiramiento en la parte alta del pecho, cerca de la clavícula."
+    ],
+    "respiracion": "Suelta el aire despacio mientras inclinas el cuerpo hacia delante.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 29
+  },
+  {
+    "id": 62,
+    "nombre": "Pecho en el marco de una puerta: codos a la altura de los hombros",
+    "zona": "pecho",
+    "musculos": [
+      "pectorales (parte media, junto al esternón)"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [
+      "puerta"
+    ],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie frente al marco de una puerta no muy ancha, con un pie adelantado y el otro atrás.",
+      "Sube los codos hasta la altura de los hombros, con los brazos en línea con los hombros y los antebrazos verticales.",
+      "Apoya los antebrazos en el marco, uno a cada lado.",
+      "Inclina todo el cuerpo hacia delante. Debes sentir el estiramiento en la parte media del pecho, junto al esternón."
+    ],
+    "respiracion": "Suelta el aire despacio mientras inclinas el cuerpo hacia delante.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 30
+  },
+  {
+    "id": 63,
+    "nombre": "Pecho en el marco de una puerta: codos altos",
+    "zona": "pecho",
+    "musculos": [
+      "pectorales (parte baja, sobre las costillas)"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [
+      "puerta"
+    ],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie frente al marco de una puerta no muy ancha, con un pie adelantado y el otro atrás.",
+      "Sube los codos por encima de la altura de los hombros, con los antebrazos verticales, de modo que los brazos formen una V con el cuello en el vértice.",
+      "Apoya los antebrazos en el marco, uno a cada lado.",
+      "Inclina todo el cuerpo hacia delante. Debes sentir el estiramiento en la parte baja del pecho, sobre las costillas."
+    ],
+    "respiracion": "Suelta el aire despacio mientras inclinas el cuerpo hacia delante.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 30
+  },
+  {
+    "id": 64,
+    "nombre": "Pecho con compañero",
+    "zona": "pecho",
+    "musculos": [
+      "pectorales"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-silla",
+    "material": [
+      "silla",
+      "companero"
+    ],
+    "porLado": false,
+    "dificultad": 3,
+    "pasos": [
+      "Siéntate en una silla y entrelaza las manos detrás de la cabeza, con los codos a la altura de los hombros.",
+      "Pide a tu compañero que se coloque detrás de ti y te sujete los codos.",
+      "Tu compañero lleva tus codos hacia atrás, despacio."
+    ],
+    "respiracion": "Suelta el aire despacio mientras tu compañero lleva tus codos hacia atrás.",
+    "volver": "Tu compañero debe seguir sujetándote y llevarte de vuelta despacio a la posición de partida, mientras tomas aire profundamente.",
+    "precauciones": [
+      "Avisa a tu compañero de inmediato si sientes un estiramiento excesivo."
+    ],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 30
+  },
+  {
+    "id": 65,
+    "nombre": "Pecho con pesos ligeros",
+    "zona": "pecho",
+    "musculos": [
+      "pectorales"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-arriba",
+    "material": [
+      "banco",
+      "peso-ligero"
+    ],
+    "porLado": false,
+    "dificultad": 3,
+    "pasos": [
+      "Acuéstate boca arriba en un banco, con la cabeza apoyada y las piernas estiradas.",
+      "Toma una mancuerna ligera en cada mano (sirve un cartón de leche de un litro lleno) y estira los brazos hacia arriba, con las manos sobre el pecho y los codos un poco doblados.",
+      "Baja las mancuernas hacia los lados, llevando los codos hasta la altura de los hombros."
+    ],
+    "respiracion": "Toma aire mientras bajas las mancuernas hacia los lados.",
+    "volver": "Suelta el aire mientras vuelves despacio a la posición de inicio, llevando las mancuernas en un movimiento circular.",
+    "precauciones": [
+      "Ten cuidado: este ejercicio genera mucha tensión en los codos y los hombros. Si notas una tensión excesiva, usa menos peso."
+    ],
+    "variantes": [
+      "También puedes hacerlo con los brazos estirados."
+    ],
+    "duracionSegundos": 20,
+    "paginaLibro": 31
+  },
+  {
+    "id": 66,
+    "nombre": "Parte delantera de los hombros contra la pared",
+    "zona": "hombros",
+    "musculos": [
+      "parte delantera de los hombros"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [
+      "pared"
+    ],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de pie de espaldas a una pared, a una distancia que te permita apoyar en ella las manos, con los dedos hacia arriba, a la altura de los hombros.",
+      "Lleva los brazos estirados lo más atrás que puedas, en una postura cómoda, con los pies juntos y las piernas un poco adelantadas, de modo que tu cuerpo quede inclinado respecto a la pared, no paralelo a ella.",
+      "Dobla las piernas y baja los hombros."
+    ],
+    "respiracion": "Suelta el aire despacio mientras doblas las piernas y bajas los hombros.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 31
+  },
+  {
+    "id": 67,
+    "nombre": "Parte delantera de los hombros en posición de flexiones",
+    "zona": "hombros",
+    "musculos": [
+      "parte delantera de los hombros",
+      "pectorales"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-abajo",
+    "material": [],
+    "porLado": false,
+    "dificultad": 3,
+    "pasos": [
+      "Colócate boca abajo en posición de flexiones de pecho (lagartijas), con el peso en las manos y las puntas de los pies, con los brazos lo más separados del cuerpo que puedas.",
+      "Baja el pecho casi hasta el suelo, sin llegar a apoyarlo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras bajas el pecho.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [
+      "Requiere fuerza suficiente para sostener el peso de tu cuerpo con los brazos."
+    ],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 31
+  },
+  {
+    "id": 68,
+    "nombre": "Rotadores internos del hombro con mesa",
+    "zona": "hombros",
+    "musculos": [
+      "rotadores internos del hombro"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-silla",
+    "material": [
+      "silla",
+      "mesa"
+    ],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Siéntate en una silla de lado junto a una mesa y apoya el antebrazo a lo largo del borde, con el codo doblado.",
+      "Inclina el tronco hacia delante y baja la cabeza y el hombro de ese lado hasta el nivel de la mesa."
+    ],
+    "respiracion": "Suelta el aire despacio mientras inclinas el tronco y bajas el hombro.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 32
+  },
+  {
+    "id": 69,
+    "nombre": "Rotadores internos del hombro con peso ligero",
+    "zona": "hombros",
+    "musculos": [
+      "rotadores internos del hombro"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-arriba",
+    "material": [
+      "banco",
+      "peso-ligero"
+    ],
+    "porLado": true,
+    "dificultad": 3,
+    "pasos": [
+      "Acuéstate boca arriba en un banco, con la cabeza apoyada y las piernas estiradas.",
+      "Toma con una mano una mancuerna ligera (sirve un cartón de leche de un litro lleno). Apoya ese brazo en el banco, en línea con los hombros, y sube la mano hasta que el codo forme un ángulo recto.",
+      "Baja la mano hasta la altura de la cabeza, girando el antebrazo hacia atrás."
+    ],
+    "respiracion": "Toma aire mientras bajas la mano hacia atrás.",
+    "volver": "Suelta el aire despacio mientras llevas el antebrazo de nuevo a la posición vertical de partida.",
+    "precauciones": [
+      "Si tuviste hace poco una luxación (dislocación) de hombro, no hagas este ejercicio.",
+      "Si tuviste una luxación de hombro hace tiempo, las primeras veces pide a un compañero que te sostenga la muñeca durante el ejercicio, hasta que puedas hacerlo sin ayuda y sin problemas."
+    ],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 32
+  },
+  {
+    "id": 70,
+    "nombre": "Parte de atrás del hombro, brazo a la espalda",
+    "zona": "hombros",
+    "musculos": [
+      "rotadores externos del hombro (parte de atrás del hombro)"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie y lleva los brazos por detrás de la espalda: uno doblado, con el dorso de la mano hacia el tronco, y la otra mano sujetando el codo.",
+      "Tira suavemente del codo para llevarlo hacia la mitad de la espalda."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas el codo hacia la mitad de la espalda.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "Si no llegas a agarrar el codo con la otra mano, sujeta el antebrazo."
+    ],
+    "duracionSegundos": 20,
+    "paginaLibro": 32
+  },
+  {
+    "id": 71,
+    "nombre": "Parte de atrás del hombro, brazos entrelazados",
+    "zona": "hombros",
+    "musculos": [
+      "rotadores externos del hombro (parte de atrás del hombro)"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de pie y dobla un brazo por delante del cuerpo, con el codo a la altura del pecho y el antebrazo vertical.",
+      "Dobla y sube el otro brazo hasta que su codo quede por debajo del primero, sosteniéndolo.",
+      "Entrelaza los antebrazos de modo que la mano que queda más abajo sujete la muñeca de la otra.",
+      "Tira de la muñeca hacia abajo y hacia fuera."
+    ],
+    "respiracion": "Suelta el aire despacio mientras tiras de la muñeca hacia abajo y hacia fuera.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "También puedes hacerlo en una silla."
+    ],
+    "duracionSegundos": 20,
+    "paginaLibro": 33
+  },
+  {
+    "id": 72,
+    "nombre": "Parte de atrás del hombro con giro en una silla",
+    "zona": "hombros",
+    "musculos": [
+      "rotadores externos del hombro (parte de atrás del hombro)"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-silla",
+    "material": [
+      "silla"
+    ],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Siéntate en una silla con respaldo firme. Deja un brazo relajado junto al cuerpo y dobla el otro por detrás del tronco, con la mano en la cintura.",
+      "Gira la cabeza hacia el lado del brazo doblado.",
+      "Gira el tronco hacia ese mismo lado.",
+      "Para aumentar el estiramiento, al final empuja un poco el codo contra el respaldo y gira un poco más el tronco."
+    ],
+    "respiracion": "Suelta el aire despacio mientras giras el tronco.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 33
+  },
+  {
+    "id": 73,
+    "nombre": "Manos juntas en la espalda",
+    "zona": "hombros",
+    "musculos": [
+      "rotadores externos del hombro (parte de atrás del hombro)"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de pie con los brazos doblados por detrás del cuerpo y las palmas juntas, pegadas a la espalda, con los dedos hacia abajo.",
+      "Gira las muñecas para que los dedos apunten hacia arriba, llevando los codos hacia atrás."
+    ],
+    "respiracion": "Toma aire despacio mientras giras las muñecas.",
+    "volver": "Vuelve a la posición inicial despacio.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 33
+  },
+  {
+    "id": 74,
+    "nombre": "Hombros con toalla por encima de la cabeza",
+    "zona": "hombros",
+    "musculos": [
+      "rotadores externos del hombro (parte de atrás del hombro)"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [
+      "toalla"
+    ],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de pie con los pies separados al ancho de los hombros.",
+      "Sujeta con ambas manos una toalla lo bastante larga, por delante del cuerpo a la altura de las caderas, con las palmas hacia atrás y los pulgares hacia fuera, por debajo del agarre.",
+      "Con los brazos estirados, pásalos por encima de la cabeza hasta llevar la toalla por detrás del cuerpo, sin girar los brazos al llegar a la altura de los hombros."
+    ],
+    "respiracion": "Suelta el aire despacio mientras pasas los brazos por encima de la cabeza.",
+    "volver": "Toma aire despacio mientras vuelves a la posición de partida con el movimiento exactamente inverso.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 34
+  },
+  {
+    "id": 75,
+    "nombre": "Brazos arriba con manos entrelazadas",
+    "zona": "hombros",
+    "musculos": [
+      "extensores del hombro"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie y cruza una muñeca sobre la otra, entrelazando las manos.",
+      "Estira los brazos hacia arriba hasta que las manos queden por encima de la cabeza y un poco hacia atrás."
+    ],
+    "respiracion": "Toma aire despacio mientras estiras los brazos hacia arriba.",
+    "volver": "Suelta el aire despacio mientras vuelves a la posición de partida.",
+    "precauciones": [],
+    "variantes": [
+      "También puedes hacerlo en una silla."
+    ],
+    "duracionSegundos": 30,
+    "paginaLibro": 34
+  },
+  {
+    "id": 76,
+    "nombre": "Bíceps con apoyo en la mesa",
+    "zona": "brazos",
+    "musculos": [
+      "bíceps"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-silla",
+    "material": [
+      "silla",
+      "mesa"
+    ],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Siéntate con un brazo doblado en ángulo recto y el codo apoyado en una mesa. Sujeta la muñeca con la otra mano.",
+      "Con esa mano, intenta bajar la muñeca hasta la mesa mientras el bíceps hace fuerza en contra (contracción excéntrica).",
+      "Cuando el brazo quede completamente estirado, mantén el estiramiento unos segundos y después relaja el bíceps."
+    ],
+    "respiracion": "Suelta el aire despacio mientras bajas la muñeca hacia la mesa.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 34
+  },
+  {
+    "id": 77,
+    "nombre": "Tríceps con apoyo en la mesa",
+    "zona": "brazos",
+    "musculos": [
+      "tríceps"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [
+      "mesa"
+    ],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie frente a una mesa que te llegue a la altura de la cadera.",
+      "Apoya los antebrazos en la mesa con las palmas hacia arriba.",
+      "Inclina el cuerpo hacia delante, llevando los hombros hacia las muñecas."
+    ],
+    "respiracion": "Suelta el aire despacio mientras inclinas el cuerpo hacia delante.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 35
+  },
+  {
+    "id": 78,
+    "nombre": "Tríceps con toalla por la espalda",
+    "zona": "brazos",
+    "musculos": [
+      "tríceps"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [
+      "toalla"
+    ],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de pie y lleva un brazo doblado por detrás de la zona lumbar, con el antebrazo lo más alto que puedas.",
+      "Toma una toalla con la otra mano y lleva ese brazo por detrás de la cabeza, con el codo doblado.",
+      "Agarra la toalla también con la mano de abajo, lo más cerca posible de la otra mano.",
+      "Tira con ambas manos en sentidos contrarios."
+    ],
+    "respiracion": "Toma aire despacio mientras tiras con ambas manos en sentidos contrarios.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "Es más eficaz si apoyas el codo de arriba contra una pared."
+    ],
+    "duracionSegundos": 20,
+    "paginaLibro": 35
+  },
+  {
+    "id": 79,
+    "nombre": "Tríceps con manos entrelazadas por la espalda",
+    "zona": "brazos",
+    "musculos": [
+      "tríceps"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": true,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de pie y lleva un brazo doblado por detrás de la zona lumbar, con el antebrazo lo más alto que puedas.",
+      "Lleva el otro brazo por detrás de la cabeza, con el codo doblado, hasta entrelazar los dedos de ambas manos.",
+      "Tira con ambas manos en sentidos contrarios."
+    ],
+    "respiracion": "Toma aire despacio mientras tiras con ambas manos en sentidos contrarios.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "Es más eficaz si apoyas el codo de arriba contra una pared."
+    ],
+    "duracionSegundos": 20,
+    "paginaLibro": 35
+  },
+  {
+    "id": 80,
+    "nombre": "Extensores de la muñeca, de pie",
+    "zona": "munecas",
+    "musculos": [
+      "braquiorradial",
+      "extensores de la muñeca"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie con los brazos estirados hacia abajo y los dorsos de las muñecas tocándose.",
+      "Gira a la vez las muñecas y las manos, hasta que las palmas miren hacia fuera."
+    ],
+    "respiracion": "Suelta el aire despacio mientras giras las muñecas.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 36
+  },
+  {
+    "id": 81,
+    "nombre": "Extensores de la muñeca, de rodillas",
+    "zona": "munecas",
+    "musculos": [
+      "braquiorradial",
+      "extensores de la muñeca"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-rodillas",
+    "material": [],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de rodillas y apoya en el suelo el dorso de las manos, a la altura de los hombros, con las muñecas dobladas y los dedos apuntando hacia las rodillas.",
+      "Inclina el cuerpo hacia el suelo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras inclinas el cuerpo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 36
+  },
+  {
+    "id": 82,
+    "nombre": "Flexores de la muñeca con la otra mano",
+    "zona": "munecas",
+    "musculos": [
+      "flexores de la muñeca",
+      "dedos"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Coloca las manos al frente, cerca del tronco y a su altura, con los dedos hacia arriba.",
+      "Apoya la base de una mano sobre los dedos de la otra.",
+      "Presiona los dedos hacia atrás."
+    ],
+    "respiracion": "Suelta el aire despacio mientras presionas los dedos hacia atrás.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 36
+  },
+  {
+    "id": 83,
+    "nombre": "Flexores de la muñeca, dedos hacia delante",
+    "zona": "munecas",
+    "musculos": [
+      "flexores de la muñeca"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-rodillas",
+    "material": [],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de rodillas y apoya las palmas en el suelo, a la altura de los hombros, con los dedos apuntando hacia la cabeza.",
+      "Inclina el cuerpo hacia el suelo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras inclinas el cuerpo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 37
+  },
+  {
+    "id": 84,
+    "nombre": "Flexores de la muñeca, dedos hacia las rodillas",
+    "zona": "munecas",
+    "musculos": [
+      "flexores de la muñeca"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-rodillas",
+    "material": [],
+    "porLado": false,
+    "dificultad": 2,
+    "pasos": [
+      "Ponte de rodillas y apoya las palmas en el suelo, a la altura de los hombros, con los dedos apuntando hacia las rodillas.",
+      "Inclina el cuerpo hacia el suelo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras inclinas el cuerpo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 37
+  },
+  {
+    "id": 85,
+    "nombre": "Parte de atrás del cuello, boca arriba",
+    "zona": "cuello",
+    "musculos": [
+      "parte de atrás del cuello"
+    ],
+    "bloque": "especifico",
+    "posicion": "boca-arriba",
+    "material": [],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Acuéstate boca arriba con las rodillas dobladas y las manos entrelazadas detrás de la cabeza, por encima de la nuca.",
+      "Mantén los omóplatos apoyados en el suelo todo el tiempo; si se despegan, no hay estiramiento.",
+      "Con las manos, lleva la cabeza hacia el pecho."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas la cabeza hacia el pecho.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 37
+  },
+  {
+    "id": 86,
+    "nombre": "Parte de atrás del cuello, de pie",
+    "zona": "cuello",
+    "musculos": [
+      "parte de atrás del cuello"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie con las manos entrelazadas detrás de la cabeza, por encima de la nuca.",
+      "Mantén los hombros lo más bajos posible durante todo el ejercicio.",
+      "Con las manos, lleva la cabeza hacia abajo sin mover el tronco, hasta que la barbilla toque el pecho."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas la cabeza hacia abajo.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "También puedes hacerlo en una silla."
+    ],
+    "duracionSegundos": 30,
+    "paginaLibro": 38
+  },
+  {
+    "id": 87,
+    "nombre": "Parte de atrás del cuello, de rodillas",
+    "zona": "cuello",
+    "musculos": [
+      "parte de atrás del cuello"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-rodillas",
+    "material": [],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de rodillas con los brazos doblados, los codos y los antebrazos apoyados en el suelo y las manos al frente.",
+      "Coloca la cabeza entre los brazos.",
+      "Gira la cabeza hacia dentro, intentando tocar el pecho con la barbilla."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas la barbilla hacia el pecho.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 38
+  },
+  {
+    "id": 88,
+    "nombre": "Parte de atrás del cuello con pesos ligeros",
+    "zona": "cuello",
+    "musculos": [
+      "parte de atrás del cuello",
+      "trapecios"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [
+      "peso-ligero"
+    ],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie con los pies juntos y los brazos estirados junto al cuerpo, con una mancuerna ligera en cada mano (sirve un cartón de leche de un litro lleno).",
+      "Deja que los hombros bajen todo lo posible mientras bajas la barbilla hasta tocar el pecho."
+    ],
+    "respiracion": "Suelta el aire despacio mientras bajas los hombros y la barbilla.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 20,
+    "paginaLibro": 38
+  },
+  {
+    "id": 89,
+    "nombre": "Lado del cuello en una silla",
+    "zona": "cuello",
+    "musculos": [
+      "parte lateral del cuello"
+    ],
+    "bloque": "especifico",
+    "posicion": "sentado-silla",
+    "material": [
+      "silla"
+    ],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Siéntate en una silla y agarra el borde del asiento con una mano, para fijar el hombro de ese lado.",
+      "Pasa la otra mano por encima de la cabeza y sujétala.",
+      "Lleva la cabeza hacia el hombro del lado de la mano que la sujeta."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas la cabeza hacia el hombro.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 39
+  },
+  {
+    "id": 90,
+    "nombre": "Lado del cuello con el brazo a la espalda",
+    "zona": "cuello",
+    "musculos": [
+      "parte lateral del cuello"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": true,
+    "dificultad": 1,
+    "pasos": [
+      "Ponte de pie con los brazos por detrás de la espalda: uno doblado, con el dorso de la mano hacia el tronco, y la otra mano sujetando el codo.",
+      "Tira suavemente del codo hacia la mitad de la espalda; así el hombro de ese lado queda fijo.",
+      "Inclina la cabeza hacia el lado contrario al hombro fijo."
+    ],
+    "respiracion": "Suelta el aire despacio mientras inclinas la cabeza.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [
+      "Si no llegas a agarrar el codo con la otra mano, sujeta el antebrazo."
+    ],
+    "duracionSegundos": 20,
+    "paginaLibro": 39
+  },
+  {
+    "id": 91,
+    "nombre": "Parte delantera del cuello, de pie",
+    "zona": "cuello",
+    "musculos": [
+      "parte delantera del cuello"
+    ],
+    "bloque": "especifico",
+    "posicion": "de-pie",
+    "material": [],
+    "porLado": false,
+    "dificultad": 1,
+    "pasos": [
+      "Coloca una mano sobre la frente y lleva la cabeza con suavidad un poco hacia atrás.",
+      "Con cuidado, lleva la cabeza hacia atrás todo lo que puedas, sin mover el tronco."
+    ],
+    "respiracion": "Suelta el aire despacio mientras llevas la cabeza hacia atrás.",
+    "volver": "Vuelve a la posición inicial despacio, tomando aire profundamente.",
+    "precauciones": [],
+    "variantes": [],
+    "duracionSegundos": 30,
+    "paginaLibro": 39
+  }
+]

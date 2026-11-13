@@ -1,0 +1,289 @@
+[
+  {
+    "id": "antes-de-la-actividad",
+    "nombre": "Antes de la actividad",
+    "descripcion": "Hazla después de calentar unos minutos, antes de hacer ejercicio o antes de un día activo. Prepara tus músculos y articulaciones, de los pies al cuello, con ejercicios que puedes hacer casi todos de pie o en una silla.",
+    "intensidad": "normal",
+    "ejercicios": [
+      3,
+      4,
+      33,
+      37,
+      48,
+      50,
+      56,
+      16,
+      58,
+      60,
+      18,
+      19,
+      20,
+      21,
+      22,
+      68,
+      70,
+      71,
+      73,
+      75,
+      25,
+      24,
+      78,
+      79,
+      80,
+      82,
+      28,
+      86,
+      90,
+      91
+    ]
+  },
+  {
+    "id": "vuelta-a-la-calma",
+    "nombre": "Vuelta a la calma",
+    "descripcion": "Hazla al final del día o después de la actividad para que tus músculos vuelvan a su longitud normal y tu cuerpo y tu mente se relajen. Estira con menos intensidad que antes de la actividad: busca una sensación suave, nunca de esfuerzo.",
+    "intensidad": "suave",
+    "ejercicios": [
+      4,
+      33,
+      37,
+      48,
+      56,
+      16,
+      58,
+      61,
+      62,
+      63,
+      18,
+      20,
+      22,
+      66,
+      75,
+      86,
+      89,
+      91,
+      25,
+      77,
+      78,
+      79,
+      80,
+      82
+    ]
+  },
+  {
+    "id": "fundamentales",
+    "nombre": "Estiramientos fundamentales",
+    "descripcion": "Los 30 estiramientos básicos para mantener una buena forma física, recorriendo el cuerpo de los pies al cuello. Son fáciles de hacer sin ayuda y sirven para cualquier persona, haga o no deporte. Hazlos siempre después de calentar.",
+    "intensidad": "normal",
+    "ejercicios": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ]
+  },
+  {
+    "id": "zona-pies-tobillos",
+    "nombre": "Pies y tobillos",
+    "descripcion": "Estiramientos para los dedos, la planta del pie y los tobillos.",
+    "intensidad": "normal",
+    "ejercicios": [
+      1,
+      2,
+      3,
+      31,
+      32
+    ]
+  },
+  {
+    "id": "zona-piernas",
+    "nombre": "Piernas",
+    "descripcion": "Estiramientos para pantorrillas, muslos (parte delantera, trasera e interna) y la parte de atrás de las rodillas.",
+    "intensidad": "normal",
+    "ejercicios": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ]
+  },
+  {
+    "id": "zona-cadera-gluteos",
+    "nombre": "Cadera y glúteos",
+    "descripcion": "Estiramientos para los glúteos y los músculos que rodean la cadera.",
+    "intensidad": "normal",
+    "ejercicios": [
+      11,
+      50,
+      51,
+      53
+    ]
+  },
+  {
+    "id": "zona-zona-lumbar",
+    "nombre": "Zona lumbar",
+    "descripcion": "Estiramientos suaves para la parte baja de la espalda.",
+    "intensidad": "normal",
+    "ejercicios": [
+      12,
+      14,
+      56,
+      57
+    ]
+  },
+  {
+    "id": "zona-abdomen",
+    "nombre": "Abdomen",
+    "descripcion": "Estiramientos para los músculos abdominales.",
+    "intensidad": "normal",
+    "ejercicios": [
+      13,
+      52,
+      54,
+      55
+    ]
+  },
+  {
+    "id": "zona-espalda-alta",
+    "nombre": "Espalda alta",
+    "descripcion": "Estiramientos para la parte alta de la espalda, los costados del tronco y la zona entre los omóplatos.",
+    "intensidad": "normal",
+    "ejercicios": [
+      15,
+      16,
+      58,
+      59
+    ]
+  },
+  {
+    "id": "zona-pecho",
+    "nombre": "Pecho",
+    "descripcion": "Estiramientos para los músculos pectorales.",
+    "intensidad": "normal",
+    "ejercicios": [
+      17,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65
+    ]
+  },
+  {
+    "id": "zona-hombros",
+    "nombre": "Hombros",
+    "descripcion": "Estiramientos para la parte delantera, lateral y trasera de los hombros.",
+    "intensidad": "normal",
+    "ejercicios": [
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75
+    ]
+  },
+  {
+    "id": "zona-brazos",
+    "nombre": "Brazos",
+    "descripcion": "Estiramientos para bíceps y tríceps.",
+    "intensidad": "normal",
+    "ejercicios": [
+      24,
+      25,
+      76,
+      77,
+      78,
+      79
+    ]
+  },
+  {
+    "id": "zona-munecas",
+    "nombre": "Muñecas",
+    "descripcion": "Estiramientos para muñecas y antebrazos.",
+    "intensidad": "normal",
+    "ejercicios": [
+      26,
+      27,
+      80,
+      81,
+      82,
+      83,
+      84
+    ]
+  },
+  {
+    "id": "zona-cuello",
+    "nombre": "Cuello",
+    "descripcion": "Estiramientos para la parte de atrás, los lados y la parte delantera del cuello.",
+    "intensidad": "normal",
+    "ejercicios": [
+      28,
+      29,
+      30,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91
+    ]
+  }
+]

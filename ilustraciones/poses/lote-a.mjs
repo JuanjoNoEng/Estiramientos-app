@@ -195,8 +195,8 @@ export default {
     nombre: 'Abdominales',
     vista: 'lado',
     mira: -1,
-    torso: -116,
-    cuello: -126,
+    torso: -112,
+    cuello: -124,
     piernaN: { a: [48, 50], fin: 95 },
     piernaL: { a: [46, 48], fin: 95 },
     brazoN: { a: [-104, -104], fin: -104 },
@@ -204,7 +204,7 @@ export default {
     resaltar: ['abdomen'],
     objetos: J => {
       const m = J.brazoN.muneca, bx = m[0] - 1, by = m[1] - 4;
-      const px = Math.min(bx - 12, J.cabeza[0] - 15);
+      const px = Math.min(bx - 12, J.cabeza[0] - 18);
       return [
         { tipo: 'pared', x: px, lado: -1, arriba: by - 25 },
         { tipo: 'barra', x: bx, y: by, pared: px },
@@ -216,12 +216,13 @@ export default {
   14: {
     nombre: 'Zona lumbar',
     vista: 'lado',
-    torso: 57,
-    cuello: 92,
-    piernaN: { a: [88, 100], fin: 0 },
-    piernaL: { a: [90, 98], fin: 0 },
-    brazoN: { hacia: [9, 88], doblez: -1, fin: 0 },
-    brazoL: { hacia: [5, 88], doblez: -1, fin: 0 },
+    torso: 48,
+    cuello: 120,
+    piernaN: { a: [87, 94], fin: 0 },
+    piernaL: { a: [89, 92], fin: 0 },
+    // brazos estirados hasta el suelo (objetivo fuera de alcance: quedan rectos)
+    brazoN: { hacia: [44, 95], doblez: 1, fin: 0 },
+    brazoL: { hacia: [41, 95], doblez: 1, fin: 0 },
     resaltar: ['lumbar'],
   },
 

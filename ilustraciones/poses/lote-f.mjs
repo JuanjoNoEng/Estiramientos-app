@@ -8,6 +8,58 @@ const RODILLAS = {
 };
 const ANTEBRAZOS = ['brazoN.antebrazo', 'brazoN.mano', 'brazoL.antebrazo', 'brazoL.mano'];
 
+// Apaño: en vista lateral el brazo cercano nace en la base del cuello y tapa la banda coral de la nuca.
+// Esta función repite la geometría de cuelloGeo/bandaCuello de figura.mjs (lado nuca) para volver a pintar
+// la banda por encima del brazo con un objeto `svg`.
+const rad = g => (g * Math.PI) / 180;
+const f1 = v => (Math.round(v * 10) / 10).toString();
+function suave(pts) {
+  const m = pts.length;
+  let d = `M${f1(pts[0][0])} ${f1(pts[0][1])}`;
+  for (let i = 0; i < m; i++) {
+    const p0 = pts[(i - 1 + m) % m], p1 = pts[i], p2 = pts[(i + 1) % m], p3 = pts[(i + 2) % m];
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+    const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    d += `C${f1(c1[0])} ${f1(c1[1])} ${f1(c2[0])} ${f1(c2[1])} ${f1(p2[0])} ${f1(p2[1])}`;
+  }
+  return d + 'Z';
+}
+function nucaEncima(J, torsoA, id, mira = 1, lado = -1) {
+  const u = [Math.cos(rad(torsoA)), Math.sin(rad(torsoA))];
+  const v = [-u[1] * mira, u[0] * mira];
+  const P = (a, b) => [J.pelvis[0] + u[0] * a + v[0] * b, J.pelvis[1] + u[1] * a + v[1] * b];
+  const L = Math.hypot(J.cabeza[0] - J.base[0], J.cabeza[1] - J.base[1]);
+  const dn = [(J.cabeza[0] - J.base[0]) / L, (J.cabeza[1] - J.base[1]) / L];
+  const borde = s => {
+    let pn = [-dn[1], dn[0]];
+    if (pn[0] * v[0] + pn[1] * v[1] < 0) pn = [-pn[0], -pn[1]];
+    pn = [pn[0] * s, pn[1] * s];
+    const A = P(44, s * (s > 0 ? 9 : 9.5));
+    const H = [J.cabeza[0] - dn[0] * 12 * 0.45 + pn[0] * 12 * 0.6, J.cabeza[1] - dn[1] * 12 * 0.45 + pn[1] * 12 * 0.6];
+    const M = [(A[0] + H[0]) / 2 - pn[0] * 1.2, (A[1] + H[1]) / 2 - pn[1] * 1.2];
+    return [A, M, H];
+  };
+  const izq = borde(-1), der = borde(1);
+  const forma = suave([P(38, 0), ...izq, J.cabeza, der[2], der[1], der[0]]);
+  const [A, M, H] = lado < 0 ? izq : der;
+  const curva = t => [0, 1].map(k => (1 - t) ** 2 * A[k] + 2 * (1 - t) * t * (2 * M[k] - (A[k] + H[k]) / 2) + t * t * H[k]);
+  const l1 = [], l2 = [];
+  for (let i = 0; i <= 14; i++) {
+    const t = i / 14, p = curva(t), q = curva(Math.min(1, t + 0.01)), r0 = curva(Math.max(0, t - 0.01));
+    const d = [q[0] - r0[0], q[1] - r0[1]], n = Math.hypot(d[0], d[1]), w = 7.5 - 2.5 * t;
+    l1.push([p[0] - (d[1] / n) * w, p[1] + (d[0] / n) * w]);
+    l2.push([p[0] + (d[1] / n) * w, p[1] - (d[0] / n) * w]);
+  }
+  // Máscara: la banda no pisa la cabeza (en el dibujo normal la cabeza la tapa)
+  const [cx, cy] = J.cabeza.map(f1);
+  return {
+    tipo: 'svg', delante: true,
+    svg: `<clipPath id="${id}"><path d="${forma}"/></clipPath>` +
+      `<mask id="${id}-m"><rect x="-500" y="-500" width="1000" height="1000" fill="#fff"/><circle cx="${cx}" cy="${cy}" r="13.6" fill="#000"/></mask>` +
+      `<g mask="url(#${id}-m)"><path d="${suave([...l1, ...l2.reverse()])}" fill="#F08A5D" clip-path="url(#${id})"/></g>`,
+  };
+}
+
 export default {
   // 80 · Extensores de la muñeca, de pie: dorsos de las muñecas juntos, palmas hacia fuera
   80: {
@@ -99,8 +151,9 @@ export default {
     // Manos entrelazadas detrás de la cabeza (la cabeza las tapa), codos hacia arriba
     brazoN: { hacia: J => [J.cabeza[0] + 7, J.cabeza[1] + 6], doblez: -1, fin: -120 },
     brazoL: { hacia: J => [J.cabeza[0] + 7, J.cabeza[1] + 5], doblez: -1, fin: -120 },
-    orden: ['brazoL', 'brazoN', 'piernaL', 'torso', 'piernaN', 'cabeza'],
+    orden: ['brazoL', 'piernaL', 'torso', 'piernaN', 'brazoN', 'cabeza'],
     resaltar: ['cuello'],
+    objetos: J => [nucaEncima(J, 0, 'lote-f-nuca-85', -1)],
   },
 
   // 86 · Parte posterior del cuello, de pie con las manos entrelazadas en la nuca
@@ -108,13 +161,14 @@ export default {
     nombre: 'Parte posterior del cuello',
     vista: 'lado',
     torso: -90,
-    cuello: -25,
+    cuello: -30,
     piernaN: { a: [90, 90] },
     piernaL: { a: [90, 90] },
-    // Manos sobre la parte alta y posterior de la cabeza, codos hacia delante y abajo
-    brazoN: { hacia: J => [J.cabeza[0] - 1, J.cabeza[1] - 12], doblez: 1, fin: 25 },
-    brazoL: { hacia: J => [J.cabeza[0], J.cabeza[1] - 12.5], doblez: 1, fin: 25 },
+    // Manos sobre la parte alta y posterior de la cabeza, codos hacia delante
+    brazoN: { hacia: J => [J.cabeza[0] - 8, J.cabeza[1] - 6], doblez: 1, fin: -55 },
+    brazoL: { hacia: J => [J.cabeza[0] - 7, J.cabeza[1] - 7], doblez: 1, fin: -55 },
     resaltar: ['cuello'],
+    objetos: J => [nucaEncima(J, -90, 'lote-f-nuca-86')],
   },
 
   // 87 · Parte posterior del cuello, de rodillas con los antebrazos en el suelo y la barbilla al pecho
@@ -122,11 +176,12 @@ export default {
     nombre: 'Parte posterior del cuello',
     vista: 'lado',
     torso: 23,
-    cuello: 118,
+    cuello: 80,
     ...RODILLAS,
     brazoN: { a: [84, 0], fin: 0 },
     brazoL: { a: [86, 0], fin: 0 },
     resaltar: ['cuello'],
+    objetos: J => [nucaEncima(J, 23, 'lote-f-nuca-87')],
   },
 
   // 88 · Parte posterior del cuello, de pie con mancuernas, hombros caídos y barbilla al pecho
@@ -134,7 +189,7 @@ export default {
     nombre: 'Parte posterior del cuello',
     vista: 'lado',
     torso: -90,
-    cuello: -22,
+    cuello: -28,
     piernaN: { a: [90, 90] },
     piernaL: { a: [90, 90] },
     brazoN: { a: [93, 91], fin: 90 },
@@ -142,6 +197,7 @@ export default {
     resaltar: ['cuello'],
     objetos: J => [
       { tipo: 'mancuerna', x: J.brazoN.punta[0], y: J.brazoN.punta[1] - 3, ang: 0 },
+      nucaEncima(J, -90, 'lote-f-nuca-88'),
     ],
   },
 
@@ -153,10 +209,11 @@ export default {
     cuello: -62,
     piernaN: { a: [95, 90], fin: 115, escala: [1, 1, 0.5] },
     piernaL: { a: [85, 90], fin: 65, escala: [1, 1, 0.5] },
-    // Brazo bloqueado: codo junto a la cintura, antebrazo cruzando la espalda
-    brazoN: { a: [92, 0], fin: 0 },
-    // La otra mano sujeta el codo
-    brazoL: { hacia: J => [J.brazoN.codo[0] + 2, J.brazoN.codo[1] - 1], doblez: -1, fin: 180 },
+    espaldas: true,
+    // Brazo bloqueado: codo junto a la cintura, antebrazo cruzando la espalda con el dorso de la mano hacia el tronco
+    brazoN: { a: [93, 0], fin: 0 },
+    // La otra mano sujeta el codo y tira de él hacia el centro de la espalda
+    brazoL: { hacia: 'brazoN.codo+3,-1', doblez: -1, fin: 185 },
     resaltar: ['cuello'],
     objetos: J => [{ tipo: 'flecha', c: J.base, r: 40, de: -118, a: -76 }],
   },

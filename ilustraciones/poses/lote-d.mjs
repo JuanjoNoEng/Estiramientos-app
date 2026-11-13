@@ -61,7 +61,7 @@ const c55base = {
   const agarreL = mezcla(J.brazoL.hombro, J.brazoL.codo, 0.4);
   c55base.brazoN = { hacia: aLocal(p55, c55base, dx55, agarreN), doblez: -1, fin: 30 };
   c55base.brazoL = { hacia: aLocal(p55, c55base, dx55, agarreL), doblez: -1, fin: 30 };
-  p55.companero = { dx: dx55, pose: c55base, delante: true };
+  p55.companero = { dx: dx55, pose: c55base, delante: false };
 }
 
 // ---------- 59 · Romboides con compañero (tumbado en una mesa) ----------
@@ -74,13 +74,13 @@ const p59 = {
   piernaN: { a: [180, 180], fin: 180 },
   piernaL: { a: [179, 180], fin: 180 },
   // Codo flexionado, antebrazo descansando sobre la zona lumbar
-  brazoN: { hacia: [8, -12], doblez: -1, fin: 180 },
+  brazoN: { hacia: [10, -12], doblez: 1, fin: 180 },
   brazoL: { a: [176, 178], fin: 178 },
   sobreSuelo: 72,
   resaltar: ['espalda'],
   objetos: (J, sueloY) => [{ tipo: 'mesa', x1: -95, x2: 72, y: sueloY - 72, delante: true }],
 };
-const dx59 = 36;
+const dx59 = 42;
 const c59base = {
   vista: 'frente',
   torso: -90,
@@ -90,13 +90,12 @@ const c59base = {
 {
   const J = art(p59);
   const h = J.brazoN.hombro;
-  c59base.brazoN = { hacia: aLocal(p59, c59base, dx59, [h[0] - 9, h[1] - 10]), doblez: -1, fin: 60 };
-  c59base.brazoL = { hacia: aLocal(p59, c59base, dx59, [h[0] + 6, h[1] + 4]), doblez: 1, fin: 120 };
+  c59base.brazoN = { hacia: aLocal(p59, c59base, dx59, [h[0] - 9, h[1] - 10]), doblez: 1, fin: 60 };
+  c59base.brazoL = { hacia: aLocal(p59, c59base, dx59, [h[0] + 6, h[1] + 4]), doblez: -1, fin: 120 };
   p59.companero = { dx: dx59, pose: c59base, delante: false };
 }
 
 // ---------- 64 · Pectorales con compañero (sentado) ----------
-const brazoNuca = (J, lado) => J.cabeza; // marcador (no se usa)
 const p64 = {
   nombre: 'Pectorales',
   vista: 'lado',
@@ -112,8 +111,8 @@ const dx64 = -42;
 const c64base = {
   vista: 'lado',
   torso: -82,
-  piernaN: { a: [96, 90], fin: 0 },
-  piernaL: { a: [84, 92], fin: 0 },
+  piernaN: { a: [86, 96], fin: 0 },
+  piernaL: { a: [80, 94], fin: 0 },
 };
 {
   const J = art(p64);
@@ -143,8 +142,9 @@ export default {
     vista: 'frente',
     torso: 180,
     piernaN: { a: [1, 0], fin: 0, escala: [1, 1, 0.5] },
-    piernaL: { a: [84, 6], fin: 6, escala: [1, 1, 0.5] },
-    brazoN: { hacia: 'piernaL.rodilla+-2,-3', doblez: -1, fin: 20 },
+    piernaL: { a: [70, 4], fin: 4, escala: [1, 1, 0.5] },
+    // La mano contraria empuja la rodilla cruzada hacia el suelo
+    brazoN: { hacia: J => mezcla(J.piernaL.cadera, J.piernaL.rodilla, 0.78), doblez: -1, fin: 20 },
     orden: ['piernaN', 'torso', 'piernaL', 'brazoN', 'brazoL'],
     brazoL: { a: [-92, -90], fin: -90 },
     resaltar: ['gluteo'],
@@ -200,12 +200,14 @@ export default {
   56: {
     nombre: 'Región lumbar',
     vista: 'lado',
-    torso: 22,
-    cuello: 65,
-    piernaN: { a: [0, 100], fin: 0 },
-    piernaL: { a: [-2, 102], fin: 0 },
-    brazoN: { hacia: [50, 42], doblez: 1, fin: 0 },
-    brazoL: { hacia: [48, 42], doblez: 1, fin: 0 },
+    // Sentado en la silla, pecho apoyado sobre los muslos, cabeza colgando delante de las rodillas
+    torso: -14,
+    cuello: 62,
+    orden: ['brazoL', 'piernaL', 'piernaN', 'torso', 'brazoN'],
+    piernaN: { a: [2, 92], fin: 0 },
+    piernaL: { a: [0, 90], fin: 0 },
+    brazoN: { hacia: [56, 46], doblez: 1, fin: 80 },
+    brazoL: { hacia: [53, 46], doblez: 1, fin: 80 },
     resaltar: ['lumbar'],
     objetos: J => [{ tipo: 'silla', x: 16, y: 12, dir: 1 }],
   },
@@ -243,14 +245,18 @@ export default {
   60: {
     nombre: 'Pectorales',
     vista: 'lado',
-    torso: -122,
-    cuello: -110,
+    torso: -130,
+    cuello: -112,
     piernaN: { a: [2, 88], fin: 0 },
     piernaL: { a: [-4, 94], fin: 0 },
     brazoN: { hacia: J => [J.cabeza[0] - 8, J.cabeza[1] + 5], doblez: -1, escala: [0.7, 0.85, 1], fin: 20 },
     brazoL: { hacia: J => [J.cabeza[0] - 7, J.cabeza[1] + 3], doblez: -1, escala: [0.7, 0.85, 1], fin: 20 },
     resaltar: ['pecho'],
-    objetos: J => [{ tipo: 'silla', x: 18, y: 12, dir: 1, alto: 28 }],
+    // Respaldo bajo (a media espalda) con una toalla doblada encima
+    objetos: J => [
+      { tipo: 'silla', x: 12, y: 12, dir: 1, alto: 22 },
+      { tipo: 'toalla', puntos: [[-30, -3], [-28.5, -11.5], [-23, -12], [-21.5, -4]], delante: false },
+    ],
   },
 
   // 62 · Pectorales en el marco de la puerta: codos a la altura de los hombros

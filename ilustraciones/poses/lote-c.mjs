@@ -1,6 +1,13 @@
 // Tanda c: ver GUIA_POSES.md
 // Ejercicios 31–49 (sin el 48, aprobado en ejercicios.mjs): pies, tobillos y piernas.
 
+// Colchoneta vista desde arriba (para posturas tumbadas dibujadas en planta, sin línea de suelo)
+const esterilla = (x1, y1, x2, y2) => ({
+  tipo: 'svg',
+  svg: `<rect x="${x1}" y="${y1}" width="${x2 - x1}" height="${y2 - y1}" rx="8" fill="#7CC6A6" opacity=".22"/>`,
+  caja: [x1, y1, x2],
+});
+
 export default {
   // 31 · Arco plantar: sentado, pierna cruzada sobre la rodilla; tira de los dedos hacia la espinilla
   31: {
@@ -116,11 +123,11 @@ export default {
   38: {
     nombre: 'Flexores de las piernas',
     vista: 'lado',
-    torso: -22,
-    cuello: -10,
+    torso: -28,
+    cuello: -14,
     piernaN: { a: [0, 0], fin: -75 },
     // Pierna lejana doblada con el talón en la ingle (se ve plegada detrás)
-    piernaL: { a: [28, 178], escala: [0.6, 0.55, 0.6], fin: -100 },
+    piernaL: { a: [10, 176], escala: [0.6, 0.5, 0.5], fin: -100 },
     brazoN: { hacia: 'piernaN.tobillo+-3,-6', doblez: 1, fin: 60 },
     brazoL: { hacia: 'piernaN.tobillo+-6,-7', doblez: 1, fin: 60 },
     resaltar: ['piernaN.muslo'],
@@ -137,15 +144,16 @@ export default {
     brazoN: { hacia: [-14, -7], doblez: -1, fin: 0 },
     brazoL: { hacia: [-17, -9], doblez: -1, fin: 0 },
     resaltar: ['piernaN.muslo'],
-    objetos: J => [{ tipo: 'pared', x: J.piernaN.rodilla[0] + 7, lado: 1, arriba: J.piernaN.punta[1] - 34 }],
+    objetos: J => [{ tipo: 'pared', x: J.piernaN.rodilla[0] + 7, lado: 1, arriba: J.piernaN.punta[1] - 62 }],
   },
 
   // 40 · Flexores de las piernas (3): boca arriba, rodilla contraria doblada; tira de la pierna estirada hacia la cara
   40: {
     nombre: 'Flexores de las piernas',
     vista: 'lado',
-    torso: 168,
-    cuello: 155,
+    // Hombros y cabeza ligeramente despegados del suelo para llegar a la pantorrilla
+    torso: 191,
+    cuello: 205,
     mira: 1,
     piernaN: { a: [-115, -115], fin: 175 },
     piernaL: { hacia: [50, 6], doblez: -1, fin: 0 },
@@ -160,13 +168,125 @@ export default {
   41: {
     nombre: 'Flexores de las piernas',
     vista: 'lado',
-    torso: -32,
-    cuello: -20,
+    torso: -42,
+    cuello: -30,
     piernaL: { a: [0, 0], fin: -80 },
-    piernaN: { a: [97, 90], fin: 0 },
+    piernaN: { a: [95, 94], escala: [0.55, 1, 1], fin: 0 },
     brazoN: { hacia: J => [J.cabeza[0] - 9, J.cabeza[1] - 6], doblez: -1, escala: [0.75, 0.85, 1], fin: 60 },
     brazoL: { hacia: J => [J.cabeza[0] - 7, J.cabeza[1] - 9], doblez: -1, escala: [0.75, 0.85, 1], fin: 60 },
     resaltar: ['piernaL.muslo'],
     objetos: J => [{ tipo: 'banco', x1: -32, x2: J.piernaL.punta[0] + 6, y: 9 }],
+  },
+  // 42 · Aductores (1): boca arriba, plantas juntas y rodillas abiertas hacia el suelo (vista desde arriba)
+  42: {
+    nombre: 'Aductores',
+    vista: 'frente',
+    sinSuelo: true,
+    suelo: 96,
+    torso: 180,
+    // Rodillas muy abiertas hacia los lados, talones cerca de las nalgas
+    piernaN: { a: [60, -75], fin: 2 },
+    piernaL: { a: [-60, 75], fin: -2 },
+    brazoN: { a: [35, 30], fin: 30 },
+    brazoL: { a: [-35, -30], fin: -30 },
+    orden: ['brazoN', 'brazoL', 'torso', 'piernaN', 'piernaL'],
+    resaltar: ['piernaN.muslo', 'piernaL.muslo'],
+    objetos: J => [esterilla(J.cabeza[0] - 18, -62, J.piernaN.punta[0] + 22, 62)],
+  },
+
+  // 43 · Aductores (2): boca arriba, piernas en alto y abiertas, tirando de dos correas (vista desde arriba)
+  43: {
+    nombre: 'Aductores',
+    vista: 'frente',
+    sinSuelo: true,
+    suelo: 96,
+    torso: 180,
+    piernaN: { a: [62, 62], escala: [0.85, 0.85, 0.8], fin: 40 },
+    piernaL: { a: [-62, -62], escala: [0.85, 0.85, 0.8], fin: -40 },
+    brazoN: { hacia: [-6, 30], doblez: -1, fin: 40 },
+    brazoL: { hacia: [-6, -30], doblez: 1, fin: -40 },
+    resaltar: ['piernaN.muslo', 'piernaL.muslo'],
+    objetos: J => [
+      esterilla(J.cabeza[0] - 18, J.piernaL.punta[1] - 12, J.piernaN.punta[0] + 16, J.piernaN.punta[1] + 12),
+      { tipo: 'correa', puntos: [J.brazoN.punta, [J.piernaN.tobillo[0] - 4, J.piernaN.tobillo[1] + 2], [J.piernaN.punta[0] - 2, J.piernaN.punta[1] + 3]] },
+      { tipo: 'correa', puntos: [J.brazoL.punta, [J.piernaL.tobillo[0] - 4, J.piernaL.tobillo[1] - 2], [J.piernaL.punta[0] - 2, J.piernaL.punta[1] - 3]] },
+    ],
+  },
+
+  // 44 · Aductores (3): sentado con las piernas muy abiertas, tronco girado y estirado sobre una pierna (de frente)
+  44: {
+    nombre: 'Aductores',
+    vista: 'frente',
+    torso: -32,
+    cuello: -18,
+    piernaL: { a: [4, 4], escala: [0.82, 0.82, 1], fin: -80 },
+    piernaN: { a: [167, 167], escala: [0.82, 0.82, 1], fin: -100 },
+    // Brazo de arriba por encima de la cabeza hasta el pie; el de abajo sujeta el pie por dentro
+    brazoN: { hacia: 'piernaL.punta+-3,2', doblez: 1, fin: 10 },
+    brazoL: { hacia: 'piernaL.tobillo+-5,-3', doblez: 1, fin: -20 },
+    orden: ['brazoL', 'piernaN', 'piernaL', 'torso', 'brazoN'],
+    resaltar: ['piernaN.muslo', 'piernaL.muslo'],
+  },
+
+  // 45 · Aductores (4): sentado contra la pared en mariposa, plantas juntas, manos en los pies (de frente)
+  45: {
+    nombre: 'Aductores',
+    vista: 'frente',
+    torso: -90,
+    cuello: -90,
+    // Rodillas abiertas a los lados, pies juntos delante (más cerca, por eso más abajo)
+    piernaN: { a: [184, 23], escala: [0.75, 1, 0.5], fin: 90 },
+    piernaL: { a: [-4, 157], escala: [0.75, 1, 0.5], fin: 90 },
+    brazoN: { hacia: 'piernaN.tobillo+-3,-9', doblez: 1, fin: 75 },
+    brazoL: { hacia: 'piernaL.tobillo+3,-9', doblez: -1, fin: 105 },
+    resaltar: ['piernaN.muslo', 'piernaL.muslo'],
+    objetos: (J, suelo) => [{
+      tipo: 'svg',
+      svg: `<rect x="-95" y="${suelo - 118}" width="190" height="118" fill="#DDE8E5"/><line x1="-95" y1="${suelo - 0.5}" x2="95" y2="${suelo - 0.5}" stroke="#BFD3CE" stroke-width="2"/>`,
+      caja: [-80, suelo - 100, 80],
+    }],
+  },
+
+  // 46 · Cuádriceps (1): boca abajo, talón hacia el glúteo sujetando el tobillo
+  46: {
+    nombre: 'Cuádriceps',
+    vista: 'lado',
+    torso: 180,
+    mira: -1,
+    piernaL: { a: [0, 0], fin: 15 },
+    piernaN: { a: [1, -157], fin: -95 },
+    brazoN: { hacia: 'piernaN.tobillo+-4,1', doblez: -1, fin: 0 },
+    brazoL: { a: [8, 2], fin: 2 },
+    resaltar: ['piernaN.muslo'],
+    objetos: J => [{ tipo: 'colchoneta', x1: J.cabeza[0] - 16, x2: J.piernaL.punta[0] + 10 }],
+  },
+
+  // 47 · Cuádriceps (2): tumbado de lado, brazo de abajo como almohada; talón al glúteo (vista desde arriba)
+  47: {
+    nombre: 'Cuádriceps',
+    vista: 'lado',
+    sinSuelo: true,
+    suelo: 96,
+    torso: 180,
+    mira: 1,
+    piernaL: { a: [0, 0], fin: -88 },
+    piernaN: { a: [4, 162], fin: 150 },
+    brazoN: { hacia: 'piernaN.tobillo+-3,-2', doblez: -1, fin: 30 },
+    brazoL: { a: [182, 178], fin: 178 },
+    resaltar: ['piernaN.muslo'],
+    objetos: J => [esterilla(J.brazoL.punta[0] - 10, -34, J.piernaL.punta[0] + 14, 34)],
+  },
+
+  // 49 · Cuádriceps (4): de pie, de espaldas a un taburete, empeine apoyado en el borde
+  49: {
+    nombre: 'Cuádriceps',
+    vista: 'lado',
+    torso: -86,
+    piernaL: { a: [84, 99], fin: 0 },
+    piernaN: { a: [115, 190], fin: 172 },
+    brazoN: { hacia: [5, -8], doblez: 1, fin: 120 },
+    brazoL: { hacia: [3, -10], doblez: 1, fin: 120 },
+    resaltar: ['piernaN.muslo'],
+    objetos: J => [{ tipo: 'banqueta', x: J.piernaN.tobillo[0] + 7, y: J.piernaN.tobillo[1] + 5, dir: 1, ancho: 32 }],
   },
 };

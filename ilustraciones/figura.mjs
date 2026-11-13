@@ -427,7 +427,8 @@ export function dibujar(pose, opciones = {}) {
 
   const ANCHO = opciones.ancho ?? 280, ALTO = opciones.alto ?? 220, MARGEN = 14;
   const bw = maxX - minX, bh = sueloY - minY;
-  const esc = Math.min(1, (ANCHO - 2 * MARGEN) / bw, (ALTO - 2 * MARGEN) / bh);
+  // zoomMax > 1 permite agrandar figuras pequeñas (tumbadas, encogidas) para que llenen el cuadro
+  const esc = Math.min(opciones.zoomMax ?? 1, (ANCHO - 2 * MARGEN) / bw, (ALTO - 2 * MARGEN) / bh);
   const vbW = ANCHO / esc, vbH = ALTO / esc;
   const vbX = (minX + maxX) / 2 - vbW / 2;
   const vbY = sueloY + MARGEN / esc - vbH;

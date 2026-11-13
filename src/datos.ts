@@ -67,7 +67,7 @@ export const ZONAS: { id: Zona; nombre: string; ejemplo: number }[] = [
   { id: 'zona-lumbar', nombre: 'Zona lumbar', ejemplo: 56 },
   { id: 'cadera-gluteos', nombre: 'Cadera y glúteos', ejemplo: 51 },
   { id: 'piernas', nombre: 'Piernas', ejemplo: 48 },
-  { id: 'pies-tobillos', nombre: 'Pies y tobillos', ejemplo: 4 },
+  { id: 'pies-tobillos', nombre: 'Pies y tobillos', ejemplo: 31 },
 ];
 export const nombreZona = (z: Zona) => ZONAS.find(x => x.id === z)?.nombre ?? z;
 
@@ -97,7 +97,7 @@ export function svgEjercicio(id: number, clave = ''): string | null {
   const pose = (POSES as Record<number, unknown>)[id];
   if (!pose) return null;
   const k = `${id}-${clave}`;
-  if (!cacheSVG.has(k)) cacheSVG.set(k, dibujar(pose, { id: `e${id}${clave}`, titulo: ejercicio(id)?.nombre }));
+  if (!cacheSVG.has(k)) cacheSVG.set(k, dibujar(pose, { id: `e${id}${clave}`, titulo: ejercicio(id)?.nombre, zoomMax: 1.5 }));
   return cacheSVG.get(k)!;
 }
 

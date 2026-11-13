@@ -1,0 +1,84 @@
+{
+  "seguridad": {
+    "antesDeEmpezar": [
+      "Calienta siempre los músculos que vas a estirar, por ejemplo con unos minutos de trote suave. Nunca estires un músculo frío.",
+      "Si nunca has hecho estiramientos, es normal sentir algunas molestias al principio, porque tus músculos no están acostumbrados. Calentar antes ayuda a reducirlas.",
+      "Aprende bien la técnica de cada ejercicio antes de hacerlo. Si alguno te resulta difícil o tienes dudas sobre cómo hacerlo, cámbialo por otro parecido y consulta con Andrey.",
+      "Avanza poco a poco, de una sesión a otra y también dentro de cada sesión: empieza despacio y ve aumentando de forma gradual."
+    ],
+    "noEstirarSi": [
+      "Tienes osteoporosis.",
+      "Tienes una lesión, una infección, una inflamación o un esguince en la zona que vas a estirar.",
+      "Has tenido hace poco una rotura muscular o una fractura en esa zona.",
+      "Un hueso bloquea el movimiento de esa zona, ya sea por una malformación o por tu constitución.",
+      "La articulación ha perdido estabilidad.",
+      "Notas que has perdido de repente movilidad o amplitud de movimiento en una articulación."
+    ],
+    "pararSi": [
+      "Sientes un dolor agudo en la articulación o en los músculos que estás estirando.",
+      "Sientes un estiramiento excesivo. Si estás haciendo el ejercicio con ayuda de otra persona, avísale de inmediato.",
+      "Tienes dudas sobre lo que estás sintiendo. Detente y consulta con Andrey."
+    ],
+    "consejos": [
+      "Estira con regularidad, también en casa, y siempre después de calentar. Si interrumpes tu rutina sin haberlo previsto, tendrás que empezar de cero al retomarla.",
+      "Estira despacio y sin rebotes ni sacudidas.",
+      "En la mayoría de los ejercicios, suelta el aire despacio mientras estiras y toma aire profundamente al volver. Algunos tienen otra indicación: síguela.",
+      "Vuelve a la posición inicial todavía más despacio de lo que estiraste.",
+      "Recorre el cuerpo en orden, de los pies a la cabeza o al revés, estirando seguidos los músculos que están conectados.",
+      "Los estiramientos dan mejores resultados si los acompañas de ejercicios de fuerza, resistencia, equilibrio y agilidad.",
+      "Ante cualquier duda, consulta con Andrey."
+    ]
+  },
+  "tarjetas": [
+    {
+      "id": "que-es-flexibilidad",
+      "titulo": "¿Qué es la flexibilidad?",
+      "texto": "La flexibilidad es la capacidad de mover tus articulaciones en todo su rango de movimiento, con ayuda de tus músculos. Cada articulación tiene su propio rango, así que una puede ser muy flexible y otra estar rígida. Estirar sirve para ganar flexibilidad cuando eres joven, mantenerla en la edad adulta y evitar que se pierda con los años."
+    },
+    {
+      "id": "reflejo-estiramiento",
+      "titulo": "El reflejo de estiramiento",
+      "texto": "Cuando un músculo se estira, se contrae por sí solo para protegerse de un posible desgarro: es el reflejo de estiramiento. Si estiras con regularidad, el músculo se acostumbra a alargarse y ese reflejo tarda más en aparecer. Así ganas amplitud de movimiento con menos riesgo de bloqueos o lesiones."
+    },
+    {
+      "id": "estatico-dinamico",
+      "titulo": "Estático y dinámico",
+      "texto": "En el estiramiento estático llevas el músculo hasta su punto máximo y mantienes la posición; es el método más seguro y eficaz, y es el que te enseña esta app. El dinámico se hace en movimiento, siempre controlado y sin rebotes, aumentando la velocidad poco a poco. Si combinas los dos, empieza por el estático: te da más amplitud para el dinámico."
+    },
+    {
+      "id": "sin-rebotes",
+      "titulo": "Evita los rebotes",
+      "texto": "Los estiramientos balísticos, con rebotes o sacudidas, son los que más riesgo de lesión tienen. No ayudan a que tus tejidos se adapten y hacen que el reflejo de estiramiento salte antes. Además, pueden causar dolores, molestias y tendinitis, así que estira siempre con movimientos lentos y controlados."
+    },
+    {
+      "id": "pasivo-activo",
+      "titulo": "Pasivo y activo",
+      "texto": "En el estiramiento pasivo te relajas y algo externo hace el trabajo: la gravedad, el peso de tu cuerpo o un compañero. Es útil cuando un músculo está tenso y no logras relajarlo, pero tiene más riesgo porque no controlas la fuerza. En el activo usas tus propios músculos: llegas menos lejos, pero mejora más tu rendimiento y no necesitas ayuda."
+    },
+    {
+      "id": "beneficios",
+      "titulo": "Lo que ganas al estirar",
+      "texto": "Además de mejorar tu flexibilidad, estirar con regularidad te ayuda a moverte con más eficacia y menos esfuerzo, y reduce el riesgo de lesiones como esguinces y desgarros. También disminuye mucho los problemas de espalda y las sobrecargas musculares por exceso de actividad. Y te deja menos tensión, menos cansancio y más relajación física y mental."
+    },
+    {
+      "id": "calentar-antes",
+      "titulo": "Calienta antes de estirar",
+      "texto": "Nunca estires músculos fríos. Calentar sube la temperatura del cuerpo y el ritmo del corazón, lleva más sangre a los músculos y les ayuda a relajarse mejor. Unos minutos de trote suave bastan para preparar tus músculos y evitar molestias."
+    },
+    {
+      "id": "vuelta-a-la-calma",
+      "titulo": "La vuelta a la calma",
+      "texto": "Después de la actividad, unos estiramientos suaves ayudan a tu cuerpo a volver a su ritmo normal, tanto en lo físico como en lo mental. Llevan músculos y articulaciones a un estado de relajación y longitud normal. Hazlos con menos intensidad que los de antes de la actividad: son imprescindibles para mantener tu flexibilidad."
+    },
+    {
+      "id": "respiracion",
+      "titulo": "Respira mientras estiras",
+      "texto": "En casi todos los ejercicios, suelta el aire despacio mientras haces el estiramiento. Para volver a la posición inicial, muévete con calma mientras tomas aire profundamente. Algunos ejercicios tienen una respiración distinta: sigue siempre la indicación de cada uno."
+    },
+    {
+      "id": "constancia",
+      "titulo": "La constancia cuenta",
+      "texto": "Estirar de vez en cuando sirve de poco: hazlo con regularidad, también en casa y siempre después de calentar. Si dejas tu rutina por un tiempo, tendrás que empezar de nuevo desde el principio. Los estiramientos funcionan mejor si los acompañas de ejercicios de fuerza, resistencia, equilibrio y agilidad."
+    }
+  ]
+}
