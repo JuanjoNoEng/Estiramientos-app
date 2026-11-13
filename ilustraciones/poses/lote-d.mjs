@@ -27,7 +27,7 @@ function enColchoneta(pose, m = 10) {
   for (const k of ['brazoN', 'brazoL']) pts.push(J[k].codo, J[k].muneca, J[k].punta);
   const x1 = Math.min(...pts.map(p => p[0])) - m - 6, x2 = Math.max(...pts.map(p => p[0])) + m + 6;
   const y1 = Math.min(...pts.map(p => p[1])) - m - 4, y2 = Math.max(...pts.map(p => p[1])) + m + 4;
-  const mat = { tipo: 'svg', delante: false, caja: [x1, y1, x2],
+  const mat = { tipo: 'svg', fijo: true, delante: false, caja: [x1, y1, x2],
     svg: `<rect x="${x1.toFixed(1)}" y="${y1.toFixed(1)}" width="${(x2 - x1).toFixed(1)}" height="${(y2 - y1).toFixed(1)}" rx="10" fill="#7CC6A6" opacity=".22"/>` };
   const previos = pose.objetos;
   return { ...pose, sinSuelo: true, suelo: y2 - 2, objetos: (J2, ...r) => [mat, ...(previos ? previos(J2, ...r) : [])] };

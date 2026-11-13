@@ -162,7 +162,7 @@ El motor interpola los ángulos de cada articulación. Los objetos, el suelo y l
 - **Punto de apoyo:** por defecto es la articulación más baja de la postura final (un pie, una rodilla…).
   Si no es la adecuada, indica en la postura **final** `ancla: 'piernaL.punta'`, o en la inicial `ancla`
   para cambiarla solo en la animación. Es el punto que se queda clavado: sin `ancla`, el punto más bajo sigue tocando el suelo; con `ancla`, ese punto queda fijo en horizontal y en vertical (útil sobre mesas y bancos).
-- Los objetos que se llevan en la mano o se dibujan sobre el cuerpo (`toalla`, `correa`, `palo`, `mancuerna`, `svg`) se recalculan en cada fotograma; los demás quedan fijos.
+- Los objetos que se llevan en la mano o se dibujan sobre el cuerpo (`toalla`, `correa`, `palo`, `mancuerna`, `svg`) se recalculan en cada fotograma; los demás quedan fijos. Un `svg` que no debe moverse (una colchoneta) lleva `fijo: true`.
 
 ### Qué movimiento dibujar
 

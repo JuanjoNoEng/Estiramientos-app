@@ -540,7 +540,7 @@ export function animacion(inicio, fin, opciones = {}) {
     let lista;
     try { lista = fin.objetos(Jm, P.sueloY, P.comp?.Jg); } catch { return P.objetos; }
     if (!Array.isArray(lista) || lista.length !== P.objetos.length) return P.objetos;
-    return lista.map((o, k) => (MOVILES.has(o.tipo) && o.tipo === P.objetos[k].tipo ? o : P.objetos[k]));
+    return lista.map((o, k) => (MOVILES.has(o.tipo) && !o.fijo && o.tipo === P.objetos[k].tipo ? o : P.objetos[k]));
   }
   // Cámara fija que abarca todo el recorrido
   const caja = { ...P.caja };

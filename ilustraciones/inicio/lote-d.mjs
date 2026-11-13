@@ -16,8 +16,8 @@ export default {
   },
   53: {
     ancla: 'pelvis',
-    torso: -90,
-    cuello: -82,
+    torso: -88,
+    cuello: -76,
   },
   54: {
     torso: -5,
@@ -35,8 +35,6 @@ export default {
     ancla: 'pelvis',
     torso: -55,
     cuello: -40,
-    piernaN: { a: [8, 92], fin: 0 },
-    piernaL: { a: [6, 90], fin: 0 },
     brazoN: { a: [88, 84], fin: 84 },
     brazoL: { a: [91, 86], fin: 86 },
   },
@@ -54,9 +52,10 @@ export default {
     brazoL: { hacia: [19.7, -11.3], doblez: 1, escala: [1, 0.5, 0.6], fin: -150 },
   },
   59: {
+    ancla: 'pelvis',
     torso: 2,
     cuello: 0,
-    brazoN: { hacia: [12, -9], doblez: 1, fin: 180 },
+    brazoN: { hacia: [2, -12], doblez: 1, escala: [1, 0.84, 1], fin: 180 },
   },
   60: {
     ancla: 'pelvis',

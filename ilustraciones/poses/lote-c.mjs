@@ -3,7 +3,7 @@
 
 // Colchoneta vista desde arriba (para posturas tumbadas dibujadas en planta, sin línea de suelo)
 const esterilla = (x1, y1, x2, y2) => ({
-  tipo: 'svg',
+  tipo: 'svg', fijo: true,
   svg: `<rect x="${x1}" y="${y1}" width="${x2 - x1}" height="${y2 - y1}" rx="8" fill="#7CC6A6" opacity=".22"/>`,
   caja: [x1, y1, x2],
 });

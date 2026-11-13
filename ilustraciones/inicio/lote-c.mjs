@@ -33,7 +33,8 @@ export default {
     torso: -78,
     cuello: -66,
     piernaL: { hacia: [71.5, 13.6], doblez: -1, escala: [0.75, 0.75, 1], fin: -50 },
-    piernaN: { hacia: [-5.1, 5.6], doblez: 1, escala: [0.75, 0.8, 0.8], fin: -70 },
+    // Rodilla y pie de la pierna doblada en el mismo sitio del suelo (las caderas giran con el tronco en vista frontal)
+    piernaN: { a: [152.1, -12], escala: [0.72, 0.8, 0.8], fin: -70 },
     brazoL: { hacia: 'piernaL.rodilla+12,-4', doblez: -1, fin: -10 },
   },
   // 37 · Parte superior de la pierna: caderas más altas; al estirar, baja las caderas sin despegar los pies

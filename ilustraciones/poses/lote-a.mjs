@@ -111,7 +111,7 @@ export default {
     objetos: J => {
       const x0 = J.brazoN.punta[0] - 10, x1 = J.piernaN.punta[0] + 14;
       return [{
-        tipo: 'svg', delante: false, caja: [x0, -62, x1],
+        tipo: 'svg', fijo: true, delante: false, caja: [x0, -62, x1],
         svg: `<rect x="${x0.toFixed(1)}" y="-60" width="${(x1 - x0).toFixed(1)}" height="120" rx="10" fill="#7CC6A6" opacity=".22"/>`,
       }];
     },
