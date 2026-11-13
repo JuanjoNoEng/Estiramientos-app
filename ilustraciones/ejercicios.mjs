@@ -31,13 +31,18 @@ export const POSES = {
   89: {
     vista: 'frente',
     torso: -90,
-    cuello: -64,
+    cuello: -60,
     piernaN: { a: [128, 93], escala: [0.42, 0.95, 0.55], fin: 120 },
     piernaL: { a: [52, 87], escala: [0.42, 0.95, 0.55], fin: 60 },
-    brazoN: { hacia: [-28, 11], doblez: -1, fin: 92 },
-    brazoL: { a: [-66, 196], fin: 212 },
+    brazoN: { hacia: [-31, 8], doblez: -1, fin: 95 },
+    // Codo arriba y afuera, antebrazo por encima de la cabeza, mano en la oreja contraria
+    brazoL: { a: [-64, 184], fin: 172 },
+    orden: ['piernaN', 'piernaL', 'torso', 'brazoN', 'brazoL', 'cabeza'],
     resaltar: ['cuello'],
-    objetos: () => [{ tipo: 'sillaFrente', x: 0, y: 6, ancho: 64 }],
+    objetos: J => [
+      { tipo: 'sillaFrente', x: 0, y: 6, ancho: 64 },
+      { tipo: 'flecha', c: J.base, r: 40, de: -122, a: -80 },
+    ],
   },
 
   // 61 · Pectorales en el marco de la puerta

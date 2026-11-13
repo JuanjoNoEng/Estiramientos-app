@@ -15,7 +15,9 @@ export const PALETA = {
   suelo: '#E2ECE9',
   accesorio: '#7CC6A6',   // toalla, palo, mancuerna
   flecha: '#F08A5D',
+  fondo: '#FBF7F1',       // color de la tarjeta donde se muestra la figura
 };
+const CONTORNO = 3.2;
 
 // Proporciones (unidades del dibujo; una persona mide ~175)
 export const LARGO = { cuello: 9, torso: 50, brazo: 28, antebrazo: 25, mano: 8, muslo: 43, pierna: 41, pie: 14 };
@@ -279,8 +281,10 @@ export function dibujar(pose, opciones = {}) {
         if (estirado) piezas.push({ d: capsula(sum(J.base, angulo(J.base, estirado), dist(J.base, estirado) * 0.75), 4.5, J.cabeza, 5.5), color: PALETA.resalte });
         piezas.push({ d: capsula(J.base, 6, J.cabeza, 6), color: PALETA.resalte });
       }
+      if (!orden.includes('cabeza')) piezas.push({ cabeza: true });
+    } else if (k === 'cabeza') {
       piezas.push({ cabeza: true });
-    } else piezas.push(...miembro(k.replace(/[NL]$/, ''), k.slice(-1)));
+    } else piezas.push({ grupo: miembro(k.replace(/[NL]$/, ''), k.slice(-1)) });
   }
 
   // Caja de la figura (para apoyarla en el suelo y encuadrar)
@@ -310,8 +314,13 @@ export function dibujar(pose, opciones = {}) {
 
   const svgObj = capa => objetos.filter(o => DELANTE.has(o.tipo) === (capa === 'adelante')).map(o => OBJETOS[o.tipo](o, sueloY)).join('');
   const cuerpo = piezas.map(p => {
-    if (p.cabeza) return `<circle cx="${n(J.cabeza[0])}" cy="${n(J.cabeza[1])}" r="${R.cabeza}" fill="${col('cabeza')}"/>`;
+    if (p.cabeza) return `<circle cx="${n(J.cabeza[0])}" cy="${n(J.cabeza[1])}" r="${R.cabeza}" fill="${col('cabeza')}" stroke="${PALETA.fondo}" stroke-width="${CONTORNO}" paint-order="stroke"/>`;
     if (p.zona) return `<path d="${zonaTronco(p.zona, J, torsoA, mira, vista)}" fill="${PALETA.resalte}" clip-path="url(#${opciones.id || 'f'}-torso)"/>`;
+    if (p.grupo) {
+      // Contorno color fondo alrededor del miembro completo: lo separa de lo que tiene detrás
+      const borde = p.grupo.map(q => `<path d="${q.d}" fill="${PALETA.fondo}" stroke="${PALETA.fondo}" stroke-width="${CONTORNO}" stroke-linejoin="round"/>`).join('');
+      return '<g>' + borde + p.grupo.map(q => `<path d="${q.d}" fill="${q.color}"/>`).join('') + '</g>';
+    }
     return `<path d="${p.d}" fill="${p.color}"/>`;
   }).join('');
   const sueloSVG = pose.sinSuelo ? '' : `<line x1="${n(vbX + 12 / esc)}" y1="${n(sueloY + 2)}" x2="${n(vbX + vbW - 12 / esc)}" y2="${n(sueloY + 2)}" stroke="${PALETA.suelo}" stroke-width="4" stroke-linecap="round"/>`;
