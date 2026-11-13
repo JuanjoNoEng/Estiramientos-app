@@ -200,6 +200,22 @@ function zonaTronco(nombre, J, torsoA, mira, vista) {
     return contorno(pts);
   }
   if (vista === 'frente') lado = 'ambos';
+  // Vista lateral: mancha ovalada sobre el músculo (se recorta con la silueta del tronco, sin cortes rectos)
+  const OVALOS = {
+    pecho: [0.74, 10, 13, 10], abdomen: [0.34, 9, 14, 9], lumbar: [0.12, -10, 14, 9],
+    espalda: [0.72, -10, 15, 9], gluteo: [-0.08, -11, 11, 10], costado: [0.5, 0, 22, 12],
+  };
+  if (vista !== 'frente' && OVALOS[nombre]) {
+    const [t, v, rx, ry] = OVALOS[nombre];
+    const ux = [Math.cos(rad(torsoA)), Math.sin(rad(torsoA))];
+    const vx = [-ux[1] * mira, ux[0] * mira];
+    const c = [J.pelvis[0] + ux[0] * LARGO.torso * t + vx[0] * v, J.pelvis[1] + ux[1] * LARGO.torso * t + vx[1] * v];
+    const pts = Array.from({ length: 24 }, (_, i) => {
+      const a = (i / 24) * 2 * Math.PI;
+      return [c[0] + ux[0] * Math.cos(a) * rx + vx[0] * Math.sin(a) * ry, c[1] + ux[1] * Math.cos(a) * rx + vx[1] * Math.sin(a) * ry];
+    });
+    return contorno(pts);
+  }
   const dir = rad(torsoA);
   const fr = [-Math.sin(dir) * mira, Math.cos(dir) * mira]; // normal hacia el frente
   const a = sum(J.pelvis, torsoA, LARGO.torso * t0), b = sum(J.pelvis, torsoA, LARGO.torso * t1);

@@ -39,10 +39,11 @@ export default {
   },
   // 37 · Parte superior de la pierna: caderas más altas; al estirar, baja las caderas sin despegar los pies
   37: {
-    torso: -42,
-    cuello: -32,
-    piernaN: { a: [62, 104], fin: 0 },
-    piernaL: { a: [60, 106], fin: 0 },
+    // Tronco algo más inclinado para que las manos lleguen a las rodillas, más altas
+    torso: -28,
+    cuello: -20,
+    piernaN: { a: [60, 104], fin: 0 },
+    piernaL: { a: [58, 106], fin: 0 },
   },
   // 38 · Flexores (1): ya sujeta el tobillo con el tronco más alto; al estirar, baja el tronco hacia el muslo
   38: {
@@ -68,16 +69,19 @@ export default {
   },
   // 42 · Aductores (1): rodillas más levantadas y juntas; al estirar, se abren hacia el suelo
   42: {
+    ancla: 'pelvis', // vista cenital: la pelvis queda quieta sobre la esterilla
     piernaN: { a: [35, -69], escala: [0.7, 0.51, 1], fin: 2 },
     piernaL: { a: [-35, 69], escala: [0.7, 0.51, 1], fin: -2 },
   },
-  // 43 · Aductores (2): piernas ya abiertas, manos algo más adelante en las correas; al estirar, tira de ellas
+  // 43 · Aductores (2): piernas en alto casi juntas (más escorzadas), correas en las manos; al estirar, las abre
   43: {
-    brazoN: { hacia: [0.3, 37.5], doblez: -1, fin: 45 },
-    brazoL: { hacia: [0.3, -37.5], doblez: 1, fin: -45 },
+    ancla: 'pelvis', // vista cenital: la pelvis queda quieta sobre la esterilla
+    piernaN: { a: [34, 34], escala: [0.66, 0.66, 0.8], fin: 25 },
+    piernaL: { a: [-34, -34], escala: [0.66, 0.66, 0.8], fin: -25 },
   },
   // 44 · Aductores (3): sentado más erguido, una mano en la rodilla y el otro brazo arriba; al estirar, se extiende hasta el pie
   44: {
+    ancla: 'pelvis', // en la final el codo queda más bajo que los talones: sin ancla el cuerpo saltaría al final
     torso: -62,
     cuello: -58,
     // En vista frontal las caderas giran con el tronco: piernas rectas reajustadas para que los talones sigan en el suelo
@@ -96,9 +100,10 @@ export default {
   46: {
     piernaN: { a: [1, -146], fin: -88 },
   },
-  // 47 · Cuádriceps (2): rodilla algo adelantada y menos doblada; al estirar, talón al glúteo y muslo hacia atrás
+  // 47 · Cuádriceps (2): rodilla algo adelantada y menos doblada (la mano ya sujeta el tobillo); al estirar, talón al glúteo y muslo hacia atrás
   47: {
-    piernaN: { a: [-8, 145], fin: 158 },
+    ancla: 'pelvis', // vista cenital: la pelvis queda quieta sobre la esterilla
+    piernaN: { a: [-4, 146], fin: 150 },
   },
   // 49 · Cuádriceps (4): rodilla de apoyo estirada; al estirar, la flexiona ligeramente
   49: {
