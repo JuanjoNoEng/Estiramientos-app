@@ -227,8 +227,10 @@ export default {
     cuelloLado: 'frente',
     piernaN: { a: [88, 90] },
     piernaL: { a: [90, 90] },
-    brazoN: { hacia: J => [J.cabeza[0] + 9, J.cabeza[1] - 10], doblez: 1, fin: -165 },
+    // Mano sobre la frente empujando la cabeza hacia atrás, codo hacia delante y arriba
+    brazoN: { hacia: J => [J.cabeza[0] + 12, J.cabeza[1] - 9], doblez: 1, fin: -150, escala: [1, 1, 1.4] },
     brazoL: { a: [95, 92] },
     resaltar: ['cuello'],
+    objetos: J => [nucaEncima(J, -94, 'lote-f-cuello-91', 1, 1)],
   },
 };
