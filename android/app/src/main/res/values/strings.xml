@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Estiramientos</string>
+    <string name="title_activity_main">Estiramientos</string>
+    <string name="package_name">com.andreyhernandez.estiramientos</string>
+    <string name="custom_url_scheme">com.andreyhernandez.estiramientos</string>
+</resources>

@@ -32,12 +32,13 @@ interface Estado {
   modo: 'completo' | 'sencillo';
   animaciones: boolean;
   instalacionVista: boolean;
+  recordatorio: string | null; // 'HH:MM' o null
 }
 
 const CLAVE = 'estiramientos-ah-v1';
 const inicial: Estado = {
   bienvenida: false, favoritos: [], sesiones: [], propias: [], voz: true, sonido: true,
-  vibracion: true, letra: 'normal', modo: 'completo', animaciones: true, instalacionVista: false,
+  vibracion: true, letra: 'normal', modo: 'completo', animaciones: true, instalacionVista: false, recordatorio: null,
 };
 
 function leer(): Estado {

@@ -6,6 +6,8 @@ import { Icono } from '../componentes/Icono';
 import { Animada } from '../componentes/Animada';
 import { decir, callar, desbloquearAudio, pitido, vibrar, AVISO, nombreEj, lecturaEj } from '../voz';
 import { obtenerRutina } from './Rutinas';
+import { KeepAwake } from '@capacitor-community/keep-awake';
+import { esApp } from '../plataforma';
 
 interface Paso {
   tipo: 'prep' | 'estira' | 'cambio';
@@ -35,6 +37,12 @@ function construirPasos(ids: number[], duracion?: number): Paso[] {
 
 function usePantallaEncendida(activa: boolean) {
   useEffect(() => {
+    // En la APK de Android se usa el plugin nativo (el navegador interno no siempre lo permite)
+    if (esApp()) {
+      if (!activa) return;
+      KeepAwake.keepAwake().catch(() => {});
+      return () => { KeepAwake.allowSleep().catch(() => {}); };
+    }
     if (!activa || !('wakeLock' in navigator)) return;
     let lock: WakeLockSentinel | null = null;
     const pedir = () => navigator.wakeLock.request('screen').then(l => (lock = l)).catch(() => {});

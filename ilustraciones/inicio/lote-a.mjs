@@ -61,9 +61,13 @@ export default {
     cuello: -85,
   },
 
-  // 9 · Triángulo con la rodilla de atrás doblada y el talón levantado; al estirar, se extiende y el talón baja
+  // 9 · Triángulo con las dos piernas casi estiradas y el talón de atrás levantado, caderas algo más adelantadas;
+  //     al estirar, la rodilla de delante se dobla, las caderas bajan hacia atrás y el talón presiona el suelo
   9: {
-    piernaN: { hacia: [-37.8, 67.9], doblez: -1, fin: 25 },
+    piernaN: { hacia: [-44.8, 69.5], doblez: -1, fin: 40 },
+    piernaL: { hacia: [-34.0, 68.0], doblez: -1, fin: 55 },
+    brazoN: { hacia: [50.2, 78.8], doblez: 1, fin: 5 },
+    brazoL: { hacia: [52.3, 77.0], doblez: 1, fin: 5 },
   },
 
   // 10 · Sentado más erguido sujetando la toalla, pies relajados; al estirar, el tronco baja y los pies vienen hacia él
@@ -76,7 +80,7 @@ export default {
 
   // 11 · Pierna flexionada con el pie bajo; al estirar, el pie sube hacia el hombro contrario
   11: {
-    piernaN: { hacia: [-8, -22], doblez: -1, escala: [0.8, 1, 0.7], fin: -10 },
+    piernaN: { a: [-148, -2], escala: [0.8, 1, 0.7], fin: -12 },
   },
 
   // 12 · Boca arriba con la pelvis en el suelo y los talones cerca de las nalgas; al estirar, rodillas al pecho

@@ -442,7 +442,8 @@ function pintar(P, cam, opciones = {}, cuerpo = null) {
   const { pose, comp, objetos, sueloY, id } = P;
   const fig = cuerpo?.fig ?? P.fig;
   const mover = cuerpo ? `translate(${n(cuerpo.dx)} ${n(cuerpo.dy)})` : '';
-  const svgObj = capa => objetos.filter(o => delante(o) === (capa === 'adelante')).map(o => OBJETOS[o.tipo](o, sueloY)).join('');
+  const lista = cuerpo?.objetos ?? objetos;
+  const svgObj = capa => lista.filter(o => delante(o) === (capa === 'adelante')).map(o => OBJETOS[o.tipo](o, sueloY)).join('');
   const compSVG = comp ? `<g transform="translate(${n(comp.dx)} ${n(comp.dy)})">${comp.svg}</g>` : '';
   const compDelante = pose.companero?.delante;
   const figSVG = mover ? `<g transform="${mover}">${fig.svg}</g>` : fig.svg;
@@ -473,6 +474,7 @@ function explicita(pose) {
   }
   return r;
 }
+const MOVILES = new Set(['toalla', 'correa', 'palo', 'mancuerna', 'svg']);
 const mezclaAng = (a, b, t) => a + ((((b - a) % 360) + 540) % 360 - 180) * t;
 const mezclaNum = (a, b, t) => a + (b - a) * t;
 
@@ -495,14 +497,18 @@ function puntoAncla(pose, J) {
 export function animacion(inicio, fin, opciones = {}) {
   const P = preparar(fin, opciones);
   const B = explicita(fin);
-  const A = explicita({ ...fin, ...inicio, objetos: undefined });
+  // Lo que no indica la postura inicial se toma de la final (también la escala de cada miembro)
+  const ini = { ...fin, ...inicio, objetos: undefined };
+  for (const m of MIEMBROS) if (inicio[m]) ini[m] = { escala: fin[m]?.escala, ...inicio[m] };
+  const A = explicita(ini);
   const base = { ...fin };
   delete base.objetos;
   // En vista frontal, la franja del cuello se queda en el lado que tiene en la postura final
   const tF = fin.torso ?? -90;
   if ((fin.vista || 'lado') === 'frente') base.ladoCuello = fin.ladoCuello ?? ((fin.cuello ?? tF) > tF ? -1 : 1);
   // El punto de apoyo puede indicarse en la postura inicial o en la final
-  const refAncla = { ancla: inicio.ancla ?? fin.ancla ?? nombreAncla(P.J) };
+  const anclaExplicita = inicio.ancla ?? fin.ancla;
+  const refAncla = { ancla: anclaExplicita ?? nombreAncla(P.J) };
   const anclaFin = puntoAncla(refAncla, P.J);
   const posePara = t => {
     const x = { ...base, torso: mezclaAng(A.torso, B.torso, t), cuello: mezclaAng(A.cuello, B.cuello, t) };
@@ -520,8 +526,22 @@ export function animacion(inicio, fin, opciones = {}) {
     const fig = construirFigura(pose, P.id, PALETA);
     const ancla = puntoAncla(refAncla, fig.J);
     // x: el apoyo no se desliza; y: el punto más bajo sigue tocando la misma altura que al final
-    return { fig, dx: anclaFin[0] - ancla[0], dy: P.fig.caja.maxY - fig.caja.maxY };
+    // Con un ancla indicada, ese punto queda clavado (x e y); si no, el punto más bajo sigue en el suelo
+    const dx = anclaFin[0] - ancla[0];
+    const dy = anclaExplicita ? anclaFin[1] - ancla[1] : P.fig.caja.maxY - fig.caja.maxY;
+    return { fig, dx, dy, objetos: objetosFotograma(fig.J, dx, dy) };
   };
+  // Los objetos que se llevan en la mano (toalla, palo, mancuerna…) o que se dibujan sobre el cuerpo (svg)
+  // se recalculan en cada fotograma; el resto (pared, silla, mesa, flechas…) queda fijo.
+  function objetosFotograma(Jf, dx, dy) {
+    if (typeof fin.objetos !== 'function') return P.objetos;
+    const mover = v => (Array.isArray(v) && v.length === 2 && typeof v[0] === 'number' ? [v[0] + dx, v[1] + dy] : v);
+    const Jm = JSON.parse(JSON.stringify(Jf), (k, v) => mover(v));
+    let lista;
+    try { lista = fin.objetos(Jm, P.sueloY, P.comp?.Jg); } catch { return P.objetos; }
+    if (!Array.isArray(lista) || lista.length !== P.objetos.length) return P.objetos;
+    return lista.map((o, k) => (MOVILES.has(o.tipo) && o.tipo === P.objetos[k].tipo ? o : P.objetos[k]));
+  }
   // Cámara fija que abarca todo el recorrido
   const caja = { ...P.caja };
   for (const t of [0, 0.25, 0.5, 0.75]) {

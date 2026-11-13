@@ -1,7 +1,41 @@
 import { useEstado, actualizar } from '../almacen';
 import { Cabecera } from '../componentes/comunes';
 import { Icono } from '../componentes/Icono';
+import { useState } from 'react';
 import { esApp } from '../plataforma';
+import { programarNotificacion, quitarNotificacion, descargarEventoCalendario } from '../recordatorio';
+
+function Recordatorio() {
+  const e = useEstado();
+  const [hora, setHora] = useState(e.recordatorio ?? '08:00');
+  const [mensaje, setMensaje] = useState('');
+  const nativo = esApp();
+  const activar = async () => {
+    if (nativo) {
+      const ok = await programarNotificacion(hora);
+      if (!ok) { setMensaje('No se pudo activar. Revisa que la app tenga permiso para enviar notificaciones.'); return; }
+      actualizar(() => ({ recordatorio: hora }));
+      setMensaje(`Listo: te avisaremos todos los días a las ${hora}.`);
+    } else {
+      descargarEventoCalendario(hora);
+      actualizar(() => ({ recordatorio: hora }));
+      setMensaje('Abre el archivo descargado y toca «Agregar» para guardarlo en tu calendario.');
+    }
+  };
+  const quitar = async () => { await quitarNotificacion(); actualizar(() => ({ recordatorio: null })); setMensaje('Recordatorio quitado.'); };
+  return (
+    <section className="tarjeta seccion">
+      <h2>Recordatorio diario</h2>
+      <p className="sub">{nativo ? 'Tu teléfono te avisará cada día para que no olvides estirar.' : 'Agrega un aviso diario en el calendario de tu teléfono.'}</p>
+      <label className="campo">¿A qué hora?
+        <input type="time" value={hora} onChange={ev => setHora(ev.target.value)} style={{ fontSize: '1.4rem', fontWeight: 600 }} />
+      </label>
+      <button className="boton grande ancho" onClick={activar}><Icono nombre="reloj" /> {nativo ? (e.recordatorio ? 'Cambiar la hora' : 'Activar recordatorio') : 'Agregar a mi calendario'}</button>
+      {nativo && e.recordatorio && <button className="boton claro" onClick={quitar}>Quitar recordatorio</button>}
+      {mensaje && <p className="tarjeta menta" role="status">{mensaje}</p>}
+    </section>
+  );
+}
 
 function Interruptor({ titulo, detalle, valor, cambiar }: { titulo: string; detalle?: string; valor: boolean; cambiar: (v: boolean) => void }) {
   return (
@@ -32,6 +66,8 @@ export function Ajustes() {
           ))}
         </div>
       </section>
+
+      <Recordatorio />
 
       <section className="tarjeta seccion" style={{ gap: 0 }}>
         <Interruptor titulo="Modo sencillo" detalle="Inicio con un solo botón grande para tus ejercicios." valor={e.modo === 'sencillo'} cambiar={v => actualizar(() => ({ modo: v ? 'sencillo' : 'completo' }))} />

@@ -32,15 +32,21 @@ export default {
     brazoN: { hacia: J => [J.piernaL.tobillo[0] - 96.4, J.piernaL.tobillo[1] - 40.1], doblez: 1, fin: 70 },
     brazoL: { hacia: J => [J.piernaL.tobillo[0] - 98.4, J.piernaL.tobillo[1] - 41.1], doblez: 1, fin: 70 },
   },
-  22: {},
-  23: {
-    brazoN: { a: [-92, -92], fin: -92 },
-    brazoL: { a: [-90, -90], fin: -90 },
+  22: {
+    torso: -89,
+    piernaN: { a: [99.5, 94.5], fin: 115, escala: [1, 1, 0.5] },
+    piernaL: { a: [86.5, 98.5], fin: 65, escala: [0.96, 1, 0.5] },
+    brazoL: { a: [0, -90], escala: [0.85, 1, 1], fin: -90 },
   },
+  // 23 · Brazos verticales con la mancuerna que bajan por detrás de la cabeza (la pelvis queda fija sobre la mesa)
+  23: { ancla: 'pelvis', brazoN: { a: [-92, -92], fin: -92 }, brazoL: { a: [-90, -90], fin: -90 } },
   24: {
-    brazoN: { a: [-122, 30], fin: 40 },
+    brazoN: { a: [-126, 28], fin: 38 },
   },
-  25: {},
+  25: {
+    torso: -93,
+    brazoN: { hacia: [-52.5, -35.6], doblez: 1, fin: 172 },
+  },
   26: {
     brazoN: { a: [180, 82], fin: 100 },
     brazoL: { a: [0, 98], fin: 80 },
@@ -60,6 +66,7 @@ export default {
     cuello: -80,
   },
   30: {
-    cuello: 160,
+    ancla: 'pelvis',
+    cuello: 150,
   },
 };
