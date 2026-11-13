@@ -123,13 +123,13 @@ export default {
   38: {
     nombre: 'Flexores de las piernas',
     vista: 'lado',
-    torso: -28,
-    cuello: -14,
+    torso: -34,
+    cuello: -20,
     piernaN: { a: [0, 0], fin: -75 },
     // Pierna lejana doblada con el talón en la ingle (se ve plegada detrás)
     piernaL: { a: [10, 176], escala: [0.6, 0.5, 0.5], fin: -100 },
-    brazoN: { hacia: 'piernaN.tobillo+-3,-6', doblez: 1, fin: 60 },
-    brazoL: { hacia: 'piernaN.tobillo+-6,-7', doblez: 1, fin: 60 },
+    brazoN: { hacia: 'piernaN.tobillo+-4,-6', doblez: 1, fin: 45 },
+    brazoL: { hacia: 'piernaN.tobillo+-7,-7', doblez: 1, fin: 45 },
     resaltar: ['piernaN.muslo'],
   },
 
