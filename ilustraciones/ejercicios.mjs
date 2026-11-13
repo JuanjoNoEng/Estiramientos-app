@@ -2,7 +2,15 @@
 // Cada pose: vista ('lado' | 'frente'), torso/cuello (ángulos), piernaN/piernaL/brazoN/brazoL, resaltar, objetos.
 // Miembro: { a: [ángulo1, ángulo2], fin } o { hacia: [x, y] | 'referencia', doblez: ±1, fin }.
 
-export const POSES = {
+import loteA from './poses/lote-a.mjs';
+import loteB from './poses/lote-b.mjs';
+import loteC from './poses/lote-c.mjs';
+import loteD from './poses/lote-d.mjs';
+import loteE from './poses/lote-e.mjs';
+import loteF from './poses/lote-f.mjs';
+
+// Posturas de muestra ya aprobadas (tienen prioridad sobre las tandas)
+const MUESTRA = {
   // 4 · Pantorrillas: inclinado contra la pared, pierna trasera estirada
   4: {
     vista: 'lado',
@@ -57,3 +65,5 @@ export const POSES = {
     objetos: J => [{ tipo: 'puerta', x1: J.brazoN.codo[0] + 2, x2: J.brazoL.codo[0] - 2, arriba: J.cabeza[1] - 45 }],
   },
 };
+
+export const POSES = { ...loteA, ...loteB, ...loteC, ...loteD, ...loteE, ...loteF, ...MUESTRA };

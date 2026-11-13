@@ -92,6 +92,7 @@ function cadena(base, spec, largos, J, finalPorDefecto) {
 
 export function resolver(pose) {
   const vista = pose.vista || 'lado';
+  const mira = pose.mira ?? 1;
   const torsoA = pose.torso ?? -90;
   const cuelloA = pose.cuello ?? torsoA;
   const pelvis = [0, 0];
@@ -118,7 +119,7 @@ export function resolver(pose) {
     const esPierna = miembro.startsWith('pierna');
     const base0 = esPierna ? J['cadera' + lado] : J['hombro' + lado];
     const largos = esPierna ? [LARGO.muslo, LARGO.pierna, LARGO.pie] : [LARGO.brazo, LARGO.antebrazo, LARGO.mano];
-    const porDefecto = esPierna ? (spec.mira ?? 1) === 1 ? () => 0 : () => 180 : a2 => a2;
+    const porDefecto = esPierna ? (vista === 'frente' ? () => 90 : mira === 1 ? () => 0 : () => 180) : a2 => a2;
     const defecto = esPierna ? { a: [90, 90] } : { a: [100, 95] };
     const [b, p1, p2, p3, a3] = cadena(base0, ('a' in spec || 'hacia' in spec) ? spec : { ...defecto, ...spec }, largos, J, porDefecto);
     J[miembro] = esPierna ? { cadera: b, rodilla: p1, tobillo: p2, punta: p3, angPie: a3 } : { hombro: b, codo: p1, muneca: p2, punta: p3 };
@@ -269,7 +270,22 @@ const OBJETOS = {
   banqueta: (o, suelo) => OBJETOS.silla({ ...o, respaldo: false }, suelo),
   mesa: (o, suelo) => caja(o.x1 + 4, o.y + 4, 6, suelo - o.y - 4, 2) + caja(o.x2 - 10, o.y + 4, 6, suelo - o.y - 4, 2) + caja(o.x1, o.y, o.x2 - o.x1, 8, 3),
   colchoneta: (o, suelo) => `<rect x="${n(o.x1)}" y="${n(suelo - 5)}" width="${n(o.x2 - o.x1)}" height="6" rx="3" fill="${PALETA.accesorio}" opacity=".45"/>`,
-  barra: o => `<circle cx="${n(o.x)}" cy="${n(o.y)}" r="4" fill="${PALETA.objetoBorde}"/>`,
+  // Barra horizontal fija a una pared (vista lateral: se ve como un círculo con soporte)
+  barra: o => {
+    const sop = o.pared != null ? linea([[o.pared, o.y], [o.x, o.y]], PALETA.objetoBorde, 3) : '';
+    return sop + `<circle cx="${n(o.x)}" cy="${n(o.y)}" r="4.5" fill="${PALETA.objetoBorde}"/>`;
+  },
+  // Banco bajo (como una mesa baja): x1, x2, y (superficie)
+  banco: (o, suelo) => OBJETOS.mesa(o, suelo),
+  // Tabla inclinada / escalón en cuña: x1 (lado bajo), x2 (lado alto), alto
+  cuna: (o, suelo) => {
+    const a = o.alto ?? 12;
+    return `<path d="M${n(o.x1)} ${n(suelo)}L${n(o.x2)} ${n(suelo - (o.x2 > o.x1 ? 0 : a))}L${n(o.x2)} ${n(suelo - a)}Z" fill="${PALETA.objeto}" stroke="${PALETA.objetoBorde}" stroke-width="1.5" stroke-linejoin="round"/>`;
+  },
+  // Correa o cinta (como la toalla, más fina)
+  correa: o => linea(o.puntos, PALETA.accesorio, 3),
+  // Comodín: SVG libre (o.svg). capa: 'adelante' | 'atras' con o.delante
+  svg: o => o.svg,
   toalla: o => linea(o.puntos, PALETA.accesorio, 4.5),
   palo: o => linea([o.p1, o.p2], '#C9A27A', 4),
   mancuerna: o => `<g transform="translate(${n(o.x)} ${n(o.y)}) rotate(${n(o.ang ?? 0)})"><rect x="-9" y="-2" width="18" height="4" rx="2" fill="#8FA9A4"/><rect x="-11" y="-6" width="5" height="12" rx="2" fill="#6F8F89"/><rect x="6" y="-6" width="5" height="12" rx="2" fill="#6F8F89"/></g>`,
@@ -284,17 +300,20 @@ const OBJETOS = {
       linea([h1, p1, h2], PALETA.flecha, 2.6);
   },
 };
-const DELANTE = new Set(['toalla', 'palo', 'mancuerna', 'flecha']);
+const DELANTE = new Set(['toalla', 'palo', 'mancuerna', 'flecha', 'correa']);
+const delante = o => o.delante ?? DELANTE.has(o.tipo);
 
 // ---------- Render principal ----------
-export function dibujar(pose, opciones = {}) {
+const PALETA_COMPANERO = { cuerpo: '#8DB3AE', lejano: '#B7D0CC', resalte: '#8DB3AE', resalteLejano: '#B7D0CC' };
+
+// Construye las piezas de una figura. Devuelve el SVG del cuerpo, sus articulaciones, su caja y sus recortes.
+function construirFigura(pose, idp, pal) {
   const { J, vista, torsoA } = resolver(pose);
   const frente = vista === 'frente';
   const mira = pose.mira ?? 1;
   const resaltar = new Set(pose.resaltar || []);
-  const col = (id, lejano) => resaltar.has(id) ? (lejano ? PALETA.resalteLejano : PALETA.resalte) : (lejano ? PALETA.lejano : PALETA.cuerpo);
+  const col = (id, lejano) => resaltar.has(id) ? (lejano ? pal.resalteLejano : pal.resalte) : (lejano ? pal.lejano : pal.cuerpo);
 
-  const capas = { atras: [], torso: [], adelante: [] };
   const miembro = (tipo, lado) => {
     const lejano = !frente && lado === 'L';
     const id = tipo + lado;
@@ -302,8 +321,7 @@ export function dibujar(pose, opciones = {}) {
     const piezas = tipo === 'pierna'
       ? dibujarPierna(P, [col(id + '.muslo', lejano), col(id + '.pierna', lejano), col(id + '.pie', lejano)], frente)
       : dibujarBrazo(P, [col(id + '.brazo', lejano), col(id + '.antebrazo', lejano), col(id + '.mano', lejano)]);
-    // Un id sin sub-parte resalta el miembro entero
-    if (resaltar.has(id)) piezas.forEach(p => (p.color = lejano ? PALETA.resalteLejano : PALETA.resalte));
+    if (resaltar.has(id)) piezas.forEach(p => (p.color = lejano ? pal.resalteLejano : pal.resalte));
     return piezas;
   };
 
@@ -314,12 +332,12 @@ export function dibujar(pose, opciones = {}) {
   const geoCuello = cuelloGeo(J, vista, torsoA, mira);
   for (const k of orden) {
     if (k === 'torso') {
-      piezas.push({ d: torsoPath(J, vista, torsoA, mira), color: PALETA.cuerpo, torso: true });
-      piezas.push({ d: geoCuello.forma, color: PALETA.cuerpo });
+      piezas.push({ d: torsoPath(J, vista, torsoA, mira), color: pal.cuerpo });
+      piezas.push({ d: geoCuello.forma, color: pal.cuerpo });
       for (const z of pose.resaltar || []) if (ZONAS[z]) piezas.push({ zona: z });
       if (resaltar.has('cuello')) {
         const lado = frente ? ((pose.cuello ?? torsoA) > torsoA ? -1 : 1) : (pose.cuelloLado === 'frente' ? 1 : -1);
-        piezas.push({ d: bandaCuello(geoCuello, lado), color: PALETA.resalte, recorte: 'cuello' });
+        piezas.push({ d: bandaCuello(geoCuello, lado), color: pal.resalte, recorte: 'cuello' });
       }
       if (!orden.includes('cabeza')) piezas.push({ cabeza: true });
     } else if (k === 'cabeza') {
@@ -327,22 +345,57 @@ export function dibujar(pose, opciones = {}) {
     } else piezas.push({ grupo: miembro(k.replace(/[NL]$/, ''), k.slice(-1)) });
   }
 
-  // Caja de la figura (para apoyarla en el suelo y encuadrar)
-  let minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
-  const incluye = (p, r = 0) => { minX = Math.min(minX, p[0] - r); maxX = Math.max(maxX, p[0] + r); minY = Math.min(minY, p[1] - r); maxY = Math.max(maxY, p[1] + r); };
+  const caja = { minX: 1e9, maxX: -1e9, minY: 1e9, maxY: -1e9 };
+  const incluye = (p, r = 0) => { caja.minX = Math.min(caja.minX, p[0] - r); caja.maxX = Math.max(caja.maxX, p[0] + r); caja.minY = Math.min(caja.minY, p[1] - r); caja.maxY = Math.max(caja.maxY, p[1] + r); };
   incluye(J.cabeza, R.cabeza); incluye(J.pelvis, R.pelvis); incluye(J.pecho, R.pecho);
   for (const k of ['piernaN', 'piernaL']) { const P = J[k]; incluye(P.rodilla, R.rodilla); incluye(P.tobillo, R.tobillo); incluye(P.punta, R.punta); incluye(P.cadera, R.cadera); }
   for (const k of ['brazoN', 'brazoL']) { const P = J[k]; incluye(P.codo, R.codo); incluye(P.muneca, R.muneca); incluye(P.punta, R.mano); }
+
+  const tp = torsoPath(J, vista, torsoA, mira);
+  const defs = `<clipPath id="${idp}-torso"><path d="${tp}"/></clipPath><clipPath id="${idp}-cuello"><path d="${geoCuello.forma}"/></clipPath>`;
+  const svg = piezas.map(p => {
+    if (p.cabeza) return `<circle cx="${n(J.cabeza[0])}" cy="${n(J.cabeza[1])}" r="${R.cabeza}" fill="${col('cabeza')}" stroke="${PALETA.fondo}" stroke-width="${CONTORNO}" paint-order="stroke"/>`;
+    if (p.zona) return `<path d="${zonaTronco(p.zona, J, torsoA, mira, vista)}" fill="${pal.resalte}" clip-path="url(#${idp}-torso)"/>`;
+    if (p.grupo) {
+      // Contorno color fondo alrededor del miembro completo: lo separa de lo que tiene detrás
+      const borde = p.grupo.map(q => `<path d="${q.d}" fill="${PALETA.fondo}" stroke="${PALETA.fondo}" stroke-width="${CONTORNO}" stroke-linejoin="round"/>`).join('');
+      return '<g>' + borde + p.grupo.map(q => `<path d="${q.d}" fill="${q.color}"/>`).join('') + '</g>';
+    }
+    if (p.recorte) return `<path d="${p.d}" fill="${p.color}" clip-path="url(#${idp}-${p.recorte})"/>`;
+    return `<path d="${p.d}" fill="${p.color}"/>`;
+  }).join('');
+  return { J, caja, defs, svg };
+}
+
+export function dibujar(pose, opciones = {}) {
+  const id = opciones.id || 'f';
+  const fig = construirFigura(pose, id, PALETA);
+  const { J } = fig;
+  let { minX, maxX, minY, maxY } = fig.caja;
   const sueloY = (pose.suelo != null ? pose.suelo : maxY) + (pose.sobreSuelo ?? 0);
 
+  // Compañero (opcional): otra figura apoyada en el mismo suelo, desplazada dx respecto a la pelvis principal
+  let comp = null;
+  if (pose.companero) {
+    const c = pose.companero;
+    comp = construirFigura(c.pose, id + '-c', PALETA_COMPANERO);
+    const dx = c.dx ?? 60;
+    const dy = c.dy ?? (sueloY - comp.caja.maxY);
+    comp.dx = dx; comp.dy = dy;
+    minX = Math.min(minX, comp.caja.minX + dx); maxX = Math.max(maxX, comp.caja.maxX + dx);
+    minY = Math.min(minY, comp.caja.minY + dy);
+    // Articulaciones del compañero en coordenadas del dibujo (para objetos o para apuntar manos)
+    comp.Jg = JSON.parse(JSON.stringify(comp.J), (k, v) => Array.isArray(v) && v.length === 2 && typeof v[0] === 'number' ? [v[0] + dx, v[1] + dy] : v);
+  }
+
   // Objetos (pueden usar las articulaciones)
-  const objetos = typeof pose.objetos === 'function' ? pose.objetos(J, sueloY) : (pose.objetos || []);
+  const objetos = typeof pose.objetos === 'function' ? pose.objetos(J, sueloY, comp?.Jg) : (pose.objetos || []);
   for (const o of objetos) {
-    // Encuadre aproximado de cada objeto
     for (const v of ['x', 'x1', 'x2']) if (o[v] != null) { minX = Math.min(minX, o[v] - 12); maxX = Math.max(maxX, o[v] + 12); }
     if (o.tipo === 'silla' || o.tipo === 'banqueta') { const w = o.ancho ?? 40, d = o.dir ?? 1; minX = Math.min(minX, d === 1 ? o.x - w : o.x); maxX = Math.max(maxX, d === 1 ? o.x : o.x + w); }
     if (o.arriba != null) minY = Math.min(minY, o.arriba - 10);
     if (o.y != null) minY = Math.min(minY, o.y - (o.alto ?? 0));
+    if (o.caja) { minX = Math.min(minX, o.caja[0]); minY = Math.min(minY, o.caja[1]); maxX = Math.max(maxX, o.caja[2]); }
   }
 
   const ANCHO = opciones.ancho ?? 280, ALTO = opciones.alto ?? 220, MARGEN = 14;
@@ -352,23 +405,13 @@ export function dibujar(pose, opciones = {}) {
   const vbX = (minX + maxX) / 2 - vbW / 2;
   const vbY = sueloY + MARGEN / esc - vbH;
 
-  const svgObj = capa => objetos.filter(o => DELANTE.has(o.tipo) === (capa === 'adelante')).map(o => OBJETOS[o.tipo](o, sueloY)).join('');
-  const cuerpo = piezas.map(p => {
-    if (p.cabeza) return `<circle cx="${n(J.cabeza[0])}" cy="${n(J.cabeza[1])}" r="${R.cabeza}" fill="${col('cabeza')}" stroke="${PALETA.fondo}" stroke-width="${CONTORNO}" paint-order="stroke"/>`;
-    if (p.zona) return `<path d="${zonaTronco(p.zona, J, torsoA, mira, vista)}" fill="${PALETA.resalte}" clip-path="url(#${opciones.id || 'f'}-torso)"/>`;
-    if (p.grupo) {
-      // Contorno color fondo alrededor del miembro completo: lo separa de lo que tiene detrás
-      const borde = p.grupo.map(q => `<path d="${q.d}" fill="${PALETA.fondo}" stroke="${PALETA.fondo}" stroke-width="${CONTORNO}" stroke-linejoin="round"/>`).join('');
-      return '<g>' + borde + p.grupo.map(q => `<path d="${q.d}" fill="${q.color}"/>`).join('') + '</g>';
-    }
-    if (p.recorte) return `<path d="${p.d}" fill="${p.color}" clip-path="url(#${opciones.id || 'f'}-${p.recorte})"/>`;
-    return `<path d="${p.d}" fill="${p.color}"/>`;
-  }).join('');
+  const svgObj = capa => objetos.filter(o => delante(o) === (capa === 'adelante')).map(o => OBJETOS[o.tipo](o, sueloY)).join('');
+  const compSVG = comp ? `<g transform="translate(${n(comp.dx)} ${n(comp.dy)})">${comp.svg}</g>` : '';
+  const compDelante = pose.companero?.delante;
   const sueloSVG = pose.sinSuelo ? '' : `<line x1="${n(vbX + 12 / esc)}" y1="${n(sueloY + 2)}" x2="${n(vbX + vbW - 12 / esc)}" y2="${n(sueloY + 2)}" stroke="${PALETA.suelo}" stroke-width="4" stroke-linecap="round"/>`;
-  const tp = torsoPath(J, vista, torsoA, mira);
-  const clip = `<defs><clipPath id="${opciones.id || 'f'}-torso"><path d="${tp}"/></clipPath>` +
-    `<clipPath id="${opciones.id || 'f'}-cuello"><path d="${geoCuello.forma}"/></clipPath></defs>`;
+  const defs = `<defs>${fig.defs}${comp ? comp.defs : ''}</defs>`;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${n(vbX)} ${n(vbY)} ${n(vbW)} ${n(vbH)}" width="${ANCHO}" height="${ALTO}">` +
-    (opciones.titulo ? `<title>${opciones.titulo}</title>` : '') + clip + sueloSVG + svgObj('atras') + cuerpo + svgObj('adelante') + '</svg>';
+    (opciones.titulo ? `<title>${opciones.titulo}</title>` : '') + defs + sueloSVG + svgObj('atras') +
+    (compDelante ? '' : compSVG) + fig.svg + (compDelante ? compSVG : '') + svgObj('adelante') + '</svg>';
 }

@@ -19,9 +19,9 @@ const ids = Object.keys(POSES).map(Number).filter(i => !filtro || filtro.has(i))
 const fichas = [];
 for (const id of ids) {
   const nombre = `ej-${String(id).padStart(3, '0')}`;
-  const svg = dibujar(POSES[id], { id: nombre, titulo: INFO[id]?.nombre });
+  const svg = dibujar(POSES[id], { id: nombre, titulo: INFO[id]?.nombre ?? POSES[id].nombre });
   fs.writeFileSync(path.join(SVG_DIR, nombre + '.svg'), svg + '\n');
-  fichas.push(`<figure><div class="img">${svg}</div><figcaption><b>${id}</b> ${INFO[id]?.nombre ?? ''}</figcaption></figure>`);
+  fichas.push(`<figure><div class="img">${svg}</div><figcaption><b>${id}</b> ${INFO[id]?.nombre ?? POSES[id].nombre ?? ''}</figcaption></figure>`);
 }
 
 const salida = process.argv[2];
