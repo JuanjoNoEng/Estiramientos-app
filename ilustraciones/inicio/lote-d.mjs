@@ -48,8 +48,8 @@ export default {
   58: {
     torso: -60,
     cuello: -25,
-    brazoN: { hacia: [21.2, -10.6], doblez: 1, escala: [1, 0.5, 0.6], fin: -155 },
-    brazoL: { hacia: [19.7, -11.3], doblez: 1, escala: [1, 0.5, 0.6], fin: -150 },
+    brazoN: { hacia: [21.2, -10.6], doblez: -1, escala: [1, 0.5, 0.6], fin: -155 },
+    brazoL: { hacia: [19.7, -11.3], doblez: -1, escala: [1, 0.5, 0.6], fin: -150 },
   },
   59: {
     ancla: 'pelvis',
