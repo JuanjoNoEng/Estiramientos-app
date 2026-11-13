@@ -197,6 +197,46 @@ function zonaTronco(nombre, J, torsoA, mira, vista) {
   return 'M' + pts.map(p => n(p[0]) + ' ' + n(p[1])).join('L') + 'Z';
 }
 
+// Cuello anatómico: masa que baja en pendiente (trapecio) desde la base del cráneo hasta los hombros.
+// lado = -1 / +1 en el eje perpendicular al torso (vista lateral: +1 = frente, -1 = nuca).
+function cuelloGeo(J, vista, torsoA, mira) {
+  const u = [Math.cos(rad(torsoA)), Math.sin(rad(torsoA))];
+  const v = [-u[1] * mira, u[0] * mira];
+  const P = (a, b) => [J.pelvis[0] + u[0] * a + v[0] * b, J.pelvis[1] + u[1] * a + v[1] * b];
+  const dn = [(J.cabeza[0] - J.base[0]) / dist(J.base, J.cabeza), (J.cabeza[1] - J.base[1]) / dist(J.base, J.cabeza)];
+  const frente = vista === 'frente';
+  const borde = s => {
+    let pn = [-dn[1], dn[0]];
+    if (pn[0] * v[0] + pn[1] * v[1] < 0) pn = [-pn[0], -pn[1]];
+    pn = [pn[0] * s, pn[1] * s];
+    const A = frente ? P(45.5, s * 15) : P(44, s * (s > 0 ? 9 : 9.5));
+    const H = [J.cabeza[0] - dn[0] * R.cabeza * 0.45 + pn[0] * R.cabeza * (frente ? 0.62 : 0.6),
+               J.cabeza[1] - dn[1] * R.cabeza * 0.45 + pn[1] * R.cabeza * (frente ? 0.62 : 0.6)];
+    // punto medio hundido: la pendiente del trapecio es cóncava
+    const M = [(A[0] + H[0]) / 2 - pn[0] * (frente ? 2.2 : 1.2), (A[1] + H[1]) / 2 - pn[1] * (frente ? 2.2 : 1.2)];
+    return [A, M, H];
+  };
+  const izq = borde(-1), der = borde(1);
+  const fondo = P(38, 0), arriba = [J.cabeza[0], J.cabeza[1]];
+  const forma = contorno([fondo, izq[0], izq[1], izq[2], arriba, der[2], der[1], der[0]]);
+  return { forma, borde };
+}
+
+function bandaCuello(geo, lado) {
+  const [A, M, H] = geo.borde(lado);
+  const N = 14, l1 = [], l2 = [];
+  const curva = t => [(1 - t) ** 2 * A[0] + 2 * (1 - t) * t * (2 * M[0] - (A[0] + H[0]) / 2) + t * t * H[0],
+                      (1 - t) ** 2 * A[1] + 2 * (1 - t) * t * (2 * M[1] - (A[1] + H[1]) / 2) + t * t * H[1]];
+  for (let i = 0; i <= N; i++) {
+    const t = i / N, p = curva(t), q = curva(Math.min(1, t + 0.01)), r0 = curva(Math.max(0, t - 0.01));
+    const d = [q[0] - r0[0], q[1] - r0[1]], L = Math.hypot(d[0], d[1]);
+    const w = 7.5 - 2.5 * t;
+    l1.push([p[0] - (d[1] / L) * w, p[1] + (d[0] / L) * w]);
+    l2.push([p[0] + (d[1] / L) * w, p[1] - (d[0] / L) * w]);
+  }
+  return contorno([...l1, ...l2.reverse()]);
+}
+
 // ---------- Objetos ----------
 function caja(x, y, w, h, r = 3) {
   return `<rect x="${n(x)}" y="${n(y)}" width="${n(w)}" height="${n(h)}" rx="${r}" fill="${PALETA.objeto}" stroke="${PALETA.objetoBorde}" stroke-width="1.5"/>`;
@@ -271,15 +311,15 @@ export function dibujar(pose, opciones = {}) {
     ? ['piernaN', 'piernaL', 'torso', 'brazoN', 'brazoL']
     : ['brazoL', 'piernaL', 'torso', 'piernaN', 'brazoN']);
   const piezas = [];
+  const geoCuello = cuelloGeo(J, vista, torsoA, mira);
   for (const k of orden) {
     if (k === 'torso') {
-      piezas.push({ d: capsula(J.base, R.cuello, J.cabeza, R.cuello), color: col('cuello') });
       piezas.push({ d: torsoPath(J, vista, torsoA, mira), color: PALETA.cuerpo, torso: true });
+      piezas.push({ d: geoCuello.forma, color: PALETA.cuerpo });
       for (const z of pose.resaltar || []) if (ZONAS[z]) piezas.push({ zona: z });
       if (resaltar.has('cuello')) {
-        const estirado = frente ? ((pose.cuello ?? torsoA) > torsoA ? J.hombroN : J.hombroL) : null;
-        if (estirado) piezas.push({ d: capsula(sum(J.base, angulo(J.base, estirado), dist(J.base, estirado) * 0.75), 4.5, J.cabeza, 5.5), color: PALETA.resalte });
-        piezas.push({ d: capsula(J.base, 6, J.cabeza, 6), color: PALETA.resalte });
+        const lado = frente ? ((pose.cuello ?? torsoA) > torsoA ? -1 : 1) : (pose.cuelloLado === 'frente' ? 1 : -1);
+        piezas.push({ d: bandaCuello(geoCuello, lado), color: PALETA.resalte, recorte: 'cuello' });
       }
       if (!orden.includes('cabeza')) piezas.push({ cabeza: true });
     } else if (k === 'cabeza') {
@@ -321,10 +361,13 @@ export function dibujar(pose, opciones = {}) {
       const borde = p.grupo.map(q => `<path d="${q.d}" fill="${PALETA.fondo}" stroke="${PALETA.fondo}" stroke-width="${CONTORNO}" stroke-linejoin="round"/>`).join('');
       return '<g>' + borde + p.grupo.map(q => `<path d="${q.d}" fill="${q.color}"/>`).join('') + '</g>';
     }
+    if (p.recorte) return `<path d="${p.d}" fill="${p.color}" clip-path="url(#${opciones.id || 'f'}-${p.recorte})"/>`;
     return `<path d="${p.d}" fill="${p.color}"/>`;
   }).join('');
   const sueloSVG = pose.sinSuelo ? '' : `<line x1="${n(vbX + 12 / esc)}" y1="${n(sueloY + 2)}" x2="${n(vbX + vbW - 12 / esc)}" y2="${n(sueloY + 2)}" stroke="${PALETA.suelo}" stroke-width="4" stroke-linecap="round"/>`;
-  const clip = `<defs><clipPath id="${opciones.id || 'f'}-torso"><path d="${torsoPath(J, vista, torsoA, mira)}"/></clipPath></defs>`;
+  const tp = torsoPath(J, vista, torsoA, mira);
+  const clip = `<defs><clipPath id="${opciones.id || 'f'}-torso"><path d="${tp}"/></clipPath>` +
+    `<clipPath id="${opciones.id || 'f'}-cuello"><path d="${geoCuello.forma}"/></clipPath></defs>`;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${n(vbX)} ${n(vbY)} ${n(vbW)} ${n(vbH)}" width="${ANCHO}" height="${ALTO}">` +
     (opciones.titulo ? `<title>${opciones.titulo}</title>` : '') + clip + sueloSVG + svgObj('atras') + cuerpo + svgObj('adelante') + '</svg>';
