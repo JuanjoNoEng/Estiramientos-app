@@ -394,7 +394,8 @@ function construirFigura(pose, idp, pal) {
   return { J, caja, defs, svg };
 }
 
-export function dibujar(pose, opciones = {}) {
+// Prepara una postura: figura, compañero, objetos evaluados, suelo y caja total (sin dibujar todavía)
+function preparar(pose, opciones = {}) {
   const id = opciones.id || 'f';
   const fig = construirFigura(pose, id, PALETA);
   const { J } = fig;
@@ -416,7 +417,7 @@ export function dibujar(pose, opciones = {}) {
   }
 
   // Objetos (pueden usar las articulaciones)
-  const objetos = typeof pose.objetos === 'function' ? pose.objetos(J, sueloY, comp?.Jg) : (pose.objetos || []);
+  const objetos = opciones.objetosFijos ?? (typeof pose.objetos === 'function' ? pose.objetos(J, sueloY, comp?.Jg) : (pose.objetos || []));
   for (const o of objetos) {
     for (const v of ['x', 'x1', 'x2']) if (o[v] != null) { minX = Math.min(minX, o[v] - 12); maxX = Math.max(maxX, o[v] + 12); }
     if (o.tipo === 'silla' || o.tipo === 'banqueta') { const w = o.ancho ?? 40, d = o.dir ?? 1; minX = Math.min(minX, d === 1 ? o.x - w : o.x); maxX = Math.max(maxX, d === 1 ? o.x : o.x + w); }
@@ -424,25 +425,104 @@ export function dibujar(pose, opciones = {}) {
     if (o.y != null) minY = Math.min(minY, o.y - (o.alto ?? 0));
     if (o.caja) { minX = Math.min(minX, o.caja[0]); minY = Math.min(minY, o.caja[1]); maxX = Math.max(maxX, o.caja[2]); }
   }
+  return { id, pose, fig, J, comp, objetos, sueloY, caja: { minX, maxX, minY } };
+}
 
+function camaraPara(caja, sueloY, opciones) {
   const ANCHO = opciones.ancho ?? 280, ALTO = opciones.alto ?? 220, MARGEN = 14;
-  const bw = maxX - minX, bh = sueloY - minY;
+  const bw = caja.maxX - caja.minX, bh = sueloY - caja.minY;
   // zoomMax > 1 permite agrandar figuras pequeñas (tumbadas, encogidas) para que llenen el cuadro
   const esc = Math.min(opciones.zoomMax ?? 1, (ANCHO - 2 * MARGEN) / bw, (ALTO - 2 * MARGEN) / bh);
   const vbW = ANCHO / esc, vbH = ALTO / esc;
-  const vbX = (minX + maxX) / 2 - vbW / 2;
-  const vbY = sueloY + MARGEN / esc - vbH;
+  return { ANCHO, ALTO, esc, vbW, vbH, vbX: (caja.minX + caja.maxX) / 2 - vbW / 2, vbY: sueloY + MARGEN / esc - vbH };
+}
 
+// Pinta una postura preparada. `cuerpo` permite sustituir la figura (fotogramas de animación) y desplazarla.
+function pintar(P, cam, opciones = {}, cuerpo = null) {
+  const { pose, comp, objetos, sueloY, id } = P;
+  const fig = cuerpo?.fig ?? P.fig;
+  const mover = cuerpo ? `translate(${n(cuerpo.dx)} ${n(cuerpo.dy)})` : '';
   const svgObj = capa => objetos.filter(o => delante(o) === (capa === 'adelante')).map(o => OBJETOS[o.tipo](o, sueloY)).join('');
   const compSVG = comp ? `<g transform="translate(${n(comp.dx)} ${n(comp.dy)})">${comp.svg}</g>` : '';
   const compDelante = pose.companero?.delante;
+  const figSVG = mover ? `<g transform="${mover}">${fig.svg}</g>` : fig.svg;
+  const { vbX, vbY, vbW, vbH, esc, ANCHO, ALTO } = cam;
   const sueloSVG = pose.sinSuelo ? '' : `<line x1="${n(vbX + 12 / esc)}" y1="${n(sueloY + 2)}" x2="${n(vbX + vbW - 12 / esc)}" y2="${n(sueloY + 2)}" stroke="${PALETA.suelo}" stroke-width="4" stroke-linecap="round"/>`;
   const defs = `<defs>${fig.defs}${comp ? comp.defs : ''}</defs>`;
-
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${n(vbX)} ${n(vbY)} ${n(vbW)} ${n(vbH)}" width="${ANCHO}" height="${ALTO}">` +
     (opciones.titulo ? `<title>${opciones.titulo}</title>` : '') + defs + sueloSVG + svgObj('atras') +
-    (compDelante ? '' : compSVG) + fig.svg + (compDelante ? compSVG : '') + svgObj('adelante') + '</svg>';
+    (compDelante ? '' : compSVG) + figSVG + (compDelante ? compSVG : '') + svgObj('adelante') + '</svg>';
   return idsUnicos(svg, id);
+}
+
+export function dibujar(pose, opciones = {}) {
+  const P = preparar(pose, opciones);
+  return pintar(P, camaraPara(P.caja, P.sueloY, opciones), opciones);
+}
+
+// ---------- Animación ----------
+// Postura con todos los ángulos explícitos (resuelve la cinemática inversa y las referencias)
+const MIEMBROS = ['piernaN', 'piernaL', 'brazoN', 'brazoL'];
+function explicita(pose) {
+  const { J } = resolver(pose);
+  const r = { torso: pose.torso ?? -90, cuello: pose.cuello ?? pose.torso ?? -90 };
+  for (const m of MIEMBROS) {
+    const P = J[m];
+    const p = m.startsWith('pierna') ? [P.cadera, P.rodilla, P.tobillo, P.punta] : [P.hombro, P.codo, P.muneca, P.punta];
+    r[m] = { a: [angulo(p[0], p[1]), angulo(p[1], p[2])], fin: angulo(p[2], p[3]), escala: pose[m]?.escala ?? [1, 1, 1] };
+  }
+  return r;
+}
+const mezclaAng = (a, b, t) => a + ((((b - a) % 360) + 540) % 360 - 180) * t;
+const mezclaNum = (a, b, t) => a + (b - a) * t;
+
+/** Punto de apoyo que no debe moverse durante la animación (por defecto, la articulación más baja). */
+function puntoAncla(pose, J) {
+  if (pose.ancla) return resolverRef(pose.ancla, J);
+  const candidatos = [J.piernaN.punta, J.piernaN.tobillo, J.piernaL.punta, J.piernaL.tobillo, J.piernaN.rodilla, J.piernaL.rodilla,
+    J.brazoN.punta, J.brazoL.punta, J.pelvis, J.cabeza];
+  return candidatos.reduce((m, p) => (p[1] > m[1] + 0.5 ? p : m));
+}
+
+/**
+ * Prepara la animación de `inicio` a `fin` (la postura del ejercicio). Devuelve `cuadro(t)` con t de 0 a 1.
+ * Los objetos, el suelo y la cámara quedan fijos; el punto de apoyo no se desliza.
+ */
+export function animacion(inicio, fin, opciones = {}) {
+  const P = preparar(fin, opciones);
+  const B = explicita(fin);
+  const A = explicita({ ...fin, ...inicio, objetos: undefined });
+  const base = { ...fin };
+  delete base.objetos;
+  const anclaFin = puntoAncla(fin, P.J);
+  const posePara = t => {
+    const x = { ...base, torso: mezclaAng(A.torso, B.torso, t), cuello: mezclaAng(A.cuello, B.cuello, t) };
+    for (const m of MIEMBROS) {
+      x[m] = {
+        a: [mezclaAng(A[m].a[0], B[m].a[0], t), mezclaAng(A[m].a[1], B[m].a[1], t)],
+        fin: mezclaAng(A[m].fin, B[m].fin, t),
+        escala: A[m].escala.map((e, i) => mezclaNum(e, B[m].escala[i], t)),
+      };
+    }
+    return x;
+  };
+  const cuerpoPara = t => {
+    const pose = posePara(t);
+    const fig = construirFigura(pose, P.id, PALETA);
+    const ancla = puntoAncla(fin, fig.J);
+    // x: el apoyo no se desliza; y: el punto más bajo sigue tocando la misma altura que al final
+    return { fig, dx: anclaFin[0] - ancla[0], dy: P.fig.caja.maxY - fig.caja.maxY };
+  };
+  // Cámara fija que abarca todo el recorrido
+  const caja = { ...P.caja };
+  for (const t of [0, 0.25, 0.5, 0.75]) {
+    const c = cuerpoPara(t);
+    caja.minX = Math.min(caja.minX, c.fig.caja.minX + c.dx);
+    caja.maxX = Math.max(caja.maxX, c.fig.caja.maxX + c.dx);
+    caja.minY = Math.min(caja.minY, c.fig.caja.minY + c.dy);
+  }
+  const cam = camaraPara(caja, P.sueloY, opciones);
+  return { cuadro: t => (t >= 1 ? pintar(P, cam, opciones) : pintar(P, cam, opciones, cuerpoPara(Math.max(0, t)))) };
 }
 
 // Los objetos 'svg' de las posturas pueden traer ids fijos (recortes, máscaras). Cuando la misma figura aparece

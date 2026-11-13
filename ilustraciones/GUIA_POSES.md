@@ -147,3 +147,38 @@ pongas `'cabeza'` en `orden` (útil si un brazo debe pasar **por detrás** de la
 6. Los ejercicios que repiten la misma idea con otra postura deben distinguirse a simple vista.
 
 No modifiques `figura.mjs`. Si falta algo, usa el objeto `svg` o anótalo en tu informe.
+
+## Animación: postura inicial
+
+Cada ejercicio se anima desde una **postura inicial** hasta la postura final (la de `ejercicios.mjs`).
+El motor interpola los ángulos de cada articulación. Los objetos, el suelo y la cámara quedan fijos, y el
+**punto de apoyo** no se desliza.
+
+- Las posturas iniciales van en `ilustraciones/inicio/lote-X.mjs` (`export default { id: {...} }`).
+- **Solo se escribe lo que cambia.** Todo lo que no indiques (vista, mira, resaltar, objetos y los miembros
+  que no mencionas) se toma de la postura final. Los objetos **siempre** son los de la postura final.
+- Se usa la misma sintaxis: `torso`, `cuello`, `piernaN`, `brazoL`… con `a` o `hacia` y `doblez`.
+  Las coordenadas son relativas a la pelvis de la postura inicial.
+- **Punto de apoyo:** por defecto es la articulación más baja de la postura final (un pie, una rodilla…).
+  Si no es la adecuada, indica en la postura **final** `ancla: 'piernaL.punta'`, o en la inicial `ancla`
+  para cambiarla solo en la animación. Es el punto que se queda clavado en el suelo.
+
+### Qué movimiento dibujar
+
+- La postura inicial es la **posición de partida que describe el libro** justo antes de estirar: el
+  estiramiento ocurre al pasar de la inicial a la final, mientras se suelta el aire.
+- El movimiento debe ser **moderado y realista**: normalmente de 15 a 45 grados en las articulaciones que
+  trabajan. No hace falta mostrar cómo se coloca la persona desde cero (sentarse, tumbarse…).
+- Los apoyos deben mantenerse: si una mano está en la pared o sujeta un pie, en la inicial también debe
+  estar en contacto (o muy cerca). Comprueba que la mano llega (la cinemática inversa no estira más allá
+  del largo del brazo).
+- En la inicial no debe haber posturas imposibles ni miembros que atraviesen objetos.
+
+### Ver la animación
+
+```bash
+node ilustraciones/animar.mjs /ruta/salida.png 4,48,61,89
+```
+
+Genera una fila por ejercicio con 5 fotogramas (0 %, 25 %, 50 %, 75 % y 100 %). Ejemplos aprobados en
+`ilustraciones/inicios.mjs` (4, 48, 61 y 89).
